@@ -221,7 +221,7 @@ p, dd { word-break: auto-phrase; }
 
 .detail-overline {
   font-family: "Cormorant Garamond", serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.28em;
   color: var(--muted);
@@ -259,19 +259,19 @@ p, dd { word-break: auto-phrase; }
   list-style: none;
   margin: 0 0 10px;
   padding: 0;
+  border-top: 1px solid rgba(42,92,63,0.18);
 }
 
 .service-list li {
   display: grid;
-  grid-template-columns: 16px 1fr;
-  gap: 6px;
+  grid-template-columns: minmax(0,1fr);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(42,92,63,0.18);
   align-items: baseline;
 }
 
 .service-list .mark {
-  color: var(--green);
-  font-size: 10px;
-  line-height: 2;
+  display: none;
 }
 
 .service-list .text {
@@ -376,7 +376,7 @@ p, dd { word-break: auto-phrase; }
 }
 .delivery-title {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.18em;
   color: var(--muted);
@@ -449,15 +449,15 @@ p, dd { word-break: auto-phrase; }
       </div>
 
       <ul class="service-list">
-        <li><span class="mark">◎</span><span class="text">沖縄全土の風景・店舗周辺スポット写真</span></li>
-        <li><span class="mark">◎</span><span class="text">リクエスト無制限。どれだけリクエストしても追加料金なし。</span></li>
-        <li><span class="mark">◎</span><span class="text">撮影・編集込み</span></li>
-        <li><span class="mark">◎</span><span class="text">契約期間中、用途自由で使用可</span></li>
+        <li><span class="text">沖縄全土の風景・店舗周辺スポット写真</span></li>
+        <li><span class="text">リクエスト無制限。どれだけリクエストしても追加料金なし。</span></li>
+        <li><span class="text">撮影・編集込み</span></li>
+        <li><span class="text">契約期間中、用途自由で使用可</span></li>
       </ul>
 
       <div class="delivery-block">
         <p class="delivery-title">提供方法</p>
-        <p class="delivery-text">Substackを登録 → 毎月Google Cloudのリンクを配信</p>
+        <p class="delivery-text">登録後、毎月リンクで写真素材を受け取れます。</p>
       </div>
 
       <div class="price-block">
@@ -470,7 +470,7 @@ p, dd { word-break: auto-phrase; }
 
       <div class="mission-block">
         <h3 class="mission-title"><span class="np">売上の</span><span class="np">半分を、</span><span class="np">島を</span><span class="np">支えてきた</span><span class="np">人たちへ。</span></h3>
-        <p class="mission-text">月額の半分を積み立て、ゆいまーる精神で島を支えてきた人に届けていきます。</p>
+        <p class="mission-text"><span class="np">月額の半分を</span><span class="np">積み立て、</span><span class="np">ゆいまーる精神で</span><span class="np">島を</span><span class="np">支えてきた人に</span><span class="np">届けていきます。</span></p>
         <p class="mission-text">契約パートナーさんとも一緒に考えていきます。</p>
       </div>
 
