@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shima Log | 島ログ</title>
+<meta name="description" content="沖縄・離島の宿と事業者向けに、写真撮影・映像・ランディングページ・公式LINE構築を一気通貫で。予約サイトの一覧では伝わらない魅力を、ちゃんと伝わる形にします。">
+<link rel="canonical" href="https://shimalog.shimalog.workers.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="島ログ / Shima Log">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="島ログ | 沖縄・離島のブランドを一緒に育てる">
+<meta property="og:description" content="沖縄・離島の宿と事業者向けに、写真撮影・映像・ランディングページ・公式LINE構築を一気通貫で。予約サイトの一覧では伝わらない魅力を、ちゃんと伝わる形にします。">
+<meta property="og:url" content="https://shimalog.shimalog.workers.dev/">
+<meta property="og:image" content="https://shimalog.shimalog.workers.dev/img/og/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -740,6 +752,9 @@ button,input,textarea,select{font:inherit}
 }
 .footer-logo{font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--fg)}
 .footer-sub,.footer-copy{font-size:.98rem;color:rgba(242,237,228,.42)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:flex-end;font-family:"Archivo","Noto Sans JP",sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.46)}
+.footer-nav a{border-bottom:1px solid rgba(242,237,228,.22);transition:color .24s ease,border-color .24s ease}
+.footer-nav a:hover{color:var(--fg);border-color:currentColor}
 
 .snap-modal{
   display:none;
@@ -881,6 +896,8 @@ button,input,textarea,select{font:inherit}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="snap.html">Snap</a></li>
+    <li><a href="wedding.html">Wedding</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#flow">Flow</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -1014,7 +1031,7 @@ button,input,textarea,select{font:inherit}
             <h3 class="section-title">島のいいものを、<span class="nowrap">ちゃんと伝える。</span></h3>
             <p class="body-copy">うむい（島への想い）を広めることが、島を守ることにつながる。</p>
             <p class="body-copy">島のいいものを、ありのまま届ける。</p>
-            <a class="article-card" href="https://shimalab24.substack.com/p/6e8" target="_blank" rel="noopener">
+            <a class="article-card" href="https://shimalog24.substack.com/p/6e8" target="_blank" rel="noopener">
               <img class="article-thumb" src="https://substackcdn.com/image/fetch/w_400,h_400,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a05c55c-d44d-4bec-aab4-bbead39ca888_7008x4672.jpeg" alt="" loading="lazy">
               <div class="article-body">
                 <span class="article-kicker">Substack — 島ログ</span>
@@ -1249,6 +1266,12 @@ button,input,textarea,select{font:inherit}
     <div class="footer-logo">Shima Log / 島ログ</div>
     <div class="footer-sub">Kota Uezu / 上江洌 孝太 — LINE: @009yvklo</div>
   </div>
+  <nav class="footer-nav" aria-label="フッター">
+    <a href="index.html">島ログ</a>
+    <a href="wedding.html">Wedding</a>
+    <a href="snap.html">Snap</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
   <div class="footer-copy">© 2026 Shima Log. All rights reserved.</div>
 </footer>
 <div id="snapModal" class="snap-modal" aria-hidden="true">

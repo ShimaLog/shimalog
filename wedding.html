@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沖縄前撮り 写真＋映像撮影 | Shima Log</title>
+<meta name="description" content="海、緑、夕景。ロケーション選びから写真と映像の残し方まで、ふたりと一緒に組み立てる沖縄の前撮り。撮影当日のアテンドまで対応します。">
+<link rel="canonical" href="https://shimalog.shimalog.workers.dev/wedding">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="島ログ / Shima Log">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="沖縄前撮り 写真＋映像撮影 | 島ログ">
+<meta property="og:description" content="海、緑、夕景。ロケーション選びから写真と映像の残し方まで、ふたりと一緒に組み立てる沖縄の前撮り。撮影当日のアテンドまで対応します。">
+<meta property="og:url" content="https://shimalog.shimalog.workers.dev/wedding">
+<meta property="og:image" content="https://shimalog.shimalog.workers.dev/img/og/og-wedding.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1C1A17;
+  --bg-2:#23211D;
+  --bg-3:#2E2B27;
+  --fg:#F2EDE4;
+  --fg-dim:#A8A199;
+  --line:rgba(242,237,228,0.14);
+  --accent:#B07A36;
+  --accent-2:#3E7A56;
+  --cream:#F2EDE4;
+  --cream-2:#E8E1D5;
+  --ink:#1C1A17;
+  --ink-dim:#5A554E;
+  --line-ink:rgba(28,26,23,0.12);
+  --t-label:12px;
+  --t-body:clamp(1.06rem,1rem + .4vw,1.2rem);
+  --t-h3:clamp(1.3rem,1.1rem + .7vw,1.62rem);
+  --t-h2:clamp(1.86rem,1.32rem + 2.05vw,2.95rem);
+  --t-h1:clamp(2.2rem,1.3rem + 1.8vw,3rem);
+  --t-num:.72rem;
+  --pad-section:clamp(112px,13vw,196px);
+  --col:34em;
+  --container:1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"Archivo","Noto Sans JP",sans-serif;
+  font-size:var(--t-body);
+  font-weight:300;
+  line-height:1.95;
+  letter-spacing:.035em;
+  word-break:normal;
+  line-break:strict;
+  overflow-wrap:normal;
+  overflow-x:hidden;
+  text-wrap:pretty;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,dl,dd{margin:0}
+h1,h2,h3,.kicker,.nav-links,.nav-links a,.brand,.label,.btn,.text-link,.position-label,.index,.price-amount,.footer-logo{
+  overflow-wrap:normal;
+  word-break:normal;
+  line-break:strict;
+  font-feature-settings:"palt" 1;
+}
+p,dd{word-break:auto-phrase}
+button,input,textarea,select{font:inherit}
+.np{display:inline-block;white-space:nowrap}
+
+.site-header{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:50;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,max-content) minmax(0,max-content);
+  align-items:center;
+  gap:28px;
+  min-height:72px;
+  padding:0 clamp(18px,5vw,64px);
+  border-bottom:1px solid var(--line);
+  background:rgba(28,26,23,.78);
+  backdrop-filter:blur(18px);
+}
+.brand{
+  font-family:"Archivo",sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+.nav-links{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.nav-links a,.label,.btn,.text-link{
+  font-family:"Archivo",sans-serif;
+  font-size:var(--t-label);
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.nav-links a{color:var(--fg-dim)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:16px 30px;
+  border:1px solid currentColor;
+  border-radius:0;
+  cursor:pointer;
+  background:transparent;
+  color:var(--fg);
+  letter-spacing:.16em;
+  transition:background .24s ease,color .24s ease,border-color .24s ease;
+}
+.btn-primary,.btn-secondary{border-color:rgba(242,237,228,.5);color:var(--fg)}
+.btn:hover{
+  background:var(--fg);
+  color:var(--bg);
+  border-color:var(--fg);
+}
+.text-link{color:var(--fg-dim);border-bottom:1px solid currentColor;padding-bottom:4px}
+
+.section{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  padding:var(--pad-section) clamp(18px,5vw,64px);
+}
+.container{
+  width:min(100%,var(--container));
+  margin:0 auto;
+}
+.kicker{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+  color:var(--accent);
+}
+.kicker::before{
+  content:"";
+  width:28px;
+  height:1px;
+  background:var(--accent);
+  flex:0 0 auto;
+}
+.section-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:18px;
+  margin-bottom:clamp(34px,5vw,64px);
+}
+.section-title{
+  max-width:18em;
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:var(--t-h2);
+  font-weight:400;
+  line-height:1.42;
+  letter-spacing:.05em;
+}
+.lead,.body-copy{
+  max-width:var(--col);
+  color:var(--fg-dim);
+  line-height:1.95;
+}
+.index{
+  font-family:"Archivo",sans-serif;
+  font-size:var(--t-num);
+  letter-spacing:.2em;
+  color:var(--accent);
+}
+
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  align-items:end;
+  overflow:hidden;
+  padding:clamp(132px,16vw,204px) clamp(18px,5vw,64px) clamp(78px,10vw,132px);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,rgba(28,26,23,.78) 0%,rgba(28,26,23,.48) 48%,rgba(28,26,23,.18) 100%),
+    linear-gradient(0deg,rgba(28,26,23,.92) 0%,rgba(28,26,23,.5) 38%,rgba(28,26,23,.12) 100%);
+}
+.hero-bg,.hero-poster{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.hero-poster{display:none}
+.hero-inner{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(24px,4vw,38px);
+  width:min(100%,var(--container));
+  margin:0 auto;
+}
+.hero h1{
+  max-width:12.4em;
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(2.3rem,5.6vw,4.6rem);
+  font-weight:400;
+  line-height:1.26;
+  letter-spacing:.06em;
+}
+.hero .lead{
+  max-width:34em;
+  color:var(--fg);
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+.position{background:var(--bg-2)}
+.position-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.36fr) minmax(0,1fr);
+  gap:clamp(34px,7vw,96px);
+  align-items:start;
+}
+.position-label{
+  color:var(--accent);
+  font-family:"Archivo",sans-serif;
+  font-size:var(--t-label);
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.position-copy{
+  max-width:42em;
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.35rem,1.07rem + 1vw,1.8rem);
+  font-weight:400;
+  line-height:1.9;
+  letter-spacing:.05em;
+}
+
+.steps{background:var(--bg)}
+.step-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;
+  background:var(--line);
+}
+.step-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(24px,3vw,42px);
+  min-height:220px;
+  padding:clamp(24px,4vw,38px);
+  background:var(--bg);
+}
+.step-card p{
+  color:var(--fg);
+  font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:clamp(1.06rem,1rem + .3vw,1.2rem);
+  font-weight:500;
+  line-height:1.7;
+  letter-spacing:.035em;
+}
+
+.gallery-section{
+  background:var(--bg-2);
+  padding:calc(var(--pad-section) * 1.16) 0 calc(var(--pad-section) * 1.24);
+}
+.gallery-section .section-head{padding-inline:clamp(18px,5vw,64px)}
+.wedding-gallery{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:12px;
+  width:min(100%,1500px);
+  margin:0 auto;
+  padding-inline:clamp(12px,3vw,32px);
+}
+.photo{
+  overflow:hidden;
+  background:#0E0C09;
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s ease;
+}
+.photo:hover img{transform:scale(1.025);filter:brightness(1.04)}
+.photo-large{grid-column:span 7;aspect-ratio:16/10}
+.photo-tall{grid-column:span 5;grid-row:span 2;aspect-ratio:4/5}
+.photo-mid{grid-column:span 4;aspect-ratio:4/3}
+.photo-wide{grid-column:span 8;aspect-ratio:16/9}
+.gallery-note{
+  width:min(100%,var(--container));
+  margin:clamp(30px,5vw,58px) auto 0;
+  padding-inline:clamp(18px,5vw,64px);
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.25rem,1.05rem + .8vw,1.62rem);
+  font-weight:400;
+  line-height:1.8;
+  letter-spacing:.05em;
+}
+
+.price{background:var(--bg)}
+.price-list{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  border-top:1px solid var(--line);
+}
+.price-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,max-content);
+  gap:24px;
+  align-items:baseline;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+.price-name{color:var(--fg)}
+.price-amount{
+  color:var(--accent);
+  font-family:"Archivo","Noto Sans JP",sans-serif;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-align:right;
+  white-space:nowrap;
+}
+
+.notes{background:var(--bg-2)}
+.note-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1px;
+  background:var(--line);
+}
+.note-item{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:12px;
+  padding:clamp(22px,3vw,34px);
+  background:var(--bg-2);
+}
+.note-item dt{
+  color:var(--fg);
+  font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:clamp(1.04rem,1rem + .24vw,1.16rem);
+  font-weight:500;
+  line-height:1.55;
+}
+.note-item dd{
+  color:var(--fg-dim);
+  line-height:1.9;
+}
+@media(min-width:561px){
+  .note-item:last-child{grid-column:1 / -1}
+}
+
+.cta{
+  min-height:70svh;
+  align-items:center;
+  text-align:center;
+  background:var(--bg);
+  padding-top:calc(var(--pad-section) * 1.25);
+  padding-bottom:calc(var(--pad-section) * 1.25);
+}
+.cta .section-title{max-width:none;margin-inline:auto}
+.cta-body{
+  max-width:34em;
+  margin:0 auto 34px;
+  color:var(--fg-dim);
+}
+.cta-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+}
+.credit{
+  margin-top:28px;
+  color:rgba(242,237,228,.42);
+  font-size:.98rem;
+  line-height:1.8;
+}
+
+.body-copy,.lead,.position-copy,.gallery-note,.price-name,.note-item dd,.cta-body,.credit{
+  word-break:auto-phrase;
+  overflow-wrap:normal;
+  line-break:strict;
+}
+
+.site-footer{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,max-content);
+  gap:24px;
+  padding:34px clamp(18px,5vw,64px);
+  border-top:1px solid var(--line);
+  background:#0E0C09;
+  color:rgba(242,237,228,.54);
+}
+.footer-logo{font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--fg)}
+.footer-sub,.footer-copy{font-size:.98rem;color:rgba(242,237,228,.42)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:flex-end;font-family:"Archivo","Noto Sans JP",sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.46)}
+.footer-nav a{border-bottom:1px solid rgba(242,237,228,.22);transition:color .24s ease,border-color .24s ease}
+.footer-nav a:hover{color:var(--fg);border-color:currentColor}
+
+@media(max-width:900px){
+  .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);min-height:64px}
+  .nav-links{display:none}
+  .position-grid,.site-footer{grid-template-columns:minmax(0,1fr)}
+  .step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wedding-gallery{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .photo-large,.photo-tall,.photo-mid,.photo-wide{grid-column:span 3;grid-row:auto;aspect-ratio:4/3}
+  .photo-large,.photo-wide{grid-column:span 6;aspect-ratio:16/10}
+}
+@media(max-width:768px){
+  .hero-bg{display:none}
+  .hero-poster{display:block}
+}
+@media(max-width:560px){
+  :root{--pad-section:106px}
+  .site-header{grid-template-columns:minmax(0,1fr);gap:10px;padding:10px 16px}
+  .brand{letter-spacing:.18em}
+  .hero{min-height:92svh;padding-top:124px;padding-bottom:54px}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.62rem);line-height:1.26}
+  .hero-actions .btn{width:100%}
+  .position-copy{font-size:clamp(1.2rem,5.4vw,1.48rem);line-height:1.85}
+  .step-grid,.note-list{grid-template-columns:minmax(0,1fr)}
+  .step-card{min-height:0}
+  .wedding-gallery{grid-template-columns:minmax(0,1fr);gap:10px;padding-inline:12px}
+  .photo-large,.photo-tall,.photo-mid,.photo-wide{grid-column:1;aspect-ratio:4/3}
+  .photo-tall{aspect-ratio:4/5}
+  .price-row{grid-template-columns:minmax(0,1fr);gap:6px}
+  .price-amount{text-align:left;white-space:normal}
+  .cta-actions{display:grid;grid-template-columns:minmax(0,1fr)}
+  .cta-actions .btn{width:100%}
+}
+@media(max-width:360px){
+  .hero h1{font-size:27px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg{display:none}
+  .hero-poster{display:block}
+  .photo img{transition:none}
+  .photo:hover img{transform:none;filter:none}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="brand">Shima Log</a>
+  <ul class="nav-links">
+    <li><a href="wedding.html">Wedding</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="snap.html">Snap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="index.html" class="text-link">島ログ（事業）</a>
+</header>
+
+<main>
+  <section class="hero">
+    <video class="hero-bg" autoplay muted loop playsinline preload="metadata" poster="img/wedding/hero-poster.jpg">
+      <source src="img/wedding/hero-loop.mp4" type="video/mp4">
+    </video>
+    <img class="hero-poster" src="img/wedding/hero-poster.jpg" alt="">
+    <div class="hero-inner">
+      <div class="kicker label">沖縄前撮り　写真＋映像撮影</div>
+      <h1><span class="np">ロケーションから、</span><span class="np">ふたりらしく</span><span class="np">組み立てる前撮り。</span></h1>
+      <p class="lead"><span class="np">海、緑、夕景。</span><span class="np">写真と映像を、</span><span class="np">場所選びから</span><span class="np">一緒に整えます。</span></p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">撮影イメージを相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section position">
+    <div class="container position-grid">
+      <div class="position-label">POSITION</div>
+      <p class="position-copy">どこで撮ればいいか分からない。写真だけでなく映像も残したい。<span class="np">沖縄らしさは欲しいけれど、</span><span class="np">場所まかせにはしたくない。</span></p>
+    </div>
+  </section>
+
+  <section class="section steps">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title"><span class="np">撮る場所を</span><span class="np">決めるところから、</span><span class="np">残し方まで</span><span class="np">整えます。</span></h2>
+      </div>
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="index">01</div>
+          <p>海・緑・夕景の候補を整理</p>
+        </div>
+        <div class="step-card">
+          <div class="index">02</div>
+          <p>写真撮影と動画素材撮影を同時進行</p>
+        </div>
+        <div class="step-card">
+          <div class="index">03</div>
+          <p>映像制作まで一貫対応</p>
+        </div>
+        <div class="step-card">
+          <div class="index">04</div>
+          <p>撮影当日のアテンドも対応</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery-section" aria-label="前撮りギャラリー">
+    <div class="wedding-gallery">
+      <figure class="photo photo-large"><img src="img/wedding/still-cliff-water.jpg" alt="沖縄の海辺と崖での前撮り撮影" loading="lazy"></figure>
+      <figure class="photo photo-tall"><img src="img/wedding/still-closeup-bride.jpg" alt="沖縄の前撮りで撮影した花嫁の寄りカット" loading="lazy"></figure>
+      <figure class="photo photo-mid"><img src="img/wedding/still-drone-shore.jpg" alt="沖縄の浜辺を上空から撮影した前撮り映像" loading="lazy"></figure>
+      <figure class="photo photo-mid"><img src="img/wedding/still-backshot-sea.jpg" alt="沖縄の海を背景にした前撮りの後ろ姿" loading="lazy"></figure>
+      <figure class="photo photo-mid"><img src="img/wedding/still-beach-distance.jpg" alt="沖縄の浜辺で引きで撮影した前撮り写真" loading="lazy"></figure>
+      <figure class="photo photo-wide"><img src="img/wedding/photo-sunset-wide.jpg" alt="沖縄の夕景で撮影した前撮り写真" loading="lazy"></figure>
+      <figure class="photo photo-mid"><img src="img/wedding/still-carry-sunset.jpg" alt="沖縄の夕景で撮影した前撮りのシルエット" loading="lazy"></figure>
+    </div>
+    <p class="gallery-note">海だけで終わらせず、時間帯や移動の流れまで一緒に決める。だから写真と映像に、同じ一日のつながりが残ります。</p>
+  </section>
+
+  <section class="section price">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">料金</h2>
+        <p class="lead"><span class="np">必要な内容に合わせて、</span><span class="np">撮影と編集を</span><span class="np">選べます。</span></p>
+      </div>
+      <div class="price-list">
+        <p class="price-row">
+          <span class="price-name">動画撮影（素材納品）　</span><span class="price-amount">20,000円</span>
+        </p>
+        <p class="price-row">
+          <span class="price-name">写真撮影（編集込み）　</span><span class="price-amount">15,000円</span>
+        </p>
+        <p class="price-row">
+          <span class="price-name">映像制作（編集込み）　</span><span class="price-amount">35,000円</span>
+        </p>
+        <p class="price-row">
+          <span class="price-name">撮影延長（4時間ごと）　</span><span class="price-amount">+15,000円</span>
+        </p>
+        <p class="price-row">
+          <span class="price-name">撮影スポット申請費用　</span><span class="price-amount">1箇所分込み／2箇所目以降は実費</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section notes">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">ご予約前に</h2>
+        <p class="lead">撮影内容、お支払い、日程変更について事前にご確認ください。</p>
+      </div>
+      <dl class="note-list">
+        <div class="note-item">
+          <dt>含まれるもの</dt>
+          <dd>撮影／撮影当日のアテンド／動画素材の納品／写真データの納品（編集込み）／映像制作の編集／修正2回まで／撮影スポット申請費用1箇所分</dd>
+        </div>
+        <div class="note-item">
+          <dt>含まれないもの</dt>
+          <dd>ヘアメイク／衣装／ブーケ・小物／アシスタント／移動車両の手配／2箇所目以降の申請費用／施設使用料・入場料／離島・県外の移動費・滞在費</dd>
+        </div>
+        <div class="note-item">
+          <dt>納期</dt>
+          <dd>納期は撮影後1〜2ヶ月を目安とします。撮影内容、編集内容、時期によって前後する場合があります。</dd>
+        </div>
+        <div class="note-item">
+          <dt>修正</dt>
+          <dd>映像制作の修正は2回まで無料です。3回目以降の修正や、大幅な構成変更は別途お見積もりとなります。</dd>
+        </div>
+        <div class="note-item">
+          <dt>お支払い</dt>
+          <dd>銀行振込、またはクレジットカード決済に対応しています。撮影日確定後、事前決済をお願いしています。振込手数料はお客様負担となります。</dd>
+        </div>
+        <div class="note-item">
+          <dt>キャンセル</dt>
+          <dd>撮影日の7日前を過ぎてからのお客様都合によるキャンセルは、撮影スポット申請料の実費に加え、見積もり額の30％をキャンセル料として頂戴します。</dd>
+        </div>
+        <div class="note-item">
+          <dt>天候による日程変更</dt>
+          <dd>台風や荒天など、天候都合により安全な撮影が難しい場合は、キャンセル料なしで日程変更のご相談が可能です。</dd>
+        </div>
+        <div class="note-item">
+          <dt>データ保管</dt>
+          <dd>納品後の撮影データ保管期間は3ヶ月を目安とします。納品後はお客様ご自身で保管をお願いします。</dd>
+        </div>
+        <div class="note-item">
+          <dt>実績掲載</dt>
+          <dd>納品した写真・映像は、島ログの実績・ポートフォリオ・SNS等で掲載させていただく場合があります。掲載不可の場合は事前にお知らせください。</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section cta" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">撮影イメージを相談する</h2>
+      </div>
+      <p class="cta-body">まずは撮りたい雰囲気や日程だけでも構いません。ロケーションの候補からご一緒に考えます。</p>
+      <div class="cta-actions">
+        <a href="https://www.instagram.com/shimalog_24/" class="btn btn-secondary" target="_blank" rel="noopener">Instagram DMで受付　@shimalog_24</a>
+        <a href="https://line.me/R/ti/p/%40009yvklo" class="btn btn-primary" target="_blank" rel="noopener">LINEで相談する</a>
+      </div>
+      <p class="credit">撮影・編集：上江洌孝太　／　島ログ</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>
+    <div class="footer-logo">Shima Log / 島ログ</div>
+    <div class="footer-sub">Kota Uezu / 上江洌孝太 — LINE: @009yvklo</div>
+  </div>
+  <nav class="footer-nav" aria-label="フッター">
+    <a href="index.html">島ログ</a>
+    <a href="wedding.html">Wedding</a>
+    <a href="snap.html">Snap</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+  <div class="footer-copy">© 2026 Shima Log. All rights reserved.</div>
+</footer>
+</body>
+</html>
