@@ -148,6 +148,7 @@ button,input,textarea,select{font:inherit}
   padding:16px 30px;
   border:1px solid currentColor;
   border-radius:0;
+  text-align:center;
   cursor:pointer;
   background:transparent;
   color:var(--fg);
@@ -607,20 +608,20 @@ button,input,textarea,select{font:inherit}
 .cta{
   min-height:70svh;
   align-items:center;
-  text-align:center;
+  text-align:left;
   background:var(--bg);
   padding-top:calc(var(--pad-section) * 1.25);
   padding-bottom:calc(var(--pad-section) * 1.25);
 }
-.cta .section-title{max-width:none;margin-inline:auto}
+.cta .section-title{max-width:none;margin-inline:0}
 .cta-body{
   max-width:34em;
-  margin:0 auto 34px;
+  margin:0 0 34px;
   color:var(--fg-dim);
 }
 .cta-request{
   max-width:34em;
-  margin:0 auto 34px;
+  margin:0 0 34px;
   text-align:left;
 }
 .cta-request h3{
@@ -631,7 +632,7 @@ button,input,textarea,select{font:inherit}
   font-weight:400;
   line-height:1.55;
   letter-spacing:.05em;
-  text-align:center;
+  text-align:left;
 }
 .cta-request ul{
   display:grid;
@@ -645,7 +646,7 @@ button,input,textarea,select{font:inherit}
 .cta-actions{
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
+  justify-content:flex-start;
   gap:14px;
 }
 .credit{
@@ -894,7 +895,7 @@ button,input,textarea,select{font:inherit}
   <section class="section conditions">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">当日のこと</h2>
+        <h2 class="section-title">撮影について</h2>
       </div>
       <dl class="condition-list">
         <div class="condition-item">
@@ -971,7 +972,6 @@ button,input,textarea,select{font:inherit}
           <span class="price-name">撮影スポット申請費用　</span><span class="price-amount">1箇所分込み／2箇所目以降は実費</span>
         </p>
       </div>
-      <p class="price-note">動画撮影と映像制作は、どちらも撮影を含みます。編集して2分の作品に仕上げるかどうかの違いなので、どちらか一方をお選びください。</p>
     </div>
   </section>
 
@@ -1025,7 +1025,7 @@ button,input,textarea,select{font:inherit}
   <section class="section cta" id="contact">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">撮影イメージを相談する</h2>
+        <h2 class="section-title">まずは話を聞かせてください</h2>
       </div>
       <div class="cta-request">
         <h3>ご相談のときに教えてください</h3>
@@ -1037,7 +1037,7 @@ button,input,textarea,select{font:inherit}
       </div>
       <p class="cta-body">まずは撮りたい雰囲気や日程だけでも構いません。ロケーションの候補からご一緒に考えます。</p>
       <div class="cta-actions">
-        <a href="https://www.instagram.com/shimalog_24/" class="btn btn-secondary" target="_blank" rel="noopener">Instagram DMで受付　@shimalog_24</a>
+        <a href="https://www.instagram.com/shimalog_24/" class="btn btn-secondary" target="_blank" rel="noopener"><span class="np">Instagram DMで受付</span>　<wbr><span class="np">@shimalog_24</span></a>
         <a href="https://line.me/R/ti/p/%40009yvklo" class="btn btn-primary" target="_blank" rel="noopener">LINEで相談する</a>
       </div>
       <p class="credit">撮影・編集：上江洌孝太　／　島ログ</p>

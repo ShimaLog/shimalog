@@ -508,42 +508,46 @@ button,input,textarea,select{font:inherit}
   object-position:center;
 }
 .photo-break.tall img{aspect-ratio:16/9}
+.photo-break.tall img{object-position:center 62%}
+.photo-break:not(.tall) img{object-position:center 58%}
 
 .works{background:var(--bg-2);padding-inline:0}
 .works .section-head{padding-inline:clamp(18px,5vw,64px)}
 .mini-gallery{
-  display:grid;
-  grid-template-columns:repeat(12,minmax(0,1fr));
-  gap:clamp(12px,2vw,24px);
+  column-count:4;
+  column-gap:clamp(12px,2vw,24px);
   padding-inline:clamp(18px,5vw,64px);
 }
 .mini-gallery a{
   display:block;
   overflow:hidden;
   background:#0b0a09;
+  break-inside:avoid;
+  margin-bottom:clamp(12px,2vw,24px);
 }
 .mini-gallery a:nth-child(1),
 .mini-gallery a:nth-child(6),
-.mini-gallery a:nth-child(10){grid-column:span 7}
+.mini-gallery a:nth-child(10){grid-column:auto}
 .mini-gallery a:nth-child(2),
 .mini-gallery a:nth-child(5),
-.mini-gallery a:nth-child(11){grid-column:span 5}
+.mini-gallery a:nth-child(11){grid-column:auto}
 .mini-gallery a:nth-child(3),
 .mini-gallery a:nth-child(4),
 .mini-gallery a:nth-child(7),
 .mini-gallery a:nth-child(8),
 .mini-gallery a:nth-child(9),
-.mini-gallery a:nth-child(12){grid-column:span 4}
+.mini-gallery a:nth-child(12){grid-column:auto}
 .mini-gallery img{
   width:100%;
-  aspect-ratio:4/3;
-  height:100%;
-  object-fit:cover;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
   object-position:center;
+  display:block;
 }
 .mini-gallery a:nth-child(1) img,
 .mini-gallery a:nth-child(6) img,
-.mini-gallery a:nth-child(10) img{aspect-ratio:3/2}
+.mini-gallery a:nth-child(10) img{aspect-ratio:auto}
 .mini-gallery-cta{margin-top:28px;text-align:center}
 
 .services{background:var(--bg-2)}
@@ -893,11 +897,7 @@ button,input,textarea,select{font:inherit}
   .package-price{text-align:left}
   .cycle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .value-grid{grid-template-columns:minmax(0,1fr)}
-  .mini-gallery{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .mini-gallery a:nth-child(n){grid-column:span 3}
-  .mini-gallery a:nth-child(1),
-  .mini-gallery a:nth-child(6),
-  .mini-gallery a:nth-child(10){grid-column:span 6}
+  .mini-gallery{column-count:2}
 }
 @media(max-width:860px){
   .hero-inner{grid-template-columns:minmax(0,1fr)}
@@ -987,8 +987,7 @@ button,input,textarea,select{font:inherit}
   .about-band{aspect-ratio:3/2;object-position:center 58%}
 }
 @media(max-width:640px){
-  .mini-gallery{grid-template-columns:minmax(0,1fr)}
-  .mini-gallery a:nth-child(n){grid-column:1}
+  .mini-gallery{column-count:1}
 }
 @media(min-width:901px){
   .hero h1{font-size:clamp(3rem,1.8rem + 2.8vw,4.4rem);line-height:1.26}
