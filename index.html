@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#1C1A17;
@@ -51,7 +51,7 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--fg);
-  font-family:"Noto Sans JP",sans-serif;
+  font-family:"Archivo","Noto Sans JP",sans-serif;
   font-size:var(--t-body);
   font-weight:300;
   line-height:1.95;
@@ -67,8 +67,13 @@ body{
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,p{margin:0}
-h1,h2{overflow-wrap:normal;font-feature-settings:"palt" 1}
-.nowrap{display:inline-block;white-space:nowrap}
+h1,h2,h3,.kicker,.label,.nav-links,.nav-links a,.brand,.btn,.text-link,.index,.service-name,.service-price,.service-tag,.footer-logo,.hero-gallery,.problem-title,.concept-title,.flow-title,.partner-title,.package-title,.pitch-headline,.article-kicker,.article-title,.article-link,.why-panel-title,.cycle-title,.value-title,.price-main,.cta-limit{
+  overflow-wrap:normal;
+  word-break:normal;
+  line-break:strict;
+  font-feature-settings:"palt" 1;
+}
+.nowrap,.np{display:inline-block;white-space:nowrap}
 button,input,textarea,select{font:inherit}
 
 .site-header{
@@ -138,12 +143,20 @@ button,input,textarea,select{font:inherit}
   justify-content:center;
   min-height:52px;
   padding:14px 24px;
-  border:1px solid transparent;
-  border-radius:2px;
+  border:1px solid currentColor;
+  border-radius:0;
   cursor:pointer;
+  background:transparent;
+  color:var(--fg);
+  letter-spacing:.16em;
+  transition:background .24s ease,color .24s ease,border-color .24s ease;
 }
-.btn-primary{background:var(--accent);color:var(--ink)}
-.btn-secondary{border-color:rgba(242,237,228,.32);color:var(--fg)}
+.btn-primary,.btn-secondary{border-color:rgba(242,237,228,.5);color:var(--fg)}
+.btn:hover{
+  background:var(--fg);
+  color:var(--bg);
+  border-color:var(--fg);
+}
 .text-link{color:var(--fg-dim);border-bottom:1px solid currentColor;padding-bottom:4px}
 
 .section{
@@ -187,9 +200,9 @@ button,input,textarea,select{font:inherit}
   color:var(--fg);
   font-family:"Shippori Mincho",serif;
   font-size:var(--t-h2);
-  font-weight:700;
-  line-height:1.45;
-  letter-spacing:.02em;
+  font-weight:400;
+  line-height:1.42;
+  letter-spacing:.05em;
 }
 .problem-title,.concept-title,.section-title{
   overflow-wrap:normal;
@@ -286,9 +299,9 @@ button,input,textarea,select{font:inherit}
   max-width:100%;
   font-family:"Shippori Mincho",serif;
   font-size:var(--t-h1);
-  font-weight:700;
-  line-height:1.36;
-  letter-spacing:.02em;
+  font-weight:400;
+  line-height:1.26;
+  letter-spacing:.06em;
 }
 .hero-id .hero-service-link{margin-top:10px}
 .hero-subtitle{
@@ -299,7 +312,7 @@ button,input,textarea,select{font:inherit}
   font-weight:500;
   line-height:1.7;
   word-break:normal;
-  overflow-wrap:anywhere;
+  overflow-wrap:normal;
 }
 .hero-body{max-width:38em;color:var(--fg-dim)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
@@ -350,8 +363,9 @@ button,input,textarea,select{font:inherit}
   color:var(--fg);
   font-family:"Zen Kaku Gothic New",sans-serif;
   font-size:var(--t-h3);
-  font-weight:500;
+  font-weight:400;
   line-height:1.55;
+  letter-spacing:.04em;
 }
 .problem-body,.problem-solve{color:var(--fg-dim)}
 .problem-solve{font-size:.98rem;line-height:1.9}
@@ -372,8 +386,9 @@ button,input,textarea,select{font:inherit}
   color:var(--fg);
   font-family:"Shippori Mincho",serif;
   font-size:var(--t-h3);
-  font-weight:700;
+  font-weight:400;
   line-height:1.9;
+  letter-spacing:.04em;
   border-left:1px solid var(--accent);
   padding-left:24px;
 }
@@ -761,8 +776,9 @@ button,input,textarea,select{font:inherit}
   color:var(--fg);
   font-family:"Shippori Mincho",serif;
   font-size:var(--t-h3);
-  font-weight:700;
+  font-weight:400;
   line-height:1.7;
+  letter-spacing:.04em;
 }
 .package-desc{margin-top:14px;color:var(--fg-dim)}
 .package-price{text-align:right}
@@ -856,7 +872,7 @@ button,input,textarea,select{font:inherit}
 @media (max-width:900px){
   .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);min-height:64px}
   .nav-links{grid-column:1/-1;grid-row:2;gap:8px;justify-self:start;flex-wrap:nowrap}
-  .nav-links a{font-size:9px;letter-spacing:.12em}
+  .nav-links a{font-size:9px;letter-spacing:.08em}
   .hero{padding-top:108px}
   .problem-item,.concept-grid,.why-panels,.partner-grid,.package-card,.site-footer{
     grid-template-columns:minmax(0,1fr);
@@ -885,9 +901,9 @@ button,input,textarea,select{font:inherit}
   :root{--pad-section:88px}
   .site-header{grid-template-columns:minmax(0,1fr);gap:10px;padding:10px 16px}
   .brand{letter-spacing:.18em}
-  .nav-links{gap:3px}
-  .nav-links a{font-size:8px;letter-spacing:.08em}
-  .site-header .btn{width:100%;padding-inline:14px;font-size:10px;letter-spacing:.12em}
+  .nav-links{gap:2px}
+  .nav-links a{font-size:7.5px;letter-spacing:.02em}
+  .site-header .btn{width:100%;padding-inline:14px;font-size:10px;letter-spacing:.16em}
   .hero{padding-inline:18px;padding-top:140px}
   .hero h1{font-size:clamp(2rem,10vw,2.55rem)}
   .hero-subtitle{max-width:16em}
@@ -948,7 +964,7 @@ button,input,textarea,select{font:inherit}
     font-size:15px;
     letter-spacing:.14em;
   }
-  .site-header .btn{width:auto;min-height:44px;padding:12px 14px;font-size:10px;letter-spacing:.1em}
+  .site-header .btn{width:auto;min-height:44px;padding:12px 14px;font-size:10px;letter-spacing:.16em}
 }
 @media(max-width:560px){
   .hero{display:grid;align-items:start;padding-bottom:clamp(28px,5vw,44px)}
@@ -958,18 +974,18 @@ button,input,textarea,select{font:inherit}
   .hero-portrait{width:96px;max-width:96px;gap:8px}
   .hero-id{flex:1 1 auto;min-width:0;padding-top:0;border-top:none}
   .hero-id .sp-hide{display:none}
-  .hero h1{font-size:clamp(1.4rem,0.9rem + 1.4vw,1.9rem);line-height:1.42}
+  .hero h1{font-size:clamp(1.4rem,0.9rem + 1.4vw,1.9rem);line-height:1.26}
   .article-thumb{width:72px;height:72px}
   .about-band{aspect-ratio:3/2;object-position:center 58%}
 }
 @media(max-width:640px){.mini-gallery a{height:140px}}
 @media(min-width:901px){
-  .hero h1{font-size:clamp(3rem,1.8rem + 2.8vw,4.4rem);line-height:1.3}
+  .hero h1{font-size:clamp(3rem,1.8rem + 2.8vw,4.4rem);line-height:1.26}
 }
 .pitch{padding-block:clamp(72px,9vw,120px);border-bottom:1px solid var(--line)}
 .pitch .kicker{margin-bottom:clamp(24px,3vw,40px)}
 .pitch-inner{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,48px)}
-.pitch-headline{font-family:"Shippori Mincho",serif;font-size:clamp(1.7rem,1.2rem + 1.8vw,2.6rem);font-weight:700;line-height:1.52;letter-spacing:.02em;max-width:22em;color:var(--fg);overflow-wrap:normal;word-break:normal;font-feature-settings:"palt" 1}
+.pitch-headline{font-family:"Shippori Mincho",serif;font-size:clamp(1.7rem,1.2rem + 1.8vw,2.6rem);font-weight:400;line-height:1.42;letter-spacing:.05em;max-width:22em;color:var(--fg);overflow-wrap:normal;word-break:normal;font-feature-settings:"palt" 1}
 .pitch-body{margin-top:0;max-width:none;color:var(--fg-dim);padding-top:clamp(18px,2.5vw,28px);border-top:1px solid var(--line)}
 @media(min-width:768px){
   .pitch-inner{grid-template-columns:1.5fr 1fr;align-items:start;gap:clamp(56px,7vw,96px)}
@@ -981,7 +997,7 @@ button,input,textarea,select{font:inherit}
   <a href="#" class="brand">Shima Log</a>
   <ul class="nav-links" id="site-nav">
     <li><a href="#about">About</a></li>
-    <li><a href="#hospitality">宿撮影</a></li>
+    <li><a href="#hospitality">宿・お店向け</a></li>
     <li><a href="wedding.html">Wedding</a></li>
     <li><a href="gallery.html">Gallery</a></li>
   </ul>
@@ -1035,30 +1051,30 @@ button,input,textarea,select{font:inherit}
     <div class="container">
       <div class="section-head">
         <div class="kicker label">Problem</div>
-        <h2 class="section-title">SNSを頑張っているのに、<span class="nowrap">予約で</span><span class="nowrap">損している。</span></h2>
+        <h2 class="section-title"><span class="np">SNSは伸びても</span><span class="np">予約は増えない。</span></h2>
       </div>
       <div class="problem-list">
         <div class="problem-item">
           <div class="index">01</div>
-          <h3 class="problem-title">OTAに流れるまま</h3>
+          <h3 class="problem-title"><span class="np">OTAに</span><span class="np">流れるまま</span></h3>
           <p class="problem-body">インスタで集客できている。写真に「行きたい」とコメントも来る。でも「予約はこちら」とOTAに飛ばした瞬間、15〜30%が引かれます。ファンができたのに、毎月削られる。</p>
           <p class="problem-solve">→ SNSのファンを直販で受け取れる仕組みをつくります。</p>
         </div>
         <div class="problem-item">
           <div class="index">02</div>
-          <h3 class="problem-title">写真が世界観と合わない</h3>
+          <h3 class="problem-title"><span class="np">写真が</span><span class="np">世界観と合わない</span></h3>
           <p class="problem-body">カメラマンに頼んで撮ってもらいました。届いた写真は綺麗でしたが、自分のインスタに並べると何かが違う。世界観が合いませんでした。</p>
           <p class="problem-solve">→ 撮影からLP制作まで同じ人間が<span class="nowrap">担当します。</span></p>
         </div>
         <div class="problem-item">
           <div class="index">03</div>
-          <h3 class="problem-title">作って終わり</h3>
+          <h3 class="problem-title"><span class="np">作って</span><span class="np">終わり</span></h3>
           <p class="problem-body">2年前にLPを作り直しました。でも今また同じ状態になっています。OTAへの依存も、DMの手動返信も、何も変わっていませんでした。更新していく仕組みがなかった。</p>
           <p class="problem-solve">→ パートナー契約で継続して仕組みを磨きます。</p>
         </div>
         <div class="problem-item">
           <div class="index">04</div>
-          <h3 class="problem-title">料金が不明瞭</h3>
+          <h3 class="problem-title"><span class="np">料金が</span><span class="np">不明瞭</span></h3>
           <p class="problem-body">相見積もりをとったら、カメラマンとWeb業者それぞれから見積もりが来ました。でもどこにいくらかかるのか、最後まで全体像が見えませんでした。</p>
           <p class="problem-solve">→ 全工程の料金を最初から明記します。</p>
         </div>
@@ -1070,7 +1086,7 @@ button,input,textarea,select{font:inherit}
     <div class="container">
       <div class="section-head">
         <div class="kicker label">Concept</div>
-        <h2 class="section-title">OTAに流さないで、<span class="nowrap">直接</span>予約を受ける<span class="nowrap">仕組み</span>を作ります。</h2>
+        <h2 class="section-title">OTAに流さないで、<span class="np">直接予約を</span><span class="np">受ける仕組みを</span>作ります。</h2>
       </div>
       <div class="concept-grid">
         <div class="concept-lead">
@@ -1080,7 +1096,7 @@ button,input,textarea,select{font:inherit}
         <div class="concept-list">
           <div class="concept-item">
             <div class="index">01</div>
-            <h3 class="concept-title"><span class="nowrap">説明は、一度でいい</span></h3>
+            <h3 class="concept-title"><span class="np">説明は一度でいい</span></h3>
             <p class="body-copy">カメラマンとWeb業者を別々に探す必要がありません。撮影・LP・直販設定まで同じ人間が担当するので、業者間の説明コストがゼロになります。</p>
           </div>
           <div class="concept-item">
@@ -1103,13 +1119,13 @@ button,input,textarea,select{font:inherit}
       <img class="about-portrait" src="img/profile-back.jpg" alt="海辺に立つ Kota Uezu">
       <div class="about-text">
         <div class="kicker label">About</div>
-        <h2 class="section-title">元々医療<span class="nowrap">従事者でした</span></h2>
+        <h2 class="section-title"><span class="np">元々</span><span class="np">医療従事者でした</span></h2>
         <div class="about-cols">
           <div class="about-body">
             <p>理学療法士として約5年間、患者さんの状態を診て、<br>治療して、経過を見守る仕事をしていました。<br>やることは今も同じです。</p>
             <p>お店の見せ方を診る。<br>原因を見つけて、撮影と制作で整える。</p>
             <p>担当が変わらないから、毎回説明しなくていい。<br>あなたのビジネスを一番理解している人間が、<br>ずっと同じ目線で並走します。</p>
-            <p>沖縄生まれ育ち。みんなが好きな沖縄を、次の世代に残したい。</p>
+            <p>沖縄生まれ育ち。みんなが好きな<span class="np">沖縄を、</span>次の世代に残したい。</p>
           </div>
           <div class="mission-inset">
             <h3 class="section-title">島のいいものを、<span class="nowrap">ちゃんと伝える。</span></h3>
@@ -1119,7 +1135,7 @@ button,input,textarea,select{font:inherit}
               <img class="article-thumb" src="https://substackcdn.com/image/fetch/w_400,h_400,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a05c55c-d44d-4bec-aab4-bbead39ca888_7008x4672.jpeg" alt="" loading="lazy">
               <div class="article-body">
                 <span class="article-kicker">Substack — 島ログ</span>
-                <span class="article-title">みんなの好きな沖縄が無くなる前に</span>
+                <span class="article-title">みんなの好きな<span class="np">沖縄が</span><span class="np">無くなる前に</span></span>
                 <span class="article-link">読む →</span>
               </div>
             </a>
@@ -1207,7 +1223,7 @@ button,input,textarea,select{font:inherit}
           <div class="price-sub">単体合計 ¥190,000 → パックで ¥20,000 OFF</div>
           <div class="price-alt">
             <div class="partner-price">¥190,000</div>
-            <div class="price-sub">クリエイティブパートナー契約（¥20,000/月）込み</div>
+            <div class="price-sub"><span class="np">クリエイティブパートナー契約</span>（¥20,000/月）込み</div>
           </div>
         </div>
       </div>
@@ -1285,7 +1301,7 @@ button,input,textarea,select{font:inherit}
           </div>
           <div class="service-row">
             <div class="index"></div>
-            <div><h4 class="service-name">クリエイティブ<span class="nowrap">パートナー契約</span></h4><div class="service-tag">10社限定</div></div>
+            <div><h4 class="service-name"><span class="np">クリエイティブパートナー契約</span></h4><div class="service-tag">10社限定</div></div>
             <p class="service-detail">保守・気軽な相談・ドメイン/サーバー費用・素材サブスク、ぜんぶ込み。<br><span>※ 撮影・LP制作のご依頼後にご案内します</span></p>
             <div class="service-price">¥20,000<small>/月〜</small></div>
           </div>
@@ -1316,13 +1332,13 @@ button,input,textarea,select{font:inherit}
       <div class="partner-grid">
         <div class="partner-card">
           <div class="label index">いつでも相談できる窓口</div>
-          <h3 class="partner-title">困ったとき、すぐ聞ける。</h3>
+          <h3 class="partner-title"><span class="np">困ったら</span><span class="np">すぐ聞ける。</span></h3>
           <p class="body-copy">サイトの小さな修正、季節ごとの差し替え、SNSに何を出すかの相談。公開して終わりにせず、月1の窓口として気軽に使ってください。</p>
           <div class="partner-price">¥20,000 <span class="service-tag">/ 月〜</span></div>
         </div>
         <div class="partner-card">
           <div class="label index">パートナー契約に込みのもの</div>
-          <h3 class="partner-title">沖縄の写真を、切らさない。</h3>
+          <h3 class="partner-title"><span class="np">沖縄の写真を</span><span class="np">切らさない。</span></h3>
           <p class="body-copy">パートナー契約には、ドメインとサーバー費用、それに素材サブスクも込み。沖縄・離島で撮り続けているから、SNSやWebに使える島の写真を毎月お届けします。</p>
         </div>
       </div>
@@ -1350,7 +1366,7 @@ button,input,textarea,select{font:inherit}
   <section class="section cta" id="contact">
     <div class="container">
       <div class="kicker label center">Contact</div>
-      <h2 class="section-title center">まず、<span class="nowrap">お話しましょう。</span></h2>
+      <h2 class="section-title center"><span class="np">まず</span><span class="np">お話しましょう。</span></h2>
       <p class="cta-body">難しいことはありません。<br>今どんな状態で、何に困っているか。<br>それだけ聞かせてください。</p>
       <p class="cta-limit">現在受付：10社限定</p>
       <a href="https://line.me/R/ti/p/%40009yvklo" class="btn btn-primary" target="_blank" rel="noopener">LINE で無料相談する</a>

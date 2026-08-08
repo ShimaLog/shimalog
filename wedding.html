@@ -288,6 +288,7 @@ button,input,textarea,select{font:inherit}
   line-height:1.9;
   letter-spacing:.05em;
 }
+.position-copy-line{display:block}
 
 .steps{background:var(--bg)}
 .step-grid{
@@ -677,8 +678,8 @@ button,input,textarea,select{font:inherit}
 
 @media(max-width:900px){
   .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);min-height:64px}
-  .nav-links{grid-column:1/-1;grid-row:2;gap:14px;justify-self:start;flex-wrap:nowrap}
-  .nav-links a{font-size:10px;letter-spacing:.12em}
+  .nav-links{grid-column:1/-1;grid-row:2;gap:10px;justify-self:start;flex-wrap:nowrap}
+  .nav-links a{font-size:9px;letter-spacing:.08em}
   .position-grid,.day-plan .section-head,.site-footer{grid-template-columns:minmax(0,1fr)}
   .step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .day-plan-grid{grid-template-columns:minmax(0,1fr)}
@@ -736,6 +737,25 @@ button,input,textarea,select{font:inherit}
   .cta-actions{display:grid;grid-template-columns:minmax(0,1fr)}
   .cta-actions .btn{width:100%}
 }
+@media(max-width:768px){
+  .hero{
+    min-height:auto;
+    align-items:start;
+    padding:calc(55svh + clamp(28px,7vw,44px)) clamp(18px,5vw,64px) clamp(78px,14vw,112px);
+  }
+  .hero::before{
+    inset:auto 0 auto 0;
+    top:0;
+    height:55svh;
+    background:linear-gradient(180deg,rgba(28,26,23,.08) 0%,rgba(28,26,23,.03) 60%,var(--bg) 100%);
+  }
+  .hero-bg,.hero-poster{
+    inset:auto 0 auto 0;
+    top:0;
+    height:55svh;
+    bottom:auto;
+  }
+}
 @media(max-width:360px){
   .hero h1{font-size:27px}
 }
@@ -753,7 +773,7 @@ button,input,textarea,select{font:inherit}
   <a href="index.html" class="brand">Shima Log</a>
   <ul class="nav-links" id="site-nav">
     <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#hospitality">宿撮影</a></li>
+    <li><a href="index.html#hospitality">宿・お店向け</a></li>
     <li><a href="wedding.html">Wedding</a></li>
     <li><a href="gallery.html">Gallery</a></li>
   </ul>
@@ -763,7 +783,7 @@ button,input,textarea,select{font:inherit}
 <main>
   <section class="hero">
     <!-- 動画のみ GitHub Pages から配信。Workers が Range リクエストに非対応で iOS Safari が再生を拒否するため（2026-08-08 実測） -->
-    <video id="hero-video" class="hero-bg" src="https://shimalog.github.io/shimalog/img/wedding/hero-loop-sm.mp4" autoplay muted playsinline loop preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
+    <video id="hero-video" class="hero-bg" src="https://shimalog.github.io/shimalog/img/wedding/hero-sp.mp4" autoplay muted playsinline loop preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
     <script>
       (function(){
         var v = document.getElementById("hero-video");
@@ -797,7 +817,11 @@ button,input,textarea,select{font:inherit}
   <section class="section position">
     <div class="container position-grid">
       <div class="position-label">POSITION</div>
-      <p class="position-copy">どこで撮ればいいか分からない。写真だけでなく映像も残したい。<span class="np">沖縄らしさは欲しいけれど、</span><span class="np">場所まかせにはしたくない。</span></p>
+      <p class="position-copy">
+        <span class="position-copy-line"><span class="np">沖縄の前撮りは、</span><span class="np">場所選びで</span><span class="np">決まると</span><span class="np">思われている。</span></span>
+        <span class="position-copy-line"><span class="np">決めているのは</span><span class="np">潮と光の時間。</span></span>
+        <span class="position-copy-line"><span class="np">同じ場所でも、</span><span class="np">一時間ずれれば</span><span class="np">別の写真になる。</span></span>
+      </p>
     </div>
   </section>
 
@@ -879,7 +903,7 @@ button,input,textarea,select{font:inherit}
         </div>
         <div class="condition-item">
           <dt>写真データ</dt>
-          <dd>100枚以上を編集してお渡しします。</dd>
+          <dd>50枚以上を編集してお渡しします。</dd>
         </div>
         <div class="condition-item">
           <dt>映像</dt>
@@ -927,7 +951,7 @@ button,input,textarea,select{font:inherit}
       <div class="price-feature">
         <h3 class="price-feature-title">写真も映像も残す</h3>
         <p class="price-feature-amount">50,000円</p>
-        <p class="price-feature-copy">4時間の撮影。写真は100枚以上を編集してお渡しします。映像は2分ほどの作品に仕上げます。</p>
+        <p class="price-feature-copy">4時間の撮影。写真は50枚以上を編集してお渡しします。映像は2分ほどの作品に仕上げます。</p>
       </div>
       <p class="price-subhead">写真だけ、映像だけでも承ります</p>
       <div class="price-list">

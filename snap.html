@@ -30,14 +30,23 @@ body {
   color: var(--char);
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: normal;
   line-break: strict;
-  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, p { margin: 0; }
-h1, h2, h3 { overflow-wrap: normal; }
+h1, h2, h3 {
+  word-break: normal;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+p, dd { word-break: auto-phrase; }
+.np {
+  display: inline-block;
+  white-space: nowrap;
+}
 
 #card-main {
   width: 1080px;
@@ -414,7 +423,7 @@ h1, h2, h3 { overflow-wrap: normal; }
         <div class="photo-top">
           <div class="brand-overline">SHIMA LOG</div>
           <div class="top-rule" aria-hidden="true"></div>
-          <h1 class="catch-title">「来世も沖縄がいいやっさ」</h1>
+          <h1 class="catch-title"><span class="np">「来世も</span><span class="np">沖縄が</span><span class="np">いいやっさ」</span></h1>
           <p class="catch-sub">みんなの好きな沖縄が、無くなる前に。<br>写真でゆいまーるを紡ぐ。</p>
         </div>
 
@@ -434,7 +443,7 @@ h1, h2, h3 { overflow-wrap: normal; }
 
       <div class="detail-header">
         <p class="detail-overline">For Okinawa Businesses</p>
-        <h2 class="detail-title">沖縄の写真素材、毎月届きます。</h2>
+        <h2 class="detail-title"><span class="np">沖縄の</span><span class="np">写真素材、</span><span class="np">毎月</span><span class="np">届きます。</span></h2>
         <div class="accent-line" aria-hidden="true"></div>
         <p class="detail-intro">使う写真で、第一印象は変わる。<br>プロが撮った沖縄の写真素材を毎月お届けします。</p>
       </div>
@@ -460,7 +469,7 @@ h1, h2, h3 { overflow-wrap: normal; }
       </div>
 
       <div class="mission-block">
-        <h3 class="mission-title">売上の半分を、島を支えてきた人たちへ。</h3>
+        <h3 class="mission-title"><span class="np">売上の</span><span class="np">半分を、</span><span class="np">島を</span><span class="np">支えてきた</span><span class="np">人たちへ。</span></h3>
         <p class="mission-text">月額の半分を積み立て、ゆいまーる精神で島を支えてきた人に届けていきます。</p>
         <p class="mission-text">契約パートナーさんとも一緒に考えていきます。</p>
       </div>
