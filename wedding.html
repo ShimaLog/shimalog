@@ -67,7 +67,7 @@ body{
 img,video{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,p,dl,dd{margin:0}
-h1,h2,h3,.kicker,.nav-links,.nav-links a,.brand,.label,.btn,.text-link,.position-label,.index,.price-amount,.footer-logo{
+h1,h2,h3,.kicker,.nav-links,.nav-links a,.brand,.label,.btn,.text-link,.position-label,.index,.price-amount,.price-feature-title,.price-feature-amount,.price-subhead,.footer-logo{
   overflow-wrap:normal;
   word-break:normal;
   line-break:strict;
@@ -342,6 +342,7 @@ button,input,textarea,select{font:inherit}
 .photo-half{grid-column:span 6}
 .photo-eight{grid-column:span 8}
 .photo-sunset{aspect-ratio:3/2}
+.photo-sunset-main{grid-column:span 12;aspect-ratio:3/2}
 .gallery-note{
   width:min(100%,var(--container));
   margin:clamp(30px,5vw,58px) auto 0;
@@ -354,7 +355,195 @@ button,input,textarea,select{font:inherit}
   letter-spacing:.05em;
 }
 
+.day-plan{
+  background:var(--bg);
+}
+.day-plan .section-head{
+  grid-template-columns:minmax(0,.9fr) minmax(0,1fr);
+  gap:clamp(28px,6vw,82px);
+  align-items:end;
+}
+.day-plan-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2vw,26px);
+}
+.day-plan-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  align-content:start;
+  gap:16px;
+}
+.day-plan-photo{
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#0E0C09;
+}
+.day-plan-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.day-plan-card:nth-child(1) .day-plan-photo img{object-position:center 42%}
+.day-plan-card:nth-child(2) .day-plan-photo img{object-position:center}
+.day-plan-card:nth-child(3) .day-plan-photo img{object-position:center 58%}
+.day-plan-num{
+  color:var(--accent);
+  font-family:"Archivo",sans-serif;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.28em;
+  line-height:1;
+}
+.day-plan-title{
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.2rem,1.04rem + .56vw,1.48rem);
+  font-weight:400;
+  line-height:1.55;
+  letter-spacing:.05em;
+}
+.day-plan-card p{
+  color:var(--fg-dim);
+  line-height:1.9;
+}
+.day-plan-close{
+  max-width:32em;
+  margin:clamp(42px,6vw,76px) auto 0;
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.22rem,1.04rem + .7vw,1.58rem);
+  font-weight:400;
+  line-height:1.8;
+  letter-spacing:.05em;
+  text-align:center;
+}
+
+.conditions{
+  background:var(--bg-2);
+}
+.condition-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(14px,2vw,22px);
+}
+.condition-item{
+  padding:clamp(24px,3vw,36px) 0;
+  border-top:1px solid var(--line);
+}
+.condition-item dt{
+  margin-bottom:10px;
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.12rem,1.02rem + .38vw,1.32rem);
+  font-weight:400;
+  line-height:1.55;
+  letter-spacing:.05em;
+}
+.condition-item dd{
+  max-width:30em;
+  color:var(--fg-dim);
+  line-height:1.9;
+}
+.condition-number{
+  color:var(--fg);
+  font-family:"Archivo","Noto Sans JP",sans-serif;
+  font-size:1.14em;
+  font-weight:400;
+  letter-spacing:.04em;
+}
+
+.comparison{
+  background:var(--bg);
+}
+.comparison-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1px;
+  background:var(--line);
+}
+.comparison-item{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:22px;
+  padding:clamp(24px,4vw,42px);
+  background:var(--bg);
+}
+.comparison-item h3{
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.2rem,1.02rem + .56vw,1.44rem);
+  font-weight:400;
+  line-height:1.55;
+  letter-spacing:.05em;
+}
+.comparison-pair{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:12px;
+}
+.comparison-pair p{
+  display:grid;
+  grid-template-columns:minmax(0,8em) minmax(0,1fr);
+  gap:12px;
+  color:var(--fg-dim);
+  line-height:1.7;
+}
+.comparison-pair span:first-child{
+  color:var(--fg);
+}
+.comparison-close{
+  max-width:38em;
+  margin:clamp(34px,5vw,58px) auto 0;
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.18rem,1.02rem + .64vw,1.48rem);
+  font-weight:400;
+  line-height:1.8;
+  letter-spacing:.05em;
+  text-align:center;
+}
+
 .price{background:var(--bg)}
+.price-feature{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,max-content);
+  gap:clamp(18px,4vw,44px);
+  align-items:end;
+  margin-bottom:clamp(58px,7vw,92px);
+}
+.price-feature-title{
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.36rem,1.08rem + .92vw,1.82rem);
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:.05em;
+}
+.price-feature-amount{
+  color:var(--accent);
+  font-family:"Archivo","Noto Sans JP",sans-serif;
+  font-size:clamp(2.55rem,1.8rem + 3vw,4.3rem);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:.04em;
+  text-align:right;
+  white-space:nowrap;
+}
+.price-feature-copy{
+  grid-column:1 / -1;
+  max-width:none;
+  color:var(--fg-dim);
+  line-height:1.9;
+}
+.price-subhead{
+  margin-bottom:18px;
+  color:var(--accent);
+  font-family:"Archivo","Noto Sans JP",sans-serif;
+  font-size:var(--t-label);
+  font-weight:500;
+  letter-spacing:.18em;
+}
 .price-list{
   display:grid;
   grid-template-columns:minmax(0,1fr);
@@ -376,6 +565,13 @@ button,input,textarea,select{font:inherit}
   letter-spacing:.08em;
   text-align:right;
   white-space:nowrap;
+}
+.price-note{
+  margin-top:18px;
+  max-width:48em;
+  color:var(--fg-muted);
+  font-size:.88rem;
+  line-height:1.8;
 }
 
 .notes{background:var(--bg-2)}
@@ -421,6 +617,30 @@ button,input,textarea,select{font:inherit}
   margin:0 auto 34px;
   color:var(--fg-dim);
 }
+.cta-request{
+  max-width:34em;
+  margin:0 auto 34px;
+  text-align:left;
+}
+.cta-request h3{
+  margin:0 0 18px;
+  color:var(--fg);
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.16rem,1.02rem + .5vw,1.38rem);
+  font-weight:400;
+  line-height:1.55;
+  letter-spacing:.05em;
+  text-align:center;
+}
+.cta-request ul{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:8px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  color:var(--fg-dim);
+}
 .cta-actions{
   display:flex;
   flex-wrap:wrap;
@@ -434,7 +654,7 @@ button,input,textarea,select{font:inherit}
   line-height:1.8;
 }
 
-.body-copy,.lead,.position-copy,.gallery-note,.price-name,.note-item dd,.cta-body,.credit{
+.body-copy,.lead,.position-copy,.gallery-note,.day-plan-card p,.day-plan-close,.condition-item dd,.comparison-pair p,.comparison-close,.price-name,.note-item dd,.cta-body,.cta-request li,.credit{
   word-break:auto-phrase;
   overflow-wrap:normal;
   line-break:strict;
@@ -459,8 +679,10 @@ button,input,textarea,select{font:inherit}
   .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);min-height:64px}
   .nav-links{grid-column:1/-1;grid-row:2;gap:14px;justify-self:start;flex-wrap:nowrap}
   .nav-links a{font-size:10px;letter-spacing:.12em}
-  .position-grid,.site-footer{grid-template-columns:minmax(0,1fr)}
+  .position-grid,.day-plan .section-head,.site-footer{grid-template-columns:minmax(0,1fr)}
   .step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .day-plan-grid{grid-template-columns:minmax(0,1fr)}
+  .day-plan-photo{aspect-ratio:16/9}
 }
 @media(max-width:768px){
   .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);gap:12px;min-height:64px;padding:10px 16px}
@@ -493,8 +715,9 @@ button,input,textarea,select{font:inherit}
     letter-spacing:.14em;
   }
   .wedding-gallery{grid-template-columns:minmax(0,1fr);gap:10px;padding-inline:12px}
-  .photo,.photo-full,.photo-half,.photo-eight{grid-column:1;aspect-ratio:2.35/1}
+  .photo,.photo-full,.photo-half,.photo-eight,.photo-sunset-main{grid-column:1;aspect-ratio:2.35/1}
   .photo-sunset{aspect-ratio:3/2}
+  .photo-sunset-main{aspect-ratio:3/2}
 }
 @media(max-width:560px){
   :root{--pad-section:106px}
@@ -503,8 +726,11 @@ button,input,textarea,select{font:inherit}
   .hero h1{font-size:clamp(1.9rem,8vw,2.62rem);line-height:1.26}
   .hero-actions .btn{width:100%}
   .position-copy{font-size:clamp(1.2rem,5.4vw,1.48rem);line-height:1.85}
-  .step-grid,.note-list{grid-template-columns:minmax(0,1fr)}
+  .step-grid,.condition-list,.comparison-grid,.note-list{grid-template-columns:minmax(0,1fr)}
   .step-card{min-height:0}
+  .comparison-pair p{grid-template-columns:minmax(0,1fr);gap:2px}
+  .price-feature{grid-template-columns:minmax(0,1fr);gap:16px;margin-bottom:52px}
+  .price-feature-amount{text-align:left;white-space:normal}
   .price-row{grid-template-columns:minmax(0,1fr);gap:6px}
   .price-amount{text-align:left;white-space:normal}
   .cta-actions{display:grid;grid-template-columns:minmax(0,1fr)}
@@ -536,7 +762,8 @@ button,input,textarea,select{font:inherit}
 
 <main>
   <section class="hero">
-    <video id="hero-video" class="hero-bg" src="img/wedding/hero-loop-sm.mp4" autoplay muted playsinline loop preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
+    <!-- 動画のみ GitHub Pages から配信。Workers が Range リクエストに非対応で iOS Safari が再生を拒否するため（2026-08-08 実測） -->
+    <video id="hero-video" class="hero-bg" src="https://shimalog.github.io/shimalog/img/wedding/hero-loop-sm.mp4" autoplay muted playsinline loop preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
     <script>
       (function(){
         var v = document.getElementById("hero-video");
@@ -549,7 +776,7 @@ button,input,textarea,select{font:inherit}
           return;
         }
         if (window.matchMedia("(min-width: 769px)").matches) {
-          v.src = "img/wedding/hero-loop.mp4";
+          v.src = "https://shimalog.github.io/shimalog/img/wedding/hero-loop.mp4";
           v.load();
         }
         var play = v.play();
@@ -602,15 +829,93 @@ button,input,textarea,select{font:inherit}
 
   <section class="section gallery-section" aria-label="前撮りギャラリー">
     <div class="wedding-gallery">
-      <figure class="photo photo-full"><img src="img/wedding/still-cliff-water.jpg" alt="沖縄の海辺と崖での前撮り撮影" loading="lazy"></figure>
-      <figure class="photo photo-half"><img src="img/wedding/still-drone-shore.jpg" alt="沖縄の浜辺を上空から撮影した前撮り映像" loading="lazy"></figure>
-      <figure class="photo photo-half"><img src="img/wedding/still-closeup-bride.jpg" alt="沖縄の前撮りで撮影した花嫁の寄りカット" loading="lazy"></figure>
+      <figure class="photo photo-full"><img src="img/wedding/still-drone-shore.jpg" alt="沖縄の浜辺を上空から撮影した前撮り映像" loading="lazy"></figure>
       <figure class="photo photo-half"><img src="img/wedding/still-backshot-sea.jpg" alt="沖縄の海を背景にした前撮りの後ろ姿" loading="lazy"></figure>
       <figure class="photo photo-half"><img src="img/wedding/still-beach-distance.jpg" alt="沖縄の浜辺で引きで撮影した前撮り写真" loading="lazy"></figure>
-      <figure class="photo photo-full photo-sunset"><img src="img/wedding/photo-sunset-wide.jpg" alt="沖縄の夕景で撮影した前撮り写真" loading="lazy"></figure>
-      <figure class="photo photo-eight"><img src="img/wedding/still-carry-sunset.jpg" alt="沖縄の夕景で撮影した前撮りのシルエット" loading="lazy"></figure>
+      <figure class="photo photo-sunset-main"><img src="img/wedding/photo-sunset-wide.jpg" alt="沖縄の夕景で撮影した前撮り写真" loading="lazy"></figure>
     </div>
     <p class="gallery-note">海だけで終わらせず、時間帯や移動の流れまで一緒に決める。だから写真と映像に、同じ一日のつながりが残ります。</p>
+  </section>
+
+  <section class="section day-plan">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title"><span class="np">日の入りから</span><span class="np">逆算する4時間。</span></h2>
+        <p class="lead">沖縄の日没は、夏と冬で1時間半以上ちがいます。決まった時間割はありません。撮影日の日の入りに合わせて、うしろから組み立てます。</p>
+      </div>
+      <div class="day-plan-grid">
+        <article class="day-plan-card">
+          <figure class="day-plan-photo"><img src="img/wedding/still-cliff-water.jpg" alt="沖縄の崖から見下ろす海。明るい時間帯のロケーション撮影" loading="lazy"></figure>
+          <div class="day-plan-num">01</div>
+          <h3 class="day-plan-title">明るい海から始める</h3>
+          <p>光が強い時間は、色の出る場所へ。海の青と、崖の緑を撮ります。</p>
+        </article>
+        <article class="day-plan-card">
+          <figure class="day-plan-photo"><img src="img/wedding/still-closeup-bride.jpg" alt="夕方の光の中での寄りのカット" loading="lazy"></figure>
+          <div class="day-plan-num">02</div>
+          <h3 class="day-plan-title"><span class="np">光がやわらぐ頃に</span><span class="np">寄りを撮る</span></h3>
+          <p>影が長くなる頃。表情とディテールは、この時間がいちばんきれいです。</p>
+        </article>
+        <article class="day-plan-card">
+          <figure class="day-plan-photo"><img src="img/wedding/still-carry-sunset.jpg" alt="日没前の海辺でのシルエット撮影" loading="lazy"></figure>
+          <div class="day-plan-num">03</div>
+          <h3 class="day-plan-title">日が落ちる前の30分</h3>
+          <p>一日でいちばん短い時間。ここに間に合わせるために、朝から逆算します。</p>
+        </article>
+      </div>
+      <p class="day-plan-close">4時間あるから、この3つを一日で回れます。</p>
+    </div>
+  </section>
+
+  <section class="section conditions">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">撮影の条件</h2>
+      </div>
+      <dl class="condition-list">
+        <div class="condition-item">
+          <dt>撮影時間</dt>
+          <dd><span class="condition-number">4時間。</span>延長は4時間ごとに承ります。</dd>
+        </div>
+        <div class="condition-item">
+          <dt>写真データ</dt>
+          <dd>100枚以上を編集してお渡しします。</dd>
+        </div>
+        <div class="condition-item">
+          <dt>映像</dt>
+          <dd><span class="condition-number">2分ほど</span>の作品に仕上げます。素材のままの納品も選べます。</dd>
+        </div>
+        <div class="condition-item">
+          <dt>天候</dt>
+          <dd>台風や荒天で安全に撮れないときは、キャンセル料なしで日程を変えられます。</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section comparison">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title"><span class="np">一般的な</span><span class="np">出張撮影との違い</span></h2>
+      </div>
+      <div class="comparison-grid">
+        <article class="comparison-item">
+          <h3>撮影時間</h3>
+          <div class="comparison-pair">
+            <p><span>出張撮影</span><span>　60分前後</span></p>
+            <p><span>島ログ</span><span>　4時間</span></p>
+          </div>
+        </article>
+        <article class="comparison-item">
+          <h3>残せるもの</h3>
+          <div class="comparison-pair">
+            <p><span>出張撮影</span><span>　写真</span></p>
+            <p><span>島ログ</span><span>　写真と映像</span></p>
+          </div>
+        </article>
+      </div>
+      <p class="comparison-close">60分では、ひとつの場所で終わります。4時間あるから、光に合わせて回れます。</p>
+    </div>
   </section>
 
   <section class="section price">
@@ -619,6 +924,12 @@ button,input,textarea,select{font:inherit}
         <h2 class="section-title">料金</h2>
         <p class="lead"><span class="np">必要な内容に合わせて、</span><span class="np">撮影と編集を</span><span class="np">選べます。</span></p>
       </div>
+      <div class="price-feature">
+        <h3 class="price-feature-title">写真も映像も残す</h3>
+        <p class="price-feature-amount">50,000円</p>
+        <p class="price-feature-copy">4時間の撮影。写真は100枚以上を編集してお渡しします。映像は2分ほどの作品に仕上げます。</p>
+      </div>
+      <p class="price-subhead">写真だけ、映像だけでも承ります</p>
       <div class="price-list">
         <p class="price-row">
           <span class="price-name">動画撮影（素材納品）　</span><span class="price-amount">20,000円</span>
@@ -636,6 +947,7 @@ button,input,textarea,select{font:inherit}
           <span class="price-name">撮影スポット申請費用　</span><span class="price-amount">1箇所分込み／2箇所目以降は実費</span>
         </p>
       </div>
+      <p class="price-note">動画撮影と映像制作は、どちらも撮影を含みます。編集して2分の作品に仕上げるかどうかの違いなので、どちらか一方をお選びください。</p>
     </div>
   </section>
 
@@ -690,6 +1002,14 @@ button,input,textarea,select{font:inherit}
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">撮影イメージを相談する</h2>
+      </div>
+      <div class="cta-request">
+        <h3>ご相談のときに教えてください</h3>
+        <ul>
+          <li>撮影を考えている時期</li>
+          <li>撮りたい雰囲気。参考の写真があればそのまま送ってください。</li>
+          <li>衣装の準備状況。まだ決まっていなくても構いません。</li>
+        </ul>
       </div>
       <p class="cta-body">まずは撮りたい雰囲気や日程だけでも構いません。ロケーションの候補からご一緒に考えます。</p>
       <div class="cta-actions">
