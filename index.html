@@ -108,6 +108,30 @@ button,input,textarea,select{font:inherit}
   text-transform:uppercase;
 }
 .nav-links a{color:var(--fg-dim)}
+.nav-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  padding:0;
+  border:1px solid rgba(242,237,228,.22);
+  border-radius:0;
+  background:transparent;
+  color:var(--fg);
+  cursor:pointer;
+  flex-direction:column;
+  gap:5px;
+}
+.nav-toggle span,
+.nav-toggle::before,
+.nav-toggle::after{
+  content:"";
+  display:block;
+  width:18px;
+  height:1px;
+  background:currentColor;
+}
 .btn{
   display:inline-flex;
   align-items:center;
@@ -894,6 +918,38 @@ button,input,textarea,select{font:inherit}
   }
   .cycle-grid{grid-template-columns:minmax(0,1fr)}
 }
+@media(max-width:768px){
+  .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content) minmax(0,max-content);gap:10px;min-height:64px;padding:10px 16px}
+  .nav-toggle{display:flex;justify-self:end}
+  .nav-links{
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    width:100%;
+    display:none;
+    grid-column:auto;
+    grid-row:auto;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:0;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    backdrop-filter:blur(18px);
+  }
+  .site-header.nav-open .nav-links{display:flex}
+  .nav-links li{border-top:1px solid var(--line)}
+  .nav-links a{
+    display:flex;
+    align-items:center;
+    min-height:48px;
+    padding:0 clamp(18px,5vw,28px);
+    font-size:15px;
+    letter-spacing:.14em;
+  }
+  .site-header .btn{width:auto;min-height:44px;padding:12px 14px;font-size:10px;letter-spacing:.1em}
+}
 @media(max-width:560px){
   .hero{display:grid;align-items:start;padding-bottom:clamp(28px,5vw,44px)}
   .hero-inner{align-self:stretch;display:grid;align-items:start;width:min(100%,var(--container));margin:0 auto}
@@ -923,16 +979,14 @@ button,input,textarea,select{font:inherit}
 <body>
 <header class="site-header">
   <a href="#" class="brand">Shima Log</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="site-nav">
     <li><a href="#about">About</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="snap.html">Snap</a></li>
+    <li><a href="#hospitality">宿撮影</a></li>
     <li><a href="wedding.html">Wedding</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#flow">Flow</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
   </ul>
   <a href="https://line.me/R/ti/p/%40009yvklo" class="btn btn-primary" target="_blank" rel="noopener">無料相談（LINE）</a>
+  <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-nav"><span></span></button>
 </header>
 
 <main>
@@ -1166,7 +1220,7 @@ button,input,textarea,select{font:inherit}
         <div class="kicker label">Services</div>
         <h2 class="section-title">提供サービス</h2>
       </div>
-      <div class="service-group">
+      <div class="service-group" id="hospitality">
         <div class="kicker label service-group-label">宿・事業者の方へ</div>
         <div class="service-category">
           <div class="service-head">
@@ -1327,6 +1381,27 @@ button,input,textarea,select{font:inherit}
   </div>
 </div>
 <script>
+function setupNav(){
+  var header=document.querySelector(".site-header");
+  var btn=document.querySelector(".nav-toggle");
+  var nav=document.getElementById("site-nav");
+  if(!header||!btn||!nav)return;
+  function closeNav(){
+    header.classList.remove("nav-open");
+    btn.setAttribute("aria-expanded","false");
+  }
+  btn.addEventListener("click",function(){
+    var open=header.classList.toggle("nav-open");
+    btn.setAttribute("aria-expanded",open?"true":"false");
+  });
+  nav.addEventListener("click",function(e){
+    if(e.target&&e.target.tagName==="A")closeNav();
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape")closeNav();
+  });
+}
+setupNav();
 function openSnapModal(){
   var m = document.getElementById('snapModal');
   var f = document.getElementById('snapFrame');

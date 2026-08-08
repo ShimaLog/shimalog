@@ -103,6 +103,30 @@ button{font:inherit}
   transition:color .3s ease;
 }
 .nav-links a:hover{color:var(--fg)}
+.nav-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  padding:0;
+  border:1px solid rgba(242,237,228,.22);
+  border-radius:0;
+  background:transparent;
+  color:var(--fg);
+  cursor:pointer;
+  flex-direction:column;
+  gap:5px;
+}
+.nav-toggle span,
+.nav-toggle::before,
+.nav-toggle::after{
+  content:"";
+  display:block;
+  width:18px;
+  height:1px;
+  background:currentColor;
+}
 
 .title-block{
   width:min(1500px,94vw);
@@ -277,6 +301,37 @@ button{font:inherit}
   .nav-links{gap:10px}
   .nav-links a{font-size:9px}
 }
+@media(max-width:768px){
+  .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);gap:12px;min-height:64px;padding:10px 16px}
+  .nav-toggle{display:flex;justify-self:end}
+  .nav-links{
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    width:100%;
+    display:none;
+    grid-column:auto;
+    grid-row:auto;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:0;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    backdrop-filter:blur(18px);
+  }
+  .site-header.nav-open .nav-links{display:flex}
+  .nav-links li{border-top:1px solid var(--line)}
+  .nav-links a{
+    display:flex;
+    align-items:center;
+    min-height:48px;
+    padding:0 clamp(18px,5vw,28px);
+    font-size:15px;
+    letter-spacing:.14em;
+  }
+}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .jitem,.jitem img,.glb,.glb-stage img{transition:none}
@@ -287,13 +342,13 @@ button{font:inherit}
 <body>
 <header class="site-header">
   <a href="index.html" class="brand">Shima Log</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="site-nav">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#hospitality">宿撮影</a></li>
     <li><a href="wedding.html">Wedding</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="snap.html">Snap</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <a href="index.html" class="business-link">島ログ（事業）→</a>
+  <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-nav"><span></span></button>
 </header>
 
 <main>
@@ -361,6 +416,26 @@ button{font:inherit}
 </div>
 
 <script>
+(function(){
+  var header=document.querySelector(".site-header");
+  var btn=document.querySelector(".nav-toggle");
+  var nav=document.getElementById("site-nav");
+  if(!header||!btn||!nav)return;
+  function closeNav(){
+    header.classList.remove("nav-open");
+    btn.setAttribute("aria-expanded","false");
+  }
+  btn.addEventListener("click",function(){
+    var open=header.classList.toggle("nav-open");
+    btn.setAttribute("aria-expanded",open?"true":"false");
+  });
+  nav.addEventListener("click",function(e){
+    if(e.target&&e.target.tagName==="A")closeNav();
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape")closeNav();
+  });
+})();
 (function(){
   var gal=document.getElementById('jgal'); if(!gal) return;
   var items=[].slice.call(gal.querySelectorAll('.jitem'));

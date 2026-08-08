@@ -114,6 +114,32 @@ button,input,textarea,select{font:inherit}
   text-transform:uppercase;
 }
 .nav-links a{color:var(--fg-dim)}
+.nav-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  padding:0;
+  border:1px solid rgba(242,237,228,.22);
+  border-radius:0;
+  background:transparent;
+  color:var(--fg);
+  cursor:pointer;
+}
+.nav-toggle span,
+.nav-toggle::before,
+.nav-toggle::after{
+  content:"";
+  display:block;
+  width:18px;
+  height:1px;
+  background:currentColor;
+}
+.nav-toggle{
+  flex-direction:column;
+  gap:5px;
+}
 .btn{
   display:inline-flex;
   align-items:center;
@@ -213,6 +239,8 @@ button,input,textarea,select{font:inherit}
   object-position:center;
 }
 .hero-poster{display:none}
+.hero-bg.video-failed{display:none}
+.hero-bg.video-failed + script + .hero-poster{display:block}
 .hero-inner{
   position:relative;
   z-index:2;
@@ -435,16 +463,42 @@ button,input,textarea,select{font:inherit}
   .step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:768px){
+  .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);gap:12px;min-height:64px;padding:10px 16px}
+  .nav-toggle{display:flex;justify-self:end}
+  .nav-links{
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    width:100%;
+    display:none;
+    grid-column:auto;
+    grid-row:auto;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:0;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    backdrop-filter:blur(18px);
+  }
+  .site-header.nav-open .nav-links{display:flex}
+  .nav-links li{border-top:1px solid var(--line)}
+  .nav-links a{
+    display:flex;
+    align-items:center;
+    min-height:48px;
+    padding:0 clamp(18px,5vw,28px);
+    font-size:15px;
+    letter-spacing:.14em;
+  }
   .wedding-gallery{grid-template-columns:minmax(0,1fr);gap:10px;padding-inline:12px}
   .photo,.photo-full,.photo-half,.photo-eight{grid-column:1;aspect-ratio:2.35/1}
   .photo-sunset{aspect-ratio:3/2}
 }
 @media(max-width:560px){
   :root{--pad-section:106px}
-  .site-header{grid-template-columns:minmax(0,1fr);gap:10px;padding:10px 16px}
   .brand{letter-spacing:.18em}
-  .nav-links{grid-row:2;gap:12px;justify-self:start}
-  .nav-links a{font-size:9px}
   .hero{min-height:92svh;padding-top:124px;padding-bottom:54px}
   .hero h1{font-size:clamp(1.9rem,8vw,2.62rem);line-height:1.26}
   .hero-actions .btn{width:100%}
@@ -458,8 +512,6 @@ button,input,textarea,select{font:inherit}
 }
 @media(max-width:360px){
   .hero h1{font-size:27px}
-  .nav-links{gap:10px}
-  .nav-links a{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -473,28 +525,35 @@ button,input,textarea,select{font:inherit}
 <body>
 <header class="site-header">
   <a href="index.html" class="brand">Shima Log</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="site-nav">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#hospitality">宿撮影</a></li>
     <li><a href="wedding.html">Wedding</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="snap.html">Snap</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="index.html" class="text-link">島ログ（事業）</a>
+  <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-nav"><span></span></button>
 </header>
 
 <main>
   <section class="hero">
-    <video id="hero-video" class="hero-bg" autoplay muted loop playsinline preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
+    <video id="hero-video" class="hero-bg" src="img/wedding/hero-loop-sm.mp4" autoplay muted playsinline loop preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
     <script>
       (function(){
         var v = document.getElementById("hero-video");
         if (!v) return;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        v.src = window.matchMedia("(max-width: 768px)").matches
-          ? "img/wedding/hero-loop-sm.mp4"
-          : "img/wedding/hero-loop.mp4";
+        v.muted = true;
+        v.playsInline = true;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          v.removeAttribute("autoplay");
+          v.pause();
+          return;
+        }
+        if (window.matchMedia("(min-width: 769px)").matches) {
+          v.src = "img/wedding/hero-loop.mp4";
+          v.load();
+        }
         var play = v.play();
-        if (play && play.catch) play.catch(function(){});
+        if (play && play.catch) play.catch(function(){ v.classList.add("video-failed"); });
       })();
     </script>
     <img class="hero-poster" src="img/wedding/hero-poster.jpg" alt="">
@@ -655,5 +714,27 @@ button,input,textarea,select{font:inherit}
   </nav>
   <div class="footer-copy">© 2026 Shima Log. All rights reserved.</div>
 </footer>
+<script>
+(function(){
+  var header=document.querySelector(".site-header");
+  var btn=document.querySelector(".nav-toggle");
+  var nav=document.getElementById("site-nav");
+  if(!header||!btn||!nav)return;
+  function closeNav(){
+    header.classList.remove("nav-open");
+    btn.setAttribute("aria-expanded","false");
+  }
+  btn.addEventListener("click",function(){
+    var open=header.classList.toggle("nav-open");
+    btn.setAttribute("aria-expanded",open?"true":"false");
+  });
+  nav.addEventListener("click",function(e){
+    if(e.target&&e.target.tagName==="A")closeNav();
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape")closeNav();
+  });
+})();
+</script>
 </body>
 </html>
