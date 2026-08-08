@@ -309,10 +309,11 @@ button,input,textarea,select{font:inherit}
   transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s ease;
 }
 .photo:hover img{transform:scale(1.025);filter:brightness(1.04)}
-.photo-large{grid-column:span 7;aspect-ratio:16/10}
-.photo-tall{grid-column:span 5;grid-row:span 2;aspect-ratio:4/5}
-.photo-mid{grid-column:span 4;aspect-ratio:4/3}
-.photo-wide{grid-column:span 8;aspect-ratio:16/9}
+.photo{aspect-ratio:2.35/1}
+.photo-full{grid-column:span 12}
+.photo-half{grid-column:span 6}
+.photo-eight{grid-column:span 8}
+.photo-sunset{aspect-ratio:3/2}
 .gallery-note{
   width:min(100%,var(--container));
   margin:clamp(30px,5vw,58px) auto 0;
@@ -428,30 +429,28 @@ button,input,textarea,select{font:inherit}
 
 @media(max-width:900px){
   .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);min-height:64px}
-  .nav-links{display:none}
+  .nav-links{grid-column:1/-1;grid-row:2;gap:14px;justify-self:start;flex-wrap:nowrap}
+  .nav-links a{font-size:10px;letter-spacing:.12em}
   .position-grid,.site-footer{grid-template-columns:minmax(0,1fr)}
   .step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .wedding-gallery{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .photo-large,.photo-tall,.photo-mid,.photo-wide{grid-column:span 3;grid-row:auto;aspect-ratio:4/3}
-  .photo-large,.photo-wide{grid-column:span 6;aspect-ratio:16/10}
 }
 @media(max-width:768px){
-  .hero-bg{display:none}
-  .hero-poster{display:block}
+  .wedding-gallery{grid-template-columns:minmax(0,1fr);gap:10px;padding-inline:12px}
+  .photo,.photo-full,.photo-half,.photo-eight{grid-column:1;aspect-ratio:2.35/1}
+  .photo-sunset{aspect-ratio:3/2}
 }
 @media(max-width:560px){
   :root{--pad-section:106px}
   .site-header{grid-template-columns:minmax(0,1fr);gap:10px;padding:10px 16px}
   .brand{letter-spacing:.18em}
+  .nav-links{grid-row:2;gap:12px;justify-self:start}
+  .nav-links a{font-size:9px}
   .hero{min-height:92svh;padding-top:124px;padding-bottom:54px}
   .hero h1{font-size:clamp(1.9rem,8vw,2.62rem);line-height:1.26}
   .hero-actions .btn{width:100%}
   .position-copy{font-size:clamp(1.2rem,5.4vw,1.48rem);line-height:1.85}
   .step-grid,.note-list{grid-template-columns:minmax(0,1fr)}
   .step-card{min-height:0}
-  .wedding-gallery{grid-template-columns:minmax(0,1fr);gap:10px;padding-inline:12px}
-  .photo-large,.photo-tall,.photo-mid,.photo-wide{grid-column:1;aspect-ratio:4/3}
-  .photo-tall{aspect-ratio:4/5}
   .price-row{grid-template-columns:minmax(0,1fr);gap:6px}
   .price-amount{text-align:left;white-space:normal}
   .cta-actions{display:grid;grid-template-columns:minmax(0,1fr)}
@@ -459,6 +458,8 @@ button,input,textarea,select{font:inherit}
 }
 @media(max-width:360px){
   .hero h1{font-size:27px}
+  .nav-links{gap:10px}
+  .nav-links a{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -483,9 +484,19 @@ button,input,textarea,select{font:inherit}
 
 <main>
   <section class="hero">
-    <video class="hero-bg" autoplay muted loop playsinline preload="metadata" poster="img/wedding/hero-poster.jpg">
-      <source src="img/wedding/hero-loop.mp4" type="video/mp4">
-    </video>
+    <video id="hero-video" class="hero-bg" autoplay muted loop playsinline preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
+    <script>
+      (function(){
+        var v = document.getElementById("hero-video");
+        if (!v) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        v.src = window.matchMedia("(max-width: 768px)").matches
+          ? "img/wedding/hero-loop-sm.mp4"
+          : "img/wedding/hero-loop.mp4";
+        var play = v.play();
+        if (play && play.catch) play.catch(function(){});
+      })();
+    </script>
     <img class="hero-poster" src="img/wedding/hero-poster.jpg" alt="">
     <div class="hero-inner">
       <div class="kicker label">沖縄前撮り　写真＋映像撮影</div>
@@ -532,13 +543,13 @@ button,input,textarea,select{font:inherit}
 
   <section class="section gallery-section" aria-label="前撮りギャラリー">
     <div class="wedding-gallery">
-      <figure class="photo photo-large"><img src="img/wedding/still-cliff-water.jpg" alt="沖縄の海辺と崖での前撮り撮影" loading="lazy"></figure>
-      <figure class="photo photo-tall"><img src="img/wedding/still-closeup-bride.jpg" alt="沖縄の前撮りで撮影した花嫁の寄りカット" loading="lazy"></figure>
-      <figure class="photo photo-mid"><img src="img/wedding/still-drone-shore.jpg" alt="沖縄の浜辺を上空から撮影した前撮り映像" loading="lazy"></figure>
-      <figure class="photo photo-mid"><img src="img/wedding/still-backshot-sea.jpg" alt="沖縄の海を背景にした前撮りの後ろ姿" loading="lazy"></figure>
-      <figure class="photo photo-mid"><img src="img/wedding/still-beach-distance.jpg" alt="沖縄の浜辺で引きで撮影した前撮り写真" loading="lazy"></figure>
-      <figure class="photo photo-wide"><img src="img/wedding/photo-sunset-wide.jpg" alt="沖縄の夕景で撮影した前撮り写真" loading="lazy"></figure>
-      <figure class="photo photo-mid"><img src="img/wedding/still-carry-sunset.jpg" alt="沖縄の夕景で撮影した前撮りのシルエット" loading="lazy"></figure>
+      <figure class="photo photo-full"><img src="img/wedding/still-cliff-water.jpg" alt="沖縄の海辺と崖での前撮り撮影" loading="lazy"></figure>
+      <figure class="photo photo-half"><img src="img/wedding/still-drone-shore.jpg" alt="沖縄の浜辺を上空から撮影した前撮り映像" loading="lazy"></figure>
+      <figure class="photo photo-half"><img src="img/wedding/still-closeup-bride.jpg" alt="沖縄の前撮りで撮影した花嫁の寄りカット" loading="lazy"></figure>
+      <figure class="photo photo-half"><img src="img/wedding/still-backshot-sea.jpg" alt="沖縄の海を背景にした前撮りの後ろ姿" loading="lazy"></figure>
+      <figure class="photo photo-half"><img src="img/wedding/still-beach-distance.jpg" alt="沖縄の浜辺で引きで撮影した前撮り写真" loading="lazy"></figure>
+      <figure class="photo photo-full photo-sunset"><img src="img/wedding/photo-sunset-wide.jpg" alt="沖縄の夕景で撮影した前撮り写真" loading="lazy"></figure>
+      <figure class="photo photo-eight"><img src="img/wedding/still-carry-sunset.jpg" alt="沖縄の夕景で撮影した前撮りのシルエット" loading="lazy"></figure>
     </div>
     <p class="gallery-note">海だけで終わらせず、時間帯や移動の流れまで一緒に決める。だから写真と映像に、同じ一日のつながりが残ります。</p>
   </section>

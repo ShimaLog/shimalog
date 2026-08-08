@@ -39,9 +39,9 @@ body{
   font-weight:300;
   line-height:1.8;
   letter-spacing:.035em;
-  word-break:keep-all;
+  word-break:normal;
   line-break:strict;
-  overflow-wrap:break-word;
+  overflow-wrap:normal;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
@@ -260,7 +260,8 @@ button{font:inherit}
   .site-header{min-height:62px;gap:12px;padding-inline:16px}
   .brand{font-size:10px;letter-spacing:.18em}
   .business-link{font-size:9px;letter-spacing:.06em}
-  .nav-links{display:none}
+  .nav-links{grid-column:1/-1;grid-row:2;gap:14px;justify-self:start;flex-wrap:nowrap}
+  .nav-links a{font-size:10px;letter-spacing:.12em}
   .title-block{width:calc(100vw - 32px);padding:82px 0 72px}
   .title-block h1{font-size:clamp(3.2rem,17vw,4.8rem)}
   .title-block p{font-size:.68rem;letter-spacing:.08em}
@@ -271,6 +272,10 @@ button{font:inherit}
   .glb-next{right:12px}
   .glb-count{bottom:29px}
   .site-footer{display:grid;grid-template-columns:minmax(0,1fr);padding-block:28px}
+}
+@media(max-width:360px){
+  .nav-links{gap:10px}
+  .nav-links a{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

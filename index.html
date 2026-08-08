@@ -503,6 +503,16 @@ button,input,textarea,select{font:inherit}
 .mini-gallery-cta{margin-top:28px;text-align:center}
 
 .services{background:var(--bg-2)}
+.service-group{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+}
+.service-group + .service-group{
+  margin-top:clamp(46px,6vw,76px);
+}
+.service-group-label{
+  margin-bottom:18px;
+}
 .service-category{
   display:grid;
   grid-template-columns:minmax(0,1fr);
@@ -604,6 +614,23 @@ button,input,textarea,select{font:inherit}
 }
 .snap-service .service-desc{
   grid-column:2 / -1;
+  grid-row:2;
+}
+.wedding-service .service-head{
+  grid-template-columns:minmax(0,1fr) auto;
+  row-gap:8px;
+}
+.wedding-service .service-name-line{
+  grid-column:1;
+  grid-row:1;
+}
+.wedding-service .service-price{
+  grid-column:2;
+  grid-row:1;
+  align-self:baseline;
+}
+.wedding-service .service-desc{
+  grid-column:1 / -1;
   grid-row:2;
 }
 .service-detail span{display:block;margin-top:8px;font-size:.98rem;line-height:1.8}
@@ -804,7 +831,8 @@ button,input,textarea,select{font:inherit}
 
 @media (max-width:900px){
   .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);min-height:64px}
-  .nav-links{display:none}
+  .nav-links{grid-column:1/-1;grid-row:2;gap:8px;justify-self:start;flex-wrap:nowrap}
+  .nav-links a{font-size:9px;letter-spacing:.12em}
   .hero{padding-top:108px}
   .problem-item,.concept-grid,.why-panels,.partner-grid,.package-card,.site-footer{
     grid-template-columns:minmax(0,1fr);
@@ -833,6 +861,8 @@ button,input,textarea,select{font:inherit}
   :root{--pad-section:88px}
   .site-header{grid-template-columns:minmax(0,1fr);gap:10px;padding:10px 16px}
   .brand{letter-spacing:.18em}
+  .nav-links{gap:3px}
+  .nav-links a{font-size:8px;letter-spacing:.08em}
   .site-header .btn{width:100%;padding-inline:14px;font-size:10px;letter-spacing:.12em}
   .hero{padding-inline:18px;padding-top:140px}
   .hero h1{font-size:clamp(2rem,10vw,2.55rem)}
@@ -1136,72 +1166,88 @@ button,input,textarea,select{font:inherit}
         <div class="kicker label">Services</div>
         <h2 class="section-title">提供サービス</h2>
       </div>
-      <div class="service-category">
-        <div class="service-head">
-          <div class="index">01</div>
-          <h3 class="service-name">写真・映像撮影（専用素材）</h3>
-          <p class="service-desc">素材を作る</p>
-        </div>
-        <div class="service-row">
-          <div class="index"></div>
-          <div><h4 class="service-name">写真撮影（4h）</h4><div class="service-tag">Photography</div></div>
-          <p class="service-detail">施設・商品・スタッフ撮影。現像・編集込み、全データ納品。Web・SNSに即活用できる素材を提供。</p>
-          <div class="service-price">¥30,000<small>〜</small></div>
-        </div>
-        <div class="service-row">
-          <div class="index"></div>
-          <div><h4 class="service-name">スナップムービー</h4><div class="service-tag">Videography</div></div>
-          <p class="service-detail">その場の空気感をそのまま閉じ込めた1〜2分の映像制作。過剰編集せず、見た人が「行きたい」と思う映像を届ける。</p>
-          <div class="service-price">¥50,000<small>〜</small></div>
-        </div>
-      </div>
-      <div class="service-category snap-service">
-        <div class="service-head">
-          <div class="index">02</div>
-          <div class="service-name-line">
-            <h3 class="service-name">スナップ素材<span class="nowrap">サブスク</span><span class="nowrap">（共用ライブラリ）</span></h3>
-            <a class="snap-detail-link" onclick="openSnapModal()">詳しく見る →</a>
+      <div class="service-group">
+        <div class="kicker label service-group-label">宿・事業者の方へ</div>
+        <div class="service-category">
+          <div class="service-head">
+            <div class="index">01</div>
+            <h3 class="service-name">写真・映像撮影（専用素材）</h3>
+            <p class="service-desc">素材を作る</p>
           </div>
-          <div class="service-price">¥10,000<small>/月</small></div>
-          <p class="service-desc">沖縄・離島の風景・観光<span class="nowrap">スポット</span>・施設<span class="nowrap">周辺</span>の写真をクラウドで公開。<span class="nowrap">契約</span>期間中、SNS・Webで自由に<span class="nowrap">使えます。</span>撮ってほしい<span class="nowrap">エリア</span>があればリクエスト可。追加料金なし。<span class="nowrap">契約事業者間</span>で共用（非独占）。映像は含みません。売上の50%を積み立て、ゆいまーる精神で島を支えてきた人に届けていきます。</p>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">写真撮影（4h）</h4><div class="service-tag">Photography</div></div>
+            <p class="service-detail">施設・商品・スタッフ撮影。現像・編集込み、全データ納品。Web・SNSに即活用できる素材を提供。</p>
+            <div class="service-price">¥30,000<small>〜</small></div>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">スナップムービー</h4><div class="service-tag">Videography</div></div>
+            <p class="service-detail">その場の空気感をそのまま閉じ込めた1〜2分の映像制作。過剰編集せず、見た人が「行きたい」と思う映像を届ける。</p>
+            <div class="service-price">¥50,000<small>〜</small></div>
+          </div>
+        </div>
+        <div class="service-category snap-service">
+          <div class="service-head">
+            <div class="index">02</div>
+            <div class="service-name-line">
+              <h3 class="service-name">スナップ素材<span class="nowrap">サブスク</span><span class="nowrap">（共用ライブラリ）</span></h3>
+              <a class="snap-detail-link" onclick="openSnapModal()">詳しく見る →</a>
+            </div>
+            <div class="service-price">¥10,000<small>/月</small></div>
+            <p class="service-desc">沖縄・離島の風景・観光<span class="nowrap">スポット</span>・施設<span class="nowrap">周辺</span>の写真をクラウドで公開。<span class="nowrap">契約</span>期間中、SNS・Webで自由に<span class="nowrap">使えます。</span>撮ってほしい<span class="nowrap">エリア</span>があればリクエスト可。追加料金なし。<span class="nowrap">契約事業者間</span>で共用（非独占）。映像は含みません。売上の50%を積み立て、ゆいまーる精神で島を支えてきた人に届けていきます。</p>
+          </div>
+        </div>
+        <div class="service-category">
+          <div class="service-head">
+            <div class="index">03</div>
+            <h3 class="service-name">Web・デジタル</h3>
+            <p class="service-desc"></p>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">LP制作</h4><div class="service-tag">Web Design</div></div>
+            <p class="service-detail">構成・コピー・デザイン一気通貫。1ページ完結型。修正2回まで。</p>
+            <div class="service-price">¥80,000</div>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">コーポレートサイト</h4><div class="service-tag">Web Design</div></div>
+            <p class="service-detail">3ページ〜構成。会社の顔となる複数ページWebサイト。修正3回まで。</p>
+            <div class="service-price">¥150,000<small>〜</small></div>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">LINE公式＋決済導入</h4><div class="service-tag">Set</div></div>
+            <p class="service-detail">LINE公式アカウントの初期設計・リッチメニュー・挨拶メッセージ設定と、オンライン決済の導入をセットで対応。問い合わせ〜決済までをオンラインで完結させる。<span>決済サービスは用途に合わせて2択から提案</span><span>Stripe　オンライン完結・LP埋め込み型に最適<br>Square　実店舗＋オンライン両対応・日本語サポート充実</span><span>※ 単体での提供は行っていません</span></p>
+            <div class="service-price">¥80,000</div>
+          </div>
+        </div>
+        <div class="service-category">
+          <div class="service-head">
+            <div class="index">04</div>
+            <h3 class="service-name">継続支援</h3>
+            <p class="service-desc">制作物の保守と、気軽に<span class="nowrap">相談</span>できる窓口。<span class="nowrap">ドメイン・サーバー</span>費用と、スナップ素材<span class="nowrap">サブスク</span>（¥10,000/月<span class="nowrap">相当</span>）も無料で付帯します。</p>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">クリエイティブ<span class="nowrap">パートナー契約</span></h4><div class="service-tag">10社限定</div></div>
+            <p class="service-detail">保守・気軽な相談・ドメイン/サーバー費用・素材サブスク、ぜんぶ込み。<br><span>※ 撮影・LP制作のご依頼後にご案内します</span></p>
+            <div class="service-price">¥20,000<small>/月〜</small></div>
+          </div>
         </div>
       </div>
-      <div class="service-category">
-        <div class="service-head">
-          <div class="index">03</div>
-          <h3 class="service-name">Web・デジタル</h3>
-          <p class="service-desc"></p>
-        </div>
-        <div class="service-row">
-          <div class="index"></div>
-          <div><h4 class="service-name">LP制作</h4><div class="service-tag">Web Design</div></div>
-          <p class="service-detail">構成・コピー・デザイン一気通貫。1ページ完結型。修正2回まで。</p>
-          <div class="service-price">¥80,000</div>
-        </div>
-        <div class="service-row">
-          <div class="index"></div>
-          <div><h4 class="service-name">コーポレートサイト</h4><div class="service-tag">Web Design</div></div>
-          <p class="service-detail">3ページ〜構成。会社の顔となる複数ページWebサイト。修正3回まで。</p>
-          <div class="service-price">¥150,000<small>〜</small></div>
-        </div>
-        <div class="service-row">
-          <div class="index"></div>
-          <div><h4 class="service-name">LINE公式＋決済導入</h4><div class="service-tag">Set</div></div>
-          <p class="service-detail">LINE公式アカウントの初期設計・リッチメニュー・挨拶メッセージ設定と、オンライン決済の導入をセットで対応。問い合わせ〜決済までをオンラインで完結させる。<span>決済サービスは用途に合わせて2択から提案</span><span>Stripe　オンライン完結・LP埋め込み型に最適<br>Square　実店舗＋オンライン両対応・日本語サポート充実</span><span>※ 単体での提供は行っていません</span></p>
-          <div class="service-price">¥80,000</div>
-        </div>
-      </div>
-      <div class="service-category">
-        <div class="service-head">
-          <div class="index">04</div>
-          <h3 class="service-name">継続支援</h3>
-          <p class="service-desc">制作物の保守と、気軽に<span class="nowrap">相談</span>できる窓口。<span class="nowrap">ドメイン・サーバー</span>費用と、スナップ素材<span class="nowrap">サブスク</span>（¥10,000/月<span class="nowrap">相当</span>）も無料で付帯します。</p>
-        </div>
-        <div class="service-row">
-          <div class="index"></div>
-          <div><h4 class="service-name">クリエイティブ<span class="nowrap">パートナー契約</span></h4><div class="service-tag">10社限定</div></div>
-          <p class="service-detail">保守・気軽な相談・ドメイン/サーバー費用・素材サブスク、ぜんぶ込み。<br><span>※ 撮影・LP制作のご依頼後にご案内します</span></p>
-          <div class="service-price">¥20,000<small>/月〜</small></div>
+      <div class="service-group">
+        <div class="kicker label service-group-label">前撮りをお考えの方へ</div>
+        <div class="service-category wedding-service">
+          <div class="service-head">
+            <div class="service-name-line">
+              <h3 class="service-name">沖縄前撮り　写真＋映像撮影</h3>
+              <a class="snap-detail-link" href="wedding.html">前撮りの詳細を見る →</a>
+            </div>
+            <div class="service-price">¥15,000<small>〜</small></div>
+            <p class="service-desc">海、緑、夕景。写真と映像を、場所選びから一緒に整えます。</p>
+          </div>
         </div>
       </div>
     </div>
