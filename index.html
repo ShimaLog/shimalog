@@ -497,19 +497,15 @@ button,input,textarea,select{font:inherit}
 .photo-break{
   padding:0;
   background:var(--bg);
-  height:clamp(360px,40vw,560px);
   overflow:hidden;
 }
 .photo-break img{
   width:100%;
-  height:100%;
-  aspect-ratio:16/9;
+  height:auto;
+  aspect-ratio:3/2;
   object-fit:cover;
   object-position:center;
 }
-.photo-break.tall img{aspect-ratio:16/9}
-.photo-break.tall img{object-position:center 62%}
-.photo-break:not(.tall) img{object-position:center 58%}
 
 .works{background:var(--bg-2);padding-inline:0}
 .works .section-head{padding-inline:clamp(18px,5vw,64px)}
