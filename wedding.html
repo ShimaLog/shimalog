@@ -769,8 +769,12 @@
         position: relative;
         inset: auto;
         z-index: 0;
-        height: 58svh;
         width: 100%;
+        aspect-ratio: 390 / 360;
+        height: auto;
+        box-sizing: border-box;
+        padding-top: 64px;
+        overflow: hidden;
         background-image: url("img/wedding/hero-poster.jpg");
         background-position: 45% center;
       }
@@ -795,7 +799,7 @@
 
       .hero-copy {
         width: 100%;
-        padding: clamp(28px, 6vw, 40px) 20px clamp(40px, 9vw, 56px);
+        padding: clamp(24px, 5vw, 34px) 20px clamp(40px, 9vw, 56px);
         background: var(--ink);
         text-align: center;
       }
