@@ -758,8 +758,64 @@
         padding-block: 10px;
       }
 
+      .hero {
+        display: block;
+        min-height: auto;
+        overflow: visible;
+        background: var(--ink);
+      }
+
+      .hero-media {
+        position: relative;
+        inset: auto;
+        z-index: 0;
+        height: 58svh;
+        width: 100%;
+        background-image: url("img/wedding/hero-poster.jpg");
+      }
+
+      .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero::before {
+        z-index: 1;
+        inset: 0 0 auto;
+        height: 64px;
+        background: linear-gradient(180deg, rgba(31, 29, 26, .28) 0%, rgba(31, 29, 26, .08) 72%, transparent 100%);
+      }
+
+      .hero::after {
+        content: none;
+      }
+
+      .hero-copy {
+        width: 100%;
+        padding: clamp(28px, 6vw, 40px) 20px clamp(40px, 9vw, 56px);
+        background: var(--ink);
+        text-align: center;
+      }
+
+      .hero .label {
+        color: rgba(255, 255, 255, .64);
+      }
+
       .hero-title {
+        margin-top: 14px;
         font-size: clamp(1.6rem, 8.6vw, 2.4rem);
+        line-height: 1.18;
+      }
+
+      .hero-text {
+        margin-top: 14px;
+        color: rgba(255, 255, 255, .86);
+        line-height: 1.82;
+      }
+
+      .hero .text-link {
+        margin-top: 18px;
       }
 
       .menu-button {
@@ -849,12 +905,6 @@
     @media (max-width: 360px) {
       .hero-title {
         font-size: 8.2vw;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .hero-media {
-        background-image: url("img/wedding/hero-poster-sp.jpg");
       }
     }
 
@@ -1170,11 +1220,11 @@
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
       const sources = {
         desktop: "img/wedding/hero-loop.mp4",
-        mobile: "img/wedding/hero-sp.mp4"
+        mobile: "img/wedding/hero-loop.mp4"
       };
       const posters = {
         desktop: "img/wedding/hero-poster.jpg",
-        mobile: "img/wedding/hero-poster-sp.jpg"
+        mobile: "img/wedding/hero-poster.jpg"
       };
 
       const setVideo = () => {
