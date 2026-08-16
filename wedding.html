@@ -1,1084 +1,1225 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>沖縄前撮り 写真＋映像撮影 | Shima Log</title>
-<meta name="description" content="海、緑、夕景。ロケーション選びから写真と映像の残し方まで、ふたりと一緒に組み立てる沖縄の前撮り。撮影当日のアテンドまで対応します。">
-<link rel="canonical" href="https://shimalog.shimalog.workers.dev/wedding">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="島ログ / Shima Log">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="沖縄前撮り 写真＋映像撮影 | 島ログ">
-<meta property="og:description" content="海、緑、夕景。ロケーション選びから写真と映像の残し方まで、ふたりと一緒に組み立てる沖縄の前撮り。撮影当日のアテンドまで対応します。">
-<meta property="og:url" content="https://shimalog.shimalog.workers.dev/wedding">
-<meta property="og:image" content="https://shimalog.shimalog.workers.dev/img/og/og-wedding.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#1C1A17;
-  --bg-2:#23211D;
-  --bg-3:#2E2B27;
-  --fg:#F2EDE4;
-  --fg-dim:#A8A199;
-  --line:rgba(242,237,228,0.14);
-  --accent:#B07A36;
-  --accent-2:#3E7A56;
-  --cream:#F2EDE4;
-  --cream-2:#E8E1D5;
-  --ink:#1C1A17;
-  --ink-dim:#5A554E;
-  --line-ink:rgba(28,26,23,0.12);
-  --t-label:12px;
-  --t-body:clamp(1.06rem,1rem + .4vw,1.2rem);
-  --t-h3:clamp(1.3rem,1.1rem + .7vw,1.62rem);
-  --t-h2:clamp(1.86rem,1.32rem + 2.05vw,2.95rem);
-  --t-h1:clamp(2.2rem,1.3rem + 1.8vw,3rem);
-  --t-num:.72rem;
-  --pad-section:clamp(112px,13vw,196px);
-  --col:34em;
-  --container:1180px;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding | Shima Log</title>
+  <meta name="description" content="沖縄本島で、前撮りの写真と映像を撮っています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Shippori+Mincho:wght@400&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #FBFAF7;
+      --paper-2: #F3F0EA;
+      --ink: #1F1D1A;
+      --ink-dim: #6B655C;
+      --ink-faint: #9A948B;
+      --rule: rgba(31, 29, 26, .12);
+      --dune: #8A7E6B;
+      --white: #fff;
+      --f-display: "Cormorant Garamond", "Shippori Mincho", serif;
+      --f-jp-head: "Shippori Mincho", serif;
+      --f-jp-body: "Zen Kaku Gothic New", sans-serif;
+      --f-label: "Archivo", sans-serif;
+      --t-hero: clamp(2.6rem, 1.4rem + 5.4vw, 5rem);
+      --t-h2: clamp(1.8rem, 1.25rem + 2.3vw, 3.1rem);
+      --t-num: clamp(1.9rem, 1.2rem + 2.9vw, 3.4rem);
+      --t-h3: clamp(1.12rem, 1.04rem + .4vw, 1.36rem);
+      --t-body: clamp(.97rem, .94rem + .16vw, 1.03rem);
+      --t-label: 13px;
+      --container: 1200px;
+      --pad-x: clamp(20px, 5vw, 72px);
+      color-scheme: light;
+    }
 
-*,*::before,*::after{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--fg);
-  font-family:"Archivo","Noto Sans JP",sans-serif;
-  font-size:var(--t-body);
-  font-weight:300;
-  line-height:1.95;
-  letter-spacing:.035em;
-  word-break:normal;
-  line-break:strict;
-  overflow-wrap:normal;
-  overflow-x:hidden;
-  text-wrap:pretty;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-img,video{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-h1,h2,h3,p,dl,dd{margin:0}
-h1,h2,h3,.kicker,.nav-links,.nav-links a,.brand,.label,.btn,.text-link,.position-label,.index,.price-amount,.price-feature-title,.price-feature-amount,.price-subhead,.footer-logo{
-  overflow-wrap:normal;
-  word-break:normal;
-  line-break:strict;
-  font-feature-settings:"palt" 1;
-}
-p,dd{word-break:auto-phrase}
-button,input,textarea,select{font:inherit}
-.np{display:inline-block;white-space:nowrap}
+    * {
+      box-sizing: border-box;
+    }
 
-.site-header{
-  position:fixed;
-  inset:0 0 auto;
-  z-index:50;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,max-content) minmax(0,max-content);
-  align-items:center;
-  gap:28px;
-  min-height:72px;
-  padding:0 clamp(18px,5vw,64px);
-  border-bottom:1px solid var(--line);
-  background:rgba(28,26,23,.78);
-  backdrop-filter:blur(18px);
-}
-.brand{
-  font-family:"Archivo",sans-serif;
-  font-size:12px;
-  font-weight:600;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-}
-.nav-links{
-  display:flex;
-  gap:28px;
-  align-items:center;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.nav-links a,.label,.btn,.text-link{
-  font-family:"Archivo",sans-serif;
-  font-size:var(--t-label);
-  font-weight:500;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
-.nav-links a{color:var(--fg-dim)}
-.nav-toggle{
-  display:none;
-  align-items:center;
-  justify-content:center;
-  width:44px;
-  height:44px;
-  padding:0;
-  border:1px solid rgba(242,237,228,.22);
-  border-radius:0;
-  background:transparent;
-  color:var(--fg);
-  cursor:pointer;
-}
-.nav-toggle span,
-.nav-toggle::before,
-.nav-toggle::after{
-  content:"";
-  display:block;
-  width:18px;
-  height:1px;
-  background:currentColor;
-}
-.nav-toggle{
-  flex-direction:column;
-  gap:5px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:48px;
-  padding:16px 30px;
-  border:1px solid currentColor;
-  border-radius:0;
-  text-align:center;
-  cursor:pointer;
-  background:transparent;
-  color:var(--fg);
-  letter-spacing:.16em;
-  transition:background .24s ease,color .24s ease,border-color .24s ease;
-}
-.btn-primary,.btn-secondary{border-color:rgba(242,237,228,.5);color:var(--fg)}
-.btn:hover{
-  background:var(--fg);
-  color:var(--bg);
-  border-color:var(--fg);
-}
-.text-link{color:var(--fg-dim);border-bottom:1px solid currentColor;padding-bottom:4px}
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
 
-.section{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  padding:var(--pad-section) clamp(18px,5vw,64px);
-}
-.container{
-  width:min(100%,var(--container));
-  margin:0 auto;
-}
-.kicker{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:18px;
-  color:var(--accent);
-}
-.kicker::before{
-  content:"";
-  width:28px;
-  height:1px;
-  background:var(--accent);
-  flex:0 0 auto;
-}
-.section-head{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:18px;
-  margin-bottom:clamp(34px,5vw,64px);
-}
-.section-title{
-  max-width:18em;
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:var(--t-h2);
-  font-weight:400;
-  line-height:1.42;
-  letter-spacing:.05em;
-}
-.lead,.body-copy{
-  max-width:var(--col);
-  color:var(--fg-dim);
-  line-height:1.95;
-}
-.index{
-  font-family:"Archivo",sans-serif;
-  font-size:var(--t-num);
-  letter-spacing:.2em;
-  color:var(--accent);
-}
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--f-jp-body);
+      font-size: var(--t-body);
+      font-weight: 400;
+      line-height: 1.95;
+      letter-spacing: .02em;
+      font-feature-settings: "palt" 1;
+      word-break: normal;
+      overflow-wrap: normal;
+      line-break: strict;
+      text-wrap: pretty;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.hero{
-  position:relative;
-  min-height:100svh;
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  align-items:end;
-  overflow:hidden;
-  padding:clamp(132px,16vw,204px) clamp(18px,5vw,64px) clamp(78px,10vw,132px);
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
-  background:
-    linear-gradient(90deg,rgba(28,26,23,.78) 0%,rgba(28,26,23,.48) 48%,rgba(28,26,23,.18) 100%),
-    linear-gradient(0deg,rgba(28,26,23,.92) 0%,rgba(28,26,23,.5) 38%,rgba(28,26,23,.12) 100%);
-}
-.hero-bg,.hero-poster{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-}
-.hero-poster{display:none}
-.hero-bg.video-failed{display:none}
-.hero-bg.video-failed + script + .hero-poster{display:block}
-.hero-inner{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:clamp(24px,4vw,38px);
-  width:min(100%,var(--container));
-  margin:0 auto;
-}
-.hero h1{
-  max-width:12.4em;
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(2.3rem,5.6vw,4.6rem);
-  font-weight:400;
-  line-height:1.26;
-  letter-spacing:.06em;
-}
-.hero .lead{
-  max-width:34em;
-  color:var(--fg);
-}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    body.nav-open {
+      overflow: hidden;
+    }
 
-.position{background:var(--bg-2)}
-.position-grid{
-  display:grid;
-  grid-template-columns:minmax(0,.36fr) minmax(0,1fr);
-  gap:clamp(34px,7vw,96px);
-  align-items:start;
-}
-.position-label{
-  color:var(--accent);
-  font-family:"Archivo",sans-serif;
-  font-size:var(--t-label);
-  font-weight:500;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
-.position-copy{
-  max-width:42em;
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.35rem,1.07rem + 1vw,1.8rem);
-  font-weight:400;
-  line-height:1.9;
-  letter-spacing:.05em;
-}
-.position-copy-line{display:block}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.steps{background:var(--bg)}
-.step-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:1px;
-  background:var(--line);
-}
-.step-card{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:clamp(24px,3vw,42px);
-  min-height:220px;
-  padding:clamp(24px,4vw,38px);
-  background:var(--bg);
-}
-.step-card p{
-  color:var(--fg);
-  font-family:"Zen Kaku Gothic New",sans-serif;
-  font-size:clamp(1.06rem,1rem + .3vw,1.2rem);
-  font-weight:500;
-  line-height:1.7;
-  letter-spacing:.035em;
-}
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
 
-.gallery-section{
-  background:var(--bg-2);
-  padding:calc(var(--pad-section) * 1.16) 0 calc(var(--pad-section) * 1.24);
-}
-.gallery-section .section-head{padding-inline:clamp(18px,5vw,64px)}
-.wedding-gallery{
-  display:grid;
-  grid-template-columns:repeat(12,minmax(0,1fr));
-  gap:12px;
-  width:min(100%,1500px);
-  margin:0 auto;
-  padding-inline:clamp(12px,3vw,32px);
-}
-.photo{
-  overflow:hidden;
-  background:#0E0C09;
-}
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s ease;
-}
-.photo:hover img{transform:scale(1.025);filter:brightness(1.04)}
-.photo{aspect-ratio:2.35/1}
-.photo-full{grid-column:span 12}
-.photo-half{grid-column:span 6}
-.photo-eight{grid-column:span 8}
-.photo-sunset{aspect-ratio:3/2}
-.photo-sunset-main{grid-column:span 12;aspect-ratio:3/2}
-.gallery-note{
-  width:min(100%,var(--container));
-  margin:clamp(30px,5vw,58px) auto 0;
-  padding-inline:clamp(18px,5vw,64px);
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.25rem,1.05rem + .8vw,1.62rem);
-  font-weight:400;
-  line-height:1.8;
-  letter-spacing:.05em;
-}
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+      font-weight: 400;
+    }
 
-.day-plan{
-  background:var(--bg);
-}
-.day-plan .section-head{
-  grid-template-columns:minmax(0,.9fr) minmax(0,1fr);
-  gap:clamp(28px,6vw,82px);
-  align-items:end;
-}
-.day-plan-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:clamp(16px,2vw,26px);
-}
-.day-plan-card{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  align-content:start;
-  gap:16px;
-}
-.day-plan-photo{
-  aspect-ratio:16/9;
-  overflow:hidden;
-  background:#0E0C09;
-}
-.day-plan-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.day-plan-card:nth-child(1) .day-plan-photo img{object-position:center 42%}
-.day-plan-card:nth-child(2) .day-plan-photo img{object-position:center}
-.day-plan-card:nth-child(3) .day-plan-photo img{object-position:center 58%}
-.day-plan-num{
-  color:var(--accent);
-  font-family:"Archivo",sans-serif;
-  font-size:10px;
-  font-weight:500;
-  letter-spacing:.28em;
-  line-height:1;
-}
-.day-plan-title{
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.2rem,1.04rem + .56vw,1.48rem);
-  font-weight:400;
-  line-height:1.55;
-  letter-spacing:.05em;
-}
-.day-plan-card p{
-  color:var(--fg-dim);
-  line-height:1.9;
-}
-.day-plan-close{
-  max-width:32em;
-  margin:clamp(42px,6vw,76px) auto 0;
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.22rem,1.04rem + .7vw,1.58rem);
-  font-weight:400;
-  line-height:1.8;
-  letter-spacing:.05em;
-  text-align:center;
-}
+    h1,
+    h2,
+    h3 {
+      font-family: var(--f-jp-head);
+      word-break: normal;
+      overflow-wrap: normal;
+      line-break: strict;
+      scroll-margin-top: 88px;
+    }
 
-.conditions{
-  background:var(--bg-2);
-}
-.condition-list{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:clamp(14px,2vw,22px);
-}
-.condition-item{
-  padding:clamp(24px,3vw,36px) 0;
-  border-top:1px solid var(--line);
-}
-.condition-item dt{
-  margin-bottom:10px;
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.12rem,1.02rem + .38vw,1.32rem);
-  font-weight:400;
-  line-height:1.55;
-  letter-spacing:.05em;
-}
-.condition-item dd{
-  max-width:30em;
-  color:var(--fg-dim);
-  line-height:1.9;
-}
-.condition-number{
-  color:var(--fg);
-  font-family:"Archivo","Noto Sans JP",sans-serif;
-  font-size:1.14em;
-  font-weight:400;
-  letter-spacing:.04em;
-}
+    .np {
+      display: inline-block;
+      white-space: nowrap;
+    }
 
-.comparison{
-  background:var(--bg);
-}
-.comparison-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:1px;
-  background:var(--line);
-}
-.comparison-item{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:22px;
-  padding:clamp(24px,4vw,42px);
-  background:var(--bg);
-}
-.comparison-item h3{
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.2rem,1.02rem + .56vw,1.44rem);
-  font-weight:400;
-  line-height:1.55;
-  letter-spacing:.05em;
-}
-.comparison-pair{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:12px;
-}
-.comparison-pair p{
-  display:grid;
-  grid-template-columns:minmax(0,8em) minmax(0,1fr);
-  gap:12px;
-  color:var(--fg-dim);
-  line-height:1.7;
-}
-.comparison-pair span:first-child{
-  color:var(--fg);
-}
-.comparison-close{
-  max-width:38em;
-  margin:clamp(34px,5vw,58px) auto 0;
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.18rem,1.02rem + .64vw,1.48rem);
-  font-weight:400;
-  line-height:1.8;
-  letter-spacing:.05em;
-  text-align:center;
-}
+    .handle,
+    .price-breakdown {
+      overflow-wrap: anywhere;
+    }
 
-.price{background:var(--bg)}
-.price-feature{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,max-content);
-  gap:clamp(18px,4vw,44px);
-  align-items:end;
-  margin-bottom:clamp(58px,7vw,92px);
-}
-.price-feature-title{
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.36rem,1.08rem + .92vw,1.82rem);
-  font-weight:400;
-  line-height:1.5;
-  letter-spacing:.05em;
-}
-.price-feature-amount{
-  color:var(--accent);
-  font-family:"Archivo","Noto Sans JP",sans-serif;
-  font-size:clamp(2.55rem,1.8rem + 3vw,4.3rem);
-  font-weight:500;
-  line-height:1;
-  letter-spacing:.04em;
-  text-align:right;
-  white-space:nowrap;
-}
-.price-feature-copy{
-  grid-column:1 / -1;
-  max-width:none;
-  color:var(--fg-dim);
-  line-height:1.9;
-}
-.price-subhead{
-  margin-bottom:18px;
-  color:var(--accent);
-  font-family:"Archivo","Noto Sans JP",sans-serif;
-  font-size:var(--t-label);
-  font-weight:500;
-  letter-spacing:.18em;
-}
-.price-list{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  border-top:1px solid var(--line);
-}
-.price-row{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,max-content);
-  gap:24px;
-  align-items:baseline;
-  padding:22px 0;
-  border-bottom:1px solid var(--line);
-}
-.price-name{color:var(--fg)}
-.price-amount{
-  color:var(--accent);
-  font-family:"Archivo","Noto Sans JP",sans-serif;
-  font-weight:500;
-  letter-spacing:.08em;
-  text-align:right;
-  white-space:nowrap;
-}
-.price-note{
-  margin-top:18px;
-  max-width:48em;
-  color:var(--fg-muted);
-  font-size:.88rem;
-  line-height:1.8;
-}
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      padding: 18px var(--pad-x);
+      color: var(--white);
+      text-shadow: 0 1px 12px rgba(31, 29, 26, .5);
+      transition: background-color .24s ease, color .24s ease, text-shadow .24s ease;
+    }
 
-.notes{background:var(--bg-2)}
-.note-list{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:1px;
-  background:var(--line);
-}
-.note-item{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:12px;
-  padding:clamp(22px,3vw,34px);
-  background:var(--bg-2);
-}
-.note-item dt{
-  color:var(--fg);
-  font-family:"Zen Kaku Gothic New",sans-serif;
-  font-size:clamp(1.04rem,1rem + .24vw,1.16rem);
-  font-weight:500;
-  line-height:1.55;
-}
-.note-item dd{
-  color:var(--fg-dim);
-  line-height:1.9;
-}
-@media(min-width:561px){
-  .note-item:last-child{grid-column:1 / -1}
-}
+    .site-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(31, 29, 26, .46) 0%, rgba(31, 29, 26, .16) 60%, transparent 100%);
+      opacity: 1;
+      transition: opacity .24s ease;
+    }
 
-.cta{
-  min-height:70svh;
-  align-items:center;
-  text-align:left;
-  background:var(--bg);
-  padding-top:calc(var(--pad-section) * 1.25);
-  padding-bottom:calc(var(--pad-section) * 1.25);
-}
-.cta .section-title{max-width:none;margin-inline:0}
-.cta-body{
-  max-width:34em;
-  margin:0 0 34px;
-  color:var(--fg-dim);
-}
-.cta-request{
-  max-width:34em;
-  margin:0 0 34px;
-  text-align:left;
-}
-.cta-request h3{
-  margin:0 0 18px;
-  color:var(--fg);
-  font-family:"Shippori Mincho",serif;
-  font-size:clamp(1.16rem,1.02rem + .5vw,1.38rem);
-  font-weight:400;
-  line-height:1.55;
-  letter-spacing:.05em;
-  text-align:left;
-}
-.cta-request ul{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:8px;
-  margin:0;
-  padding:0;
-  list-style:none;
-  color:var(--fg-dim);
-}
-.cta-actions{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-start;
-  gap:14px;
-}
-.credit{
-  margin-top:28px;
-  color:rgba(242,237,228,.42);
-  font-size:.98rem;
-  line-height:1.8;
-}
+    .site-header.is-scrolled {
+      background: var(--paper);
+      color: var(--ink);
+      text-shadow: none;
+    }
 
-.body-copy,.lead,.position-copy,.gallery-note,.day-plan-card p,.day-plan-close,.condition-item dd,.comparison-pair p,.comparison-close,.price-name,.note-item dd,.cta-body,.cta-request li,.credit{
-  word-break:auto-phrase;
-  overflow-wrap:normal;
-  line-break:strict;
-}
+    .site-header.is-scrolled::before {
+      opacity: 0;
+    }
 
-.site-footer{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,max-content);
-  gap:24px;
-  padding:34px clamp(18px,5vw,64px);
-  border-top:1px solid var(--line);
-  background:#0E0C09;
-  color:rgba(242,237,228,.54);
-}
-.footer-logo{font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--fg)}
-.footer-sub,.footer-copy{font-size:.98rem;color:rgba(242,237,228,.42)}
-.footer-nav{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:flex-end;font-family:"Archivo","Noto Sans JP",sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.46)}
-.footer-nav a{border-bottom:1px solid rgba(242,237,228,.22);transition:color .24s ease,border-color .24s ease}
-.footer-nav a:hover{color:var(--fg);border-color:currentColor}
+    .brand {
+      font-family: var(--f-display);
+      font-size: 1.05rem;
+      font-weight: 300;
+      letter-spacing: .08em;
+      line-height: 1;
+    }
 
-@media(max-width:900px){
-  .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);min-height:64px}
-  .nav-links{grid-column:1/-1;grid-row:2;gap:10px;justify-self:start;flex-wrap:nowrap}
-  .nav-links a{font-size:12px;letter-spacing:.08em}
-  .position-grid,.day-plan .section-head,.site-footer{grid-template-columns:minmax(0,1fr)}
-  .step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .day-plan-grid{grid-template-columns:minmax(0,1fr)}
-  .day-plan-photo{aspect-ratio:16/9}
-}
-@media(max-width:768px){
-  .site-header{grid-template-columns:minmax(0,1fr) minmax(0,max-content);gap:12px;min-height:64px;padding:10px 16px}
-  .nav-toggle{display:flex;justify-self:end}
-  .nav-links{
-    position:fixed;
-    top:64px;
-    left:0;
-    right:0;
-    width:100%;
-    display:none;
-    grid-column:auto;
-    grid-row:auto;
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-    padding:0;
-    border-bottom:1px solid var(--line);
-    background:var(--bg);
-    backdrop-filter:blur(18px);
-  }
-  .site-header.nav-open .nav-links{display:flex}
-  .nav-links li{border-top:1px solid var(--line)}
-  .nav-links a{
-    display:flex;
-    align-items:center;
-    min-height:48px;
-    padding:0 clamp(18px,5vw,28px);
-    font-size:15px;
-    letter-spacing:.14em;
-  }
-  .wedding-gallery{grid-template-columns:minmax(0,1fr);gap:10px;padding-inline:12px}
-  .photo,.photo-full,.photo-half,.photo-eight,.photo-sunset-main{grid-column:1;aspect-ratio:2.35/1}
-  .photo-sunset{aspect-ratio:3/2}
-  .photo-sunset-main{aspect-ratio:3/2}
-}
-@media(max-width:560px){
-  :root{--pad-section:106px}
-  .brand{letter-spacing:.18em}
-  .hero{min-height:92svh;padding-top:124px;padding-bottom:54px}
-  .hero h1{font-size:clamp(1.9rem,8vw,2.62rem);line-height:1.26}
-  .hero-actions .btn{width:100%}
-  .position-copy{font-size:clamp(1.2rem,5.4vw,1.48rem);line-height:1.85}
-  .step-grid,.condition-list,.comparison-grid,.note-list{grid-template-columns:minmax(0,1fr)}
-  .step-card{min-height:0}
-  .comparison-pair p{grid-template-columns:minmax(0,1fr);gap:2px}
-  .price-feature{grid-template-columns:minmax(0,1fr);gap:16px;margin-bottom:52px}
-  .price-feature-amount{text-align:left;white-space:normal}
-  .price-row{grid-template-columns:minmax(0,1fr);gap:6px}
-  .price-amount{text-align:left;white-space:normal}
-  .cta-actions{display:grid;grid-template-columns:minmax(0,1fr)}
-  .cta-actions .btn{width:100%}
-}
-@media(max-width:768px){
-  .hero{
-    min-height:auto;
-    align-items:start;
-    padding:calc(55svh + clamp(28px,7vw,44px)) clamp(18px,5vw,64px) clamp(78px,14vw,112px);
-  }
-  .hero::before{
-    inset:auto 0 auto 0;
-    top:0;
-    height:55svh;
-    background:linear-gradient(180deg,rgba(28,26,23,.08) 0%,rgba(28,26,23,.03) 60%,var(--bg) 100%);
-  }
-  .hero-bg,.hero-poster{
-    inset:auto 0 auto 0;
-    top:0;
-    height:55svh;
-    bottom:auto;
-  }
-}
-@media(max-width:360px){
-  .hero h1{font-size:27px}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .hero-bg{display:none}
-  .hero-poster{display:block}
-  .photo img{transition:none}
-  .photo:hover img{transform:none;filter:none}
-}
-</style>
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2.4vw, 32px);
+      font-family: var(--f-label);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .menu-button {
+      display: none;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 12px;
+      border: 1px solid currentColor;
+      background: transparent;
+      color: inherit;
+      font-family: var(--f-label);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      line-height: 1;
+      text-transform: uppercase;
+      appearance: none;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      place-items: end center;
+      min-height: 100svh;
+      overflow: hidden;
+      color: var(--white);
+      isolation: isolate;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: var(--ink) url("img/wedding/hero-poster.jpg") center / cover no-repeat;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      z-index: -2;
+      background: linear-gradient(0deg, rgba(31, 29, 26, .62) 0%, rgba(31, 29, 26, .28) 42%, rgba(31, 29, 26, .04) 74%);
+    }
+
+    .hero::after {
+      z-index: -1;
+      background: radial-gradient(ellipse at 50% 86%, rgba(31, 29, 26, .56), transparent 62%);
+    }
+
+    .hero-copy {
+      width: min(100%, 980px);
+      padding: 0 var(--pad-x) clamp(56px, 9vw, 110px);
+      text-align: center;
+    }
+
+    .label {
+      display: block;
+      color: var(--dune);
+      font-family: var(--f-label);
+      font-size: var(--t-label);
+      font-weight: 500;
+      letter-spacing: .28em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .hero .label {
+      color: rgba(255, 255, 255, .66);
+    }
+
+    .hero-title {
+      margin-top: 20px;
+      font-size: var(--t-hero);
+      line-height: 1.22;
+      letter-spacing: .02em;
+    }
+
+    .hero-text {
+      max-width: 40em;
+      margin: 22px auto 0;
+      color: rgba(255, 255, 255, .88);
+    }
+
+    @media (min-width: 901px) {
+      .hero-text {
+        max-width: 60em;
+        font-size: clamp(.96rem, .92rem + .1vw, 1rem);
+      }
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 28px;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 5px;
+      color: currentColor;
+      font-family: var(--f-label);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      line-height: 1.4;
+    }
+
+    .section {
+      padding-inline: var(--pad-x);
+    }
+
+    .section-inner {
+      width: min(100%, var(--container));
+      margin-inline: auto;
+    }
+
+    .gallery {
+      padding-block: clamp(72px, 9vw, 140px);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(10px, 1.6vw, 22px);
+      align-items: start;
+    }
+
+    .gallery figure {
+      margin: 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-item:nth-child(1) img,
+    .gallery-item:nth-child(3) img {
+      aspect-ratio: 4 / 5;
+    }
+
+    .gallery-item:nth-child(2) img,
+    .gallery-item:nth-child(4) img,
+    .gallery-item:nth-child(6) img {
+      aspect-ratio: 3 / 2;
+    }
+
+    .gallery-item:nth-child(5) img,
+    .gallery-item:nth-child(7) img,
+    .gallery-item:nth-child(8) img {
+      aspect-ratio: 16 / 9;
+    }
+
+    .gallery-item:nth-child(1) {
+      grid-column: 1 / span 8;
+    }
+
+    .gallery-item:nth-child(2) {
+      grid-column: 9 / span 4;
+      margin-top: clamp(44px, 7vw, 96px);
+    }
+
+    .gallery-item:nth-child(3) {
+      grid-column: 2 / span 4;
+      margin-top: clamp(8px, 2vw, 28px);
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: 6 / span 7;
+      margin-top: clamp(44px, 7vw, 104px);
+    }
+
+    .gallery-item:nth-child(5) {
+      grid-column: 1 / span 5;
+      margin-top: clamp(32px, 5vw, 76px);
+    }
+
+    .gallery-item:nth-child(6) {
+      grid-column: 6 / span 3;
+      margin-top: clamp(92px, 11vw, 160px);
+    }
+
+    .gallery-item:nth-child(7) {
+      grid-column: 9 / span 4;
+      margin-top: clamp(48px, 7vw, 112px);
+    }
+
+    .gallery-item:nth-child(8) {
+      grid-column: 3 / span 8;
+      margin-top: clamp(30px, 5vw, 88px);
+    }
+
+    .intro {
+      padding-block: clamp(64px, 8vw, 116px);
+    }
+
+    .intro-block {
+      max-width: 760px;
+    }
+
+    .section-title {
+      font-size: var(--t-h2);
+      line-height: 1.38;
+      letter-spacing: .05em;
+    }
+
+    .section-text {
+      max-width: 36em;
+      color: var(--ink-dim);
+    }
+
+    .intro .section-text {
+      max-width: 43em;
+      margin-top: clamp(16px, 2.4vw, 26px);
+    }
+
+    .timeline {
+      background: var(--paper-2);
+      padding-block: clamp(110px, 14vw, 220px);
+    }
+
+    .timeline-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+      align-items: end;
+      margin-bottom: clamp(24px, 4vw, 44px);
+    }
+
+    .timeline-list {
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: minmax(76px, 104px) max-content;
+      gap: clamp(14px, 2vw, 24px);
+      align-items: baseline;
+      border-bottom: 1px solid var(--rule);
+      padding-block: clamp(10px, 1.2vw, 16px);
+    }
+
+    .timeline-row > div {
+      min-width: 0;
+      font-size: clamp(1rem, .96rem + .2vw, 1.12rem);
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+
+    .time {
+      font-family: var(--f-display);
+      font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.2rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: .04em;
+    }
+
+    .timeline-note {
+      max-width: 52em;
+      margin-top: clamp(28px, 4vw, 56px);
+      color: var(--ink-dim);
+    }
+
+    .manifesto {
+      padding-block: clamp(120px, 16vw, 240px);
+      text-align: center;
+    }
+
+    .manifesto .section-title {
+      max-width: 16em;
+      margin-inline: auto;
+    }
+
+    .manifesto .section-text {
+      margin: clamp(40px, 6vw, 72px) auto 0;
+    }
+
+    .feature {
+      padding-block: clamp(72px, 9vw, 132px);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(32px, 4vw, 56px);
+      text-align: center;
+    }
+
+    .feature-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      justify-items: center;
+    }
+
+    #photo-film-title {
+      max-width: 17.5em;
+    }
+
+    .feature-film {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(8px, 1.4vw, 18px);
+    }
+
+    .feature-frame {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .feature-frame img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2 / 1;
+      object-fit: cover;
+    }
+
+    .feature .section-text {
+      margin-top: clamp(20px, 3vw, 36px);
+      margin-inline: auto;
+      color: rgba(255, 255, 255, .74);
+    }
+
+    .wide-photo {
+      width: 100vw;
+      max-width: 100%;
+      margin-inline: calc(50% - 50vw);
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .wide-photo img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center 32%;
+    }
+
+    .line-section {
+      padding-block: clamp(54px, 7vw, 96px);
+    }
+
+    .line-message {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding-block: clamp(28px, 4vw, 48px);
+      text-align: center;
+      font-family: var(--f-jp-head);
+      font-size: clamp(1.18rem, 1rem + .82vw, 1.72rem);
+      line-height: 1.7;
+      letter-spacing: .05em;
+    }
+
+    .price {
+      padding-block: clamp(104px, 13vw, 200px);
+      background: var(--paper-2);
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .36fr) minmax(0, .64fr);
+      gap: clamp(34px, 7vw, 110px);
+      align-items: start;
+    }
+
+    .price-title {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .price-plan {
+      font-family: var(--f-jp-body);
+      font-size: clamp(1rem, .95rem + .3vw, 1.15rem);
+      font-weight: 400;
+      line-height: 1.45;
+      letter-spacing: .12em;
+    }
+
+    .price-amount {
+      font-family: var(--f-display);
+      font-size: min(clamp(3rem, 2rem + 4.4vw, 5.2rem), 22vw);
+      font-weight: 300;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .price-breakdown {
+      margin-top: clamp(18px, 3vw, 30px);
+      color: var(--ink-dim);
+    }
+
+    .price-block {
+      border-top: 1px solid var(--rule);
+      padding: clamp(28px, 3.5vw, 48px) 0 clamp(24px, 4vw, 44px);
+    }
+
+    .price-block > .label {
+      margin-bottom: 16px;
+    }
+
+    .price-sub {
+      margin-top: clamp(48px, 6vw, 80px);
+    }
+
+    .price-options {
+      margin-top: clamp(48px, 6vw, 80px);
+    }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: baseline;
+      padding-block: 6px;
+      font-size: clamp(1.02rem, .98rem + .22vw, 1.18rem);
+    }
+
+    .price-row span {
+      min-width: 0;
+    }
+
+    .price-row span:last-child {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .price-option {
+      font-size: .95rem;
+    }
+
+    .price-note {
+      margin-top: 12px;
+      color: var(--ink-faint);
+      font-size: .9rem;
+    }
+
+    .price-trust {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+      margin-top: 0;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-faint);
+      font-size: .78rem;
+      line-height: 1.8;
+    }
+
+    .price-trust div {
+      border-bottom: 1px solid var(--rule);
+      padding-block: 7px;
+    }
+
+    .details-layer {
+      padding-block: clamp(86px, 11vw, 160px);
+    }
+
+    .details-list {
+      border-top: 1px solid var(--rule);
+    }
+
+    details {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding-block: clamp(22px, 3vw, 34px);
+      font-family: var(--f-jp-head);
+      font-size: clamp(1.15rem, 1rem + .7vw, 1.62rem);
+      line-height: 1.5;
+      letter-spacing: .05em;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .detail-body {
+      padding: 0 0 clamp(26px, 4vw, 44px);
+      color: var(--ink-dim);
+    }
+
+    .detail-body ul {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+      margin: 0;
+      padding-left: 1.2em;
+    }
+
+    .cta {
+      position: relative;
+      display: grid;
+      align-items: center;
+      min-height: 78svh;
+      padding-block: clamp(112px, 15vw, 230px);
+      background: var(--ink);
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(31, 29, 26, .72) 0%, rgba(31, 29, 26, .58) 50%, rgba(31, 29, 26, .78) 100%);
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(6px);
+      transform: scale(1.06);
+    }
+
+    .cta .section-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta .section-title {
+      max-width: 18em;
+      margin-inline: auto;
+      font-size: clamp(1.5rem, 1.15rem + 1.4vw, 2.1rem);
+      letter-spacing: .01em;
+      line-height: 1.34;
+    }
+
+    .cta .section-text {
+      margin: clamp(24px, 4vw, 42px) auto 0;
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .cta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+      justify-content: center;
+      margin-top: clamp(28px, 4vw, 48px);
+    }
+
+    .credit {
+      margin-top: clamp(54px, 7vw, 92px);
+      color: rgba(255, 255, 255, .58);
+      font-size: .9rem;
+    }
+
+    .site-footer {
+      padding: 34px var(--pad-x);
+      background: var(--paper);
+      color: var(--ink-dim);
+    }
+
+    .footer-inner {
+      width: min(100%, var(--container));
+      margin-inline: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--f-label);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    @media (max-width: 700px) {
+      .site-header {
+        min-height: 64px;
+        padding-block: 10px;
+      }
+
+      .hero-title {
+        font-size: clamp(1.6rem, 8.6vw, 2.4rem);
+      }
+
+      .menu-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        position: fixed;
+        inset: 64px 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        padding: 18px var(--pad-x) 24px;
+        border-top: 1px solid rgba(255, 255, 255, .22);
+        border-bottom: 1px solid rgba(255, 255, 255, .22);
+        background: rgba(31, 29, 26, .92);
+        color: var(--white);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity .2s ease, transform .2s ease;
+      }
+
+      .site-nav a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      body.nav-open .site-nav {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(8px, 2vw, 16px);
+      }
+
+      .timeline-head,
+      .feature-grid,
+      .price-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: auto;
+        margin-top: 0;
+      }
+
+      .gallery-item:nth-child(n + 2) {
+        margin-top: 0;
+      }
+
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(5),
+      .gallery-item:nth-child(8) {
+        grid-column: 1 / -1;
+      }
+
+      .feature-film {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .feature-frame img {
+        aspect-ratio: 3 / 2;
+      }
+
+      .wide-photo img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .timeline-row {
+        grid-template-columns: minmax(76px, 104px) max-content;
+        gap: 14px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-title {
+        font-size: 8.2vw;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+        animation-duration: .001ms !important;
+      }
+
+      .hero-video {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <a href="index.html" class="brand">Shima Log</a>
-  <ul class="nav-links" id="site-nav">
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#hospitality">宿・お店向け</a></li>
-    <li><a href="wedding.html">Wedding</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-  </ul>
-  <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-nav"><span></span></button>
-</header>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html">Shima Log</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#hospitality">宿・お店向け</a>
+      <a href="wedding.html">Wedding</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
 
-<main>
-  <section class="hero">
-    <!-- 動画のみ GitHub Pages から配信。Workers が Range リクエストに非対応で iOS Safari が再生を拒否するため（2026-08-08 実測） -->
-    <video id="hero-video" class="hero-bg" src="https://shimalog.github.io/shimalog/img/wedding/hero-sp.mp4" autoplay muted playsinline loop preload="metadata" poster="img/wedding/hero-poster.jpg"></video>
-    <script>
-      (function(){
-        var v = document.getElementById("hero-video");
-        if (!v) return;
-        v.muted = true;
-        v.playsInline = true;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          v.removeAttribute("autoplay");
-          v.pause();
-          return;
-        }
-        if (window.matchMedia("(min-width: 769px)").matches) {
-          v.src = "https://shimalog.github.io/shimalog/img/wedding/hero-loop.mp4";
-          v.load();
-        }
-        var play = v.play();
-        if (play && play.catch) play.catch(function(){ v.classList.add("video-failed"); });
-      })();
-    </script>
-    <img class="hero-poster" src="img/wedding/hero-poster.jpg" alt="">
-    <div class="hero-inner">
-      <div class="kicker label">沖縄前撮り　写真＋映像撮影</div>
-      <h1><span class="np">ロケーションから、</span><span class="np">ふたりらしく</span><span class="np">組み立てる前撮り。</span></h1>
-      <p class="lead"><span class="np">海、緑、夕景。</span><span class="np">写真と映像を、</span><span class="np">場所選びから</span><span class="np">一緒に整えます。</span></p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">撮影イメージを相談する</a>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <video class="hero-video" muted playsinline loop autoplay poster="img/wedding/hero-poster.jpg" data-hero-video></video>
       </div>
-    </div>
-  </section>
-
-  <section class="section position">
-    <div class="container position-grid">
-      <div class="position-label">POSITION</div>
-      <p class="position-copy">
-        <span class="position-copy-line"><span class="np">沖縄の前撮りは、</span><span class="np">場所選びで</span><span class="np">決まると</span><span class="np">思われている。</span></span>
-        <span class="position-copy-line"><span class="np">決めているのは</span><span class="np">潮と光の時間。</span></span>
-        <span class="position-copy-line"><span class="np">同じ場所でも、</span><span class="np">一時間ずれれば</span><span class="np">別の写真になる。</span></span>
-      </p>
-    </div>
-  </section>
-
-  <section class="section steps">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title"><span class="np">撮る場所を</span><span class="np">決めるところから、</span><span class="np">残し方まで</span><span class="np">整えます。</span></h2>
+      <div class="hero-copy">
+        <span class="label">OKINAWA / PHOTO &amp; FILM</span>
+        <h1 class="hero-title" id="hero-title"><span class="np">思い出になる</span><span class="np">前撮り撮影</span></h1>
+        <p class="hero-text">撮影だけの1日にするのはもったいない。せっかくの沖縄を満喫する1日を写真と映像で残します。</p>
+        <a class="text-link" href="https://line.me/R/ti/p/%40009yvklo">撮影の相談</a>
       </div>
-      <div class="step-grid">
-        <div class="step-card">
-          <div class="index">01</div>
-          <p>海・緑・夕景の候補を整理</p>
-        </div>
-        <div class="step-card">
-          <div class="index">02</div>
-          <p>写真撮影と動画素材撮影を同時進行</p>
-        </div>
-        <div class="step-card">
-          <div class="index">03</div>
-          <p>映像制作まで一貫対応</p>
-        </div>
-        <div class="step-card">
-          <div class="index">04</div>
-          <p>撮影当日のアテンドも対応</p>
+    </section>
+
+    <section class="section gallery" aria-label="Gallery">
+      <div class="section-inner">
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="img/wedding/sel-photo-sunset-portrait.jpg" alt="" width="1800" height="2700" loading="lazy">
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/wedding/cut-drone-islet.jpg" alt="" width="1920" height="960" loading="lazy">
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/wedding/cut-couple-blue.jpg" alt="" width="1920" height="960" loading="lazy">
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/wedding/cut-into-green.jpg" alt="" width="1920" height="960" loading="lazy">
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/wedding/cut-groom-bw-beach.jpg" alt="" width="1920" height="960" loading="lazy">
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/wedding/cut-hands-turquoise.jpg" alt="" width="1920" height="960" loading="lazy">
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/wedding/sel-still-drone-shore.jpg" alt="" width="1920" height="818" loading="lazy">
+          </figure>
+          <figure class="gallery-item">
+            <img src="img/wedding/sel-still-cliff-sea.jpg" alt="" width="1920" height="818" loading="lazy">
+          </figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section gallery-section" aria-label="前撮りギャラリー">
-    <div class="wedding-gallery">
-      <figure class="photo photo-full"><img src="img/wedding/still-drone-shore.jpg" alt="沖縄の浜辺を上空から撮影した前撮り映像" loading="lazy"></figure>
-      <figure class="photo photo-half"><img src="img/wedding/still-backshot-sea.jpg" alt="沖縄の海を背景にした前撮りの後ろ姿" loading="lazy"></figure>
-      <figure class="photo photo-half"><img src="img/wedding/still-beach-distance.jpg" alt="沖縄の浜辺で引きで撮影した前撮り写真" loading="lazy"></figure>
-      <figure class="photo photo-sunset-main"><img src="img/wedding/photo-sunset-wide.jpg" alt="沖縄の夕景で撮影した前撮り写真" loading="lazy"></figure>
-    </div>
-    <p class="gallery-note">海だけで終わらせず、時間帯や移動の流れまで一緒に決める。だから写真と映像に、同じ一日のつながりが残ります。</p>
-  </section>
+    <section class="section intro" aria-labelledby="location-title">
+      <div class="section-inner">
+        <div class="intro-block">
+          <h2 class="section-title" id="location-title"><span class="np">ご希望を元に、</span><span class="np">ロケーションを選びます</span></h2>
+          <p class="section-text">周るロケーションに応じてスケジュールを組みます。<span class="np">もちろんおまかせでもOK</span></p>
+        </div>
+      </div>
+    </section>
 
-  <section class="section day-plan">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title"><span class="np">日の入りから</span><span class="np">逆算する4時間。</span></h2>
-        <p class="lead">沖縄の日没は、夏と冬で1時間半以上ちがいます。決まった時間割はありません。撮影日の日の入りに合わせて、うしろから組み立てます。</p>
-      </div>
-      <div class="day-plan-grid">
-        <article class="day-plan-card">
-          <figure class="day-plan-photo"><img src="img/wedding/still-cliff-water.jpg" alt="沖縄の崖から見下ろす海。明るい時間帯のロケーション撮影" loading="lazy"></figure>
-          <div class="day-plan-num">01</div>
-          <h3 class="day-plan-title">明るい海から始める</h3>
-          <p>光が強い時間は、色の出る場所へ。海の青と、崖の緑を撮ります。</p>
-        </article>
-        <article class="day-plan-card">
-          <figure class="day-plan-photo"><img src="img/wedding/still-closeup-bride.jpg" alt="夕方の光の中での寄りのカット" loading="lazy"></figure>
-          <div class="day-plan-num">02</div>
-          <h3 class="day-plan-title"><span class="np">光がやわらぐ頃に</span><span class="np">寄りを撮る</span></h3>
-          <p>影が長くなる頃。表情とディテールは、この時間がいちばんきれいです。</p>
-        </article>
-        <article class="day-plan-card">
-          <figure class="day-plan-photo"><img src="img/wedding/still-carry-sunset.jpg" alt="日没前の海辺でのシルエット撮影" loading="lazy"></figure>
-          <div class="day-plan-num">03</div>
-          <h3 class="day-plan-title">日が落ちる前の30分</h3>
-          <p>一日でいちばん短い時間。ここに間に合わせるために、朝から逆算します。</p>
-        </article>
-      </div>
-      <p class="day-plan-close">4時間あるから、この3つを一日で回れます。</p>
-    </div>
-  </section>
-
-  <section class="section conditions">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">撮影について</h2>
-      </div>
-      <dl class="condition-list">
-        <div class="condition-item">
-          <dt>撮影時間</dt>
-          <dd>基本は4時間です。延長は4時間単位で追加できます。</dd>
+    <section class="section timeline" aria-labelledby="timeline-title">
+      <div class="section-inner">
+        <div class="timeline-head">
+          <span class="label">SCHEDULE</span>
+          <h2 class="section-title" id="timeline-title"></h2>
         </div>
-        <div class="condition-item">
-          <dt>写真データ</dt>
-          <dd>50枚以上を編集してお渡しします。</dd>
-        </div>
-        <div class="condition-item">
-          <dt>映像</dt>
-          <dd><span class="condition-number">2分ほど</span>の作品に仕上げます。素材のままの納品も選べます。</dd>
-        </div>
-        <div class="condition-item">
-          <dt>天候</dt>
-          <dd>台風や荒天で安全に撮れないときは、キャンセル料なしで日程を変えられます。</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="section comparison">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title"><span class="np">一般的な</span><span class="np">出張撮影との違い</span></h2>
-      </div>
-      <div class="comparison-grid">
-        <article class="comparison-item">
-          <h3>撮影時間</h3>
-          <div class="comparison-pair">
-            <p><span>出張撮影</span><span>　60分前後</span></p>
-            <p><span>島ログ</span><span>　4時間</span></p>
+        <div class="timeline-list">
+          <div class="timeline-row">
+            <div class="time">15:00</div>
+            <div>1スポット目</div>
           </div>
-        </article>
-        <article class="comparison-item">
-          <h3>残せるもの</h3>
-          <div class="comparison-pair">
-            <p><span>出張撮影</span><span>　写真</span></p>
-            <p><span>島ログ</span><span>　写真と映像</span></p>
+          <div class="timeline-row">
+            <div class="time">15:30</div>
+            <div>ドローン</div>
           </div>
-        </article>
+          <div class="timeline-row">
+            <div class="time">16:00</div>
+            <div>カメラ</div>
+          </div>
+          <div class="timeline-row">
+            <div class="time">16:40</div>
+            <div>移動</div>
+          </div>
+          <div class="timeline-row">
+            <div class="time">17:20</div>
+            <div>2スポット目</div>
+          </div>
+          <div class="timeline-row">
+            <div class="time">18:30</div>
+            <div>サンセット撮影</div>
+          </div>
+          <div class="timeline-row">
+            <div class="time">19:00</div>
+            <div>終了</div>
+          </div>
+        </div>
+        <p class="timeline-note">これはスケジュール一例です。撮影時期、行き先に合わせて毎回組み直します。</p>
       </div>
-      <p class="comparison-close">60分では、ひとつの場所で終わります。4時間あるから、光に合わせて回れます。</p>
-    </div>
-  </section>
+    </section>
 
-  <section class="section price">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">料金</h2>
-        <p class="lead"><span class="np">必要な内容に合わせて、</span><span class="np">撮影と編集を</span><span class="np">選べます。</span></p>
+    <section class="section manifesto" aria-labelledby="margin-title">
+      <div class="section-inner">
+        <h2 class="section-title" id="margin-title"><span class="np">焦らず、</span><span class="np">ゆっくり巡ります</span></h2>
+        <p class="section-text">他の業者さんと場所が重なったり、太陽が雲に隠れたり。そんな待ち時間もふくめて、ゆったり過ごしてもらえたら。2スポットは保証したうえで、時間が余ればもう一か所へ寄れます。</p>
+        <p class="section-text">一度きりの日なので、丁寧に撮りたいと思っています。</p>
       </div>
-      <div class="price-feature">
-        <h3 class="price-feature-title">写真も映像も残す</h3>
-        <p class="price-feature-amount">50,000円</p>
-        <p class="price-feature-copy">4時間の撮影。写真は50枚以上を編集してお渡しします。映像は2分ほどの作品に仕上げます。</p>
+    </section>
+    
+    <section class="section feature" aria-labelledby="photo-film-title">
+      <div class="section-inner feature-grid">
+        <div class="feature-copy">
+          <h2 class="section-title" id="photo-film-title"><span class="np">沖縄で</span><span class="np">前撮りする</span><span class="np">そんな贅沢な</span><span class="np">1日を</span><span class="np">写真と映像で</span><span class="np">残す</span></h2>
+          <p class="section-text">写真も映像も同じ流れの中で撮ります。</p>
+        </div>
+        <div class="feature-image feature-film">
+          <figure class="feature-frame">
+            <img src="img/wedding/cut-bride-black-green.jpg" alt="" width="1920" height="960" loading="lazy">
+          </figure>
+          <figure class="feature-frame">
+            <img src="img/wedding/cut-sunset-silhouette.jpg" alt="" width="1920" height="960" loading="lazy">
+          </figure>
+          <figure class="feature-frame">
+            <img src="img/wedding/sel-still-carry-sunset.jpg" alt="" width="1920" height="818" loading="lazy">
+          </figure>
+        </div>
       </div>
-      <p class="price-subhead">写真だけ、映像だけでも承ります</p>
-      <div class="price-list">
-        <p class="price-row">
-          <span class="price-name">動画撮影（素材納品）　</span><span class="price-amount">20,000円</span>
-        </p>
-        <p class="price-row">
-          <span class="price-name">写真撮影（編集込み）　</span><span class="price-amount">15,000円</span>
-        </p>
-        <p class="price-row">
-          <span class="price-name">映像制作（編集込み）　</span><span class="price-amount">35,000円</span>
-        </p>
-        <p class="price-row">
-          <span class="price-name">撮影延長（4時間ごと）　</span><span class="price-amount">+15,000円</span>
-        </p>
-        <p class="price-row">
-          <span class="price-name">撮影スポット申請費用　</span><span class="price-amount">1箇所分込み／2箇所目以降は実費</span>
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section notes">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">ご予約前に</h2>
-        <p class="lead">撮影内容、お支払い、日程変更について事前にご確認ください。</p>
-      </div>
-      <dl class="note-list">
-        <div class="note-item">
-          <dt>含まれるもの</dt>
-          <dd>撮影／撮影当日のアテンド／動画素材の納品／写真データの納品（編集込み）／映像制作の編集／修正2回まで／撮影スポット申請費用1箇所分</dd>
-        </div>
-        <div class="note-item">
-          <dt>含まれないもの</dt>
-          <dd>ヘアメイク／衣装／ブーケ・小物／アシスタント／移動車両の手配／2箇所目以降の申請費用／施設使用料・入場料／離島・県外の移動費・滞在費</dd>
-        </div>
-        <div class="note-item">
-          <dt>納期</dt>
-          <dd>納品は撮影後1〜2ヶ月が目安です。撮影内容や時期によって、少し前後します。</dd>
-        </div>
-        <div class="note-item">
-          <dt>修正</dt>
-          <dd>映像制作の修正は2回まで無料です。3回目以降や大きな構成変更は、追加料金を事前にお伝えします。</dd>
-        </div>
-        <div class="note-item">
-          <dt>お支払い</dt>
-          <dd>銀行振込、またはクレジットカード決済に対応しています。撮影日確定後、事前決済をお願いしています。振込手数料はお客様負担となります。</dd>
-        </div>
-        <div class="note-item">
-          <dt>キャンセル</dt>
-          <dd>撮影日の7日前を過ぎてからのお客様都合によるキャンセルは、撮影スポット申請料の実費に加え、見積もり額の30％をキャンセル料として頂戴します。</dd>
-        </div>
-        <div class="note-item">
-          <dt>天候による日程変更</dt>
-          <dd>台風や荒天など、天候都合により安全な撮影が難しい場合は、キャンセル料なしで日程変更のご相談が可能です。</dd>
-        </div>
-        <div class="note-item">
-          <dt>データ保管</dt>
-          <dd>納品後の撮影データ保管期間は3ヶ月を目安とします。納品後はお客様ご自身で保管をお願いします。</dd>
-        </div>
-        <div class="note-item">
-          <dt>実績掲載</dt>
-          <dd>納品した写真・映像は、島ログの実績・ポートフォリオ・SNS等で掲載させていただく場合があります。掲載不可の場合は事前にお知らせください。</dd>
-        </div>
-      </dl>
+    <div class="wide-photo" aria-hidden="true">
+      <img src="img/wedding/sel-photo-sunset-wide.jpg" alt="" width="2200" height="1466" loading="lazy">
     </div>
-  </section>
 
-  <section class="section cta" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">まずは話を聞かせてください</h2>
+    <section class="section price" aria-labelledby="price-title">
+      <div class="section-inner price-grid">
+        <span class="label">PRICE</span>
+        <div>
+          <div class="price-block price-main">
+            <span class="label">SET</span>
+            <h2 class="price-title" id="price-title"><span class="price-plan">写真＋映像</span><span class="price-amount">128,000円</span></h2>
+            <p class="price-breakdown">4時間 / ロケーション2か所（申請料込み） / 写真70カット / 映像2分 / ドローン</p>
+          </div>
+          <div class="price-block price-sub" aria-label="単体プラン">
+            <span class="label">SINGLE</span>
+            <div class="price-row">
+              <span>写真のみ</span>
+              <span>59,800円（50カット）</span>
+            </div>
+            <div class="price-row">
+              <span>映像のみ</span>
+              <span>79,800円</span>
+            </div>
+            <p class="price-note">SINGLEプランは撮影申請1か所分が含まれます</p>
+          </div>
+          <div class="price-block price-options" aria-label="オプション">
+            <span class="label">OPTION</span>
+            <div class="price-row price-option">
+              <span>ロケーション追加（1か所）</span>
+              <span>15,000円</span>
+            </div>
+            <div class="price-row price-option">
+              <span>撮影延長（4時間）</span>
+              <span>20,000円</span>
+            </div>
+            <div class="price-row price-option">
+              <span>日をまたぐ撮影</span>
+              <span>15,000円</span>
+            </div>
+            <div class="price-row price-option">
+              <span>早期納品（2週間以内）</span>
+              <span>15,000円</span>
+            </div>
+            <div class="price-row price-option">
+              <span>沖縄県外での撮影</span>
+              <span>移動費・宿泊費 実費</span>
+            </div>
+          </div>
+          <div class="price-trust">
+            <div>台風等で安全に撮影できない場合はキャンセル料なしで日程再調整可能です。</div>
+            <div>ドローンは飛ばせない場所もあります。ロケーション決定後可否をお伝えします</div>
+            <div>含まないもの：ヘアメイク／衣装／ブーケ／施設使用料</div>
+          </div>
+          <a class="text-link" href="#details">料金の詳細</a>
+        </div>
       </div>
-      <div class="cta-request">
-        <h3>ご相談のときに教えてください</h3>
-        <ul>
-          <li>撮影を考えている時期</li>
-          <li>撮りたい雰囲気。参考の写真があればそのまま送ってください。</li>
-          <li>衣装の準備状況。まだ決まっていなくても構いません。</li>
-        </ul>
+    </section>
+
+    <section class="section details-layer" id="details" aria-label="料金の詳細">
+      <div class="section-inner">
+        <div class="details-list">
+          <details>
+            <summary>ご予約とお支払いについて</summary>
+            <div class="detail-body">
+              <ul>
+                <li>ご予約確定時に料金の30%をお支払いいただきます</li>
+                <li>残額は納品前までにお願いしています</li>
+                <li>銀行振込またはクレジットカード決済に対応しています</li>
+                <li>振込手数料はお客様のご負担となります</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>撮影内容と当日の流れについて</summary>
+            <div class="detail-body">
+              <ul>
+                <li>移動を含めた当日の流れは、事前にお送りします</li>
+                <li>当日の天候や現地の状況により、スケジュールを変更する場合があります</li>
+                <li>ロケーションの追加は1か所 15,000円です</li>
+                <li>撮影の延長は4時間 20,000円です</li>
+                <li>日をまたぐ撮影は別途15,000円です。宿泊が必要な場合の費用は実費となります</li>
+                <li>沖縄県外での撮影は、移動費と宿泊費が実費で加算されます</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>料金に含まれるもの・含まれないもの</summary>
+            <div class="detail-body">
+              <ul>
+                <li>写真＋映像プランは、撮影申請2か所分が含まれます</li>
+                <li>写真のみ・映像のみの単体プランは、撮影申請1か所分が含まれます</li>
+                <li>追加の申請料、施設使用料、入場料は実費となります</li>
+                <li>ヘアメイク／衣装／ブーケ／小物／移動車両／アシスタントは含まれません</li>
+                <li>ドローンは飛ばせない場所もあります。行き先が決まってから可否をお伝えします</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>日程変更・キャンセルについて</summary>
+            <div class="detail-body">
+              <ul>
+                <li>撮影日の15日前までのキャンセル料はかかりません</li>
+                <li>14〜8日前は料金の30%、7日前〜当日は料金の50%を頂戴します</li>
+                <li>申請料など、すでに発生した実費は別途ご負担いただきます</li>
+                <li>台風や荒天により安全な撮影が難しい場合は、日程変更をご相談できます</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>納品・修正・データ保管について</summary>
+            <div class="detail-body">
+              <ul>
+                <li>納品は撮影日から1か月以内を目安に行います。状況により2か月ほどかかる場合があります</li>
+                <li>2週間以内の早期納品は15,000円で対応できます</li>
+                <li>映像制作の修正は2回まで無料です</li>
+                <li>3回目以降の修正や大幅な構成変更は、別途お見積もりとなります</li>
+                <li>納品データの保管期間は、納品後3か月を目安としています</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>写真・映像の掲載について</summary>
+            <div class="detail-body">
+              <ul>
+                <li>納品した写真や映像を、実績紹介やSNSで掲載させていただく場合があります</li>
+                <li>掲載を希望されない場合は、事前にお知らせください</li>
+              </ul>
+            </div>
+          </details>
+        </div>
       </div>
-      <p class="cta-body">まずは撮りたい雰囲気や日程だけでも構いません。ロケーションの候補からご一緒に考えます。</p>
-      <div class="cta-actions">
-        <a href="https://www.instagram.com/shimalog_24/" class="btn btn-secondary" target="_blank" rel="noopener"><span class="np">Instagram DMで受付</span>　<wbr><span class="np">@shimalog_24</span></a>
-        <a href="https://line.me/R/ti/p/%40009yvklo" class="btn btn-primary" target="_blank" rel="noopener">LINEで相談する</a>
+    </section>
+
+    <section class="section cta" aria-labelledby="contact-title">
+      <img class="cta-bg" src="img/wedding/sel-still-backshot-sea.jpg" alt="" width="1920" height="818" loading="lazy" aria-hidden="true">
+      <div class="section-inner">
+        <h2 class="section-title" id="contact-title"><span class="np">まずは</span><span class="np">日程から</span><span class="np">ご相談ください</span></h2>
+        <p class="section-text">撮影日が決まると、行き先も決めやすくなります。LINEかInstagramのDMで、予定と撮りたい雰囲気を送ってください。</p>
+        <div class="cta-links">
+          <a class="text-link" href="https://line.me/R/ti/p/%40009yvklo">LINEで相談する</a>
+          <a class="text-link" href="https://www.instagram.com/shimalog_24/">Instagram @shimalog_24</a>
+        </div>
+        <p class="credit">撮影・編集　上江洌孝太／島ログ</p>
       </div>
-      <p class="credit">撮影・編集：上江洌孝太　／　島ログ</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html">島ログ</a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="wedding.html">Wedding</a>
+        <a href="snap.html">Snap</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="site-footer">
-  <div>
-    <div class="footer-logo">Shima Log / 島ログ</div>
-    <div class="footer-sub">Kota Uezu / 上江洌孝太 — LINE: @009yvklo</div>
-  </div>
-  <nav class="footer-nav" aria-label="フッター">
-    <a href="index.html">島ログ</a>
-    <a href="wedding.html">Wedding</a>
-    <a href="snap.html">Snap</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
-  <div class="footer-copy">© 2026 Shima Log. All rights reserved.</div>
-</footer>
-<script>
-(function(){
-  var header=document.querySelector(".site-header");
-  var btn=document.querySelector(".nav-toggle");
-  var nav=document.getElementById("site-nav");
-  if(!header||!btn||!nav)return;
-  function closeNav(){
-    header.classList.remove("nav-open");
-    btn.setAttribute("aria-expanded","false");
-  }
-  btn.addEventListener("click",function(){
-    var open=header.classList.toggle("nav-open");
-    btn.setAttribute("aria-expanded",open?"true":"false");
-  });
-  nav.addEventListener("click",function(e){
-    if(e.target&&e.target.tagName==="A")closeNav();
-  });
-  document.addEventListener("keydown",function(e){
-    if(e.key==="Escape")closeNav();
-  });
-})();
-</script>
+  <script>
+    (() => {
+      const video = document.querySelector("[data-hero-video]");
+      const media = window.matchMedia("(max-width: 700px)");
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const sources = {
+        desktop: "img/wedding/hero-loop.mp4",
+        mobile: "img/wedding/hero-sp.mp4"
+      };
+
+      const setVideo = () => {
+        if (!video || reduce.matches) return;
+        const nextSrc = media.matches ? sources.mobile : sources.desktop;
+        if (video.getAttribute("src") === nextSrc) return;
+        video.setAttribute("src", nextSrc);
+        video.load();
+        video.play().catch(() => {});
+      };
+
+      setVideo();
+      media.addEventListener("change", setVideo);
+
+      const button = document.querySelector("[data-menu-button]");
+      const navLinks = document.querySelectorAll(".site-nav a");
+      const header = document.querySelector("[data-header]");
+      const hero = document.querySelector(".hero");
+
+      const closeNav = () => {
+        document.body.classList.remove("nav-open");
+        button?.setAttribute("aria-expanded", "false");
+      };
+
+      button?.addEventListener("click", () => {
+        const isOpen = document.body.classList.toggle("nav-open");
+        button.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", closeNav);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeNav();
+      });
+
+      const setHeaderState = () => {
+        if (!header || !hero) return;
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        header.classList.toggle("is-scrolled", heroBottom <= 0);
+      };
+
+      if (header && hero && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          header.classList.toggle("is-scrolled", !entries[0].isIntersecting);
+        }, { threshold: 0 });
+
+        observer.observe(hero);
+      } else {
+        setHeaderState();
+        window.addEventListener("scroll", setHeaderState, { passive: true });
+      }
+    })();
+  </script>
 </body>
 </html>
