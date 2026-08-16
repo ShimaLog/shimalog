@@ -943,7 +943,7 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" muted playsinline loop autoplay poster="img/wedding/hero-poster.jpg" data-hero-video></video>
+        <video class="hero-video" muted playsinline webkit-playsinline loop autoplay preload="auto" disablepictureinpicture poster="img/wedding/hero-poster.jpg" data-hero-video></video>
       </div>
       <div class="hero-copy">
         <span class="label">OKINAWA / PHOTO &amp; FILM</span>
@@ -1231,9 +1231,37 @@
         desktop: "img/wedding/hero-poster.jpg",
         mobile: "img/wedding/hero-poster.jpg"
       };
+      const retryEvents = ["touchstart", "click", "scroll"];
+      const retryOptions = { once: true, passive: true };
+
+      const clearVideoRetry = () => {
+        retryEvents.forEach((eventName) => {
+          document.removeEventListener(eventName, retryPlayback, retryOptions);
+        });
+      };
+
+      const scheduleVideoRetry = () => {
+        clearVideoRetry();
+        retryEvents.forEach((eventName) => {
+          document.addEventListener(eventName, retryPlayback, retryOptions);
+        });
+      };
+
+      const playHeroVideo = () => {
+        if (!video || reduce.matches) return;
+        video.muted = true;
+        const playPromise = video.play();
+        if (!playPromise) return;
+        playPromise.then(clearVideoRetry).catch(scheduleVideoRetry);
+      };
+
+      function retryPlayback() {
+        playHeroVideo();
+      }
 
       const setVideo = () => {
         if (!video) return;
+        video.muted = true;
         const nextPoster = media.matches ? posters.mobile : posters.desktop;
         video.setAttribute("poster", nextPoster);
         if (reduce.matches) return;
@@ -1241,11 +1269,17 @@
         if (video.getAttribute("src") === nextSrc) return;
         video.setAttribute("src", nextSrc);
         video.load();
-        video.play().catch(() => {});
+        playHeroVideo();
       };
 
       setVideo();
       media.addEventListener("change", setVideo);
+      document.addEventListener("visibilitychange", () => {
+        if (!video || reduce.matches) return;
+        if (document.visibilityState === "visible" && video.paused) {
+          playHeroVideo();
+        }
+      });
 
       const button = document.querySelector("[data-menu-button]");
       const navLinks = document.querySelectorAll(".site-nav a");
