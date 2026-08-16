@@ -852,6 +852,12 @@
       }
     }
 
+    @media (max-width: 700px) {
+      .hero-media {
+        background-image: url("img/wedding/hero-poster-sp.jpg");
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1053,7 +1059,6 @@
             <div>ドローンは飛ばせない場所もあります。ロケーション決定後可否をお伝えします</div>
             <div>含まないもの：ヘアメイク／衣装／ブーケ／施設使用料</div>
           </div>
-          <a class="text-link" href="#details">料金の詳細</a>
         </div>
       </div>
     </section>
@@ -1167,9 +1172,16 @@
         desktop: "img/wedding/hero-loop.mp4",
         mobile: "img/wedding/hero-sp.mp4"
       };
+      const posters = {
+        desktop: "img/wedding/hero-poster.jpg",
+        mobile: "img/wedding/hero-poster-sp.jpg"
+      };
 
       const setVideo = () => {
-        if (!video || reduce.matches) return;
+        if (!video) return;
+        const nextPoster = media.matches ? posters.mobile : posters.desktop;
+        video.setAttribute("poster", nextPoster);
+        if (reduce.matches) return;
         const nextSrc = media.matches ? sources.mobile : sources.desktop;
         if (video.getAttribute("src") === nextSrc) return;
         video.setAttribute("src", nextSrc);
