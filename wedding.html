@@ -7,7 +7,7 @@
   <meta name="description" content="沖縄本島で、前撮りの写真と映像を撮っています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Shippori+Mincho:wght@400&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Shippori+Mincho:wght@300;400&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --paper: #FBFAF7;
@@ -239,24 +239,30 @@
 
     .hero-title {
       margin-top: 20px;
-      font-size: var(--t-hero);
+      font-size: clamp(1.75rem, 4.2vw, 3.2rem);
+      font-weight: 300;
       line-height: 1.22;
       letter-spacing: .02em;
     }
 
+    .hero-title .np {
+      display: block;
+      white-space: nowrap;
+    }
+
     .hero-text {
-      max-width: 40em;
+      max-width: 28em;
       margin: 22px auto 0;
       color: rgba(255, 255, 255, .88);
     }
 
     @media (min-width: 901px) {
       .hero-title {
-        font-size: clamp(3.35rem, 1.95rem + 3.2vw, 4.65rem);
+        font-size: clamp(2.6rem, 2rem + 1.6vw, 4.1rem);
       }
 
       .hero-text {
-        max-width: 60em;
+        max-width: 32em;
         font-size: clamp(.96rem, .92rem + .1vw, 1rem);
       }
     }
@@ -758,8 +764,8 @@
 
     @media (max-width: 900px) {
       .hero-title .np {
-        display: inline;
-        white-space: normal;
+        display: block;
+        white-space: nowrap;
       }
     }
 
@@ -820,11 +826,12 @@
 
       .hero-title {
         margin-top: 14px;
-        font-size: clamp(1.6rem, 8.6vw, 2.4rem);
+        font-size: clamp(1.28rem, 5.4vw, 1.55rem);
         line-height: 1.18;
       }
 
       .hero-text {
+        max-width: 22em;
         margin-top: 14px;
         color: rgba(255, 255, 255, .86);
         line-height: 1.82;
@@ -920,7 +927,7 @@
 
     @media (max-width: 360px) {
       .hero-title {
-        font-size: 8.2vw;
+        font-size: 1.28rem;
       }
     }
 
@@ -958,8 +965,8 @@
       </div>
       <div class="hero-copy">
         <span class="label">OKINAWA / PHOTO &amp; FILM</span>
-        <h1 class="hero-title" id="hero-title"><span class="np">これから始まる2人の時間を、</span><span class="np">沖縄で記録する</span></h1>
-        <p class="hero-text">撮影のためだけに来る1日ではありません。2人がこれから重ねていく時間の、最初の1日を写真と映像で残します。</p>
+        <h1 class="hero-title" id="hero-title"><span class="np">これから始まる2人の時間を</span><span class="np">沖縄で記録する</span></h1>
+        <p class="hero-text">たっぷり4時間、ロケーションは2か所。撮影を忘れて楽しめる。</p>
         <a class="text-link" href="https://line.me/R/ti/p/%40009yvklo">撮影の相談</a>
       </div>
     </section>
