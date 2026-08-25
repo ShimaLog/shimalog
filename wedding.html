@@ -13,7 +13,7 @@
       --paper: #FBFAF7;
       --paper-2: #F3F0EA;
       --ink: #1F1D1A;
-      --ink-dim: #6B655C;
+      --ink-dim: #57524A;
       --ink-faint: #9A948B;
       --rule: rgba(31, 29, 26, .12);
       --dune: #8A7E6B;
@@ -26,7 +26,7 @@
       --t-h2: clamp(1.8rem, 1.25rem + 2.3vw, 3.1rem);
       --t-num: clamp(1.9rem, 1.2rem + 2.9vw, 3.4rem);
       --t-h3: clamp(1.12rem, 1.04rem + .4vw, 1.36rem);
-      --t-body: clamp(.97rem, .94rem + .16vw, 1.03rem);
+      --t-body: clamp(1.04rem,1rem + .28vw,1.14rem);
       --t-label: 13px;
       --container: 1200px;
       --pad-x: clamp(20px, 5vw, 72px);
@@ -605,7 +605,7 @@
     }
 
     .price-option {
-      font-size: .95rem;
+      font-size: 1rem;
     }
 
     .price-note {
@@ -949,6 +949,11 @@
         display: none;
       }
     }
+
+@media(max-width:360px){
+  .hero .hero-text{font-size:.92em}
+  .section-title{font-size:calc(var(--t-h2) * .86)}
+}
   </style>
 </head>
 <body>
@@ -957,8 +962,8 @@
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>Menu</button>
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
       <a href="index.html#about">About</a>
-      <a href="index.html#hospitality">宿・お店向け</a>
       <a href="wedding.html">Wedding</a>
+      <a href="hospitality.html">宿・お店向け</a>
       <a href="gallery.html">Gallery</a>
     </nav>
   </header>
@@ -1235,7 +1240,6 @@
       <a href="index.html">島ログ</a>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="wedding.html">Wedding</a>
-        <a href="snap.html">Snap</a>
         <a href="gallery.html">Gallery</a>
       </nav>
     </div>

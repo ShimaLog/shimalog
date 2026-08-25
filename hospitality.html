@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shima Log | 島ログ</title>
+<title>宿・お店向け | Shima Log</title>
 <meta name="description" content="沖縄・離島の宿と事業者向けに、写真撮影・映像・ランディングページ・公式LINE構築を一気通貫で。予約サイトの一覧では伝わらない魅力を、ちゃんと伝わる形にします。">
 <link rel="canonical" href="https://shimalog.shimalog.workers.dev/">
 <meta property="og:type" content="website">
@@ -300,11 +300,16 @@ button,input,textarea,select{font:inherit}
 }
 .problem-item{
   display:grid;
-  grid-template-columns:minmax(0,.14fr) minmax(max-content,.42fr) minmax(0,1fr) minmax(0,.5fr);
-  gap:24px;
-  padding:28px 0;
+  grid-template-columns:minmax(0,.4fr) minmax(0,1fr);
+  column-gap:clamp(32px,4vw,64px);
+  row-gap:10px;
+  padding:clamp(30px,3.6vw,48px) 0;
   border-bottom:1px solid var(--line);
 }
+.problem-item > .index{grid-column:1;grid-row:1;font-size:.82rem;letter-spacing:.18em;opacity:.55}
+.problem-item > .problem-title{grid-column:1;grid-row:2;margin:0}
+.problem-item > .problem-body{grid-column:2;grid-row:1 / span 2;margin:0}
+.problem-item > .problem-solve{grid-column:2;grid-row:3;margin-top:12px}
 .problem-title,.concept-title,.service-name,.flow-title,.partner-title{
   color:var(--fg);
   font-family:var(--f-jp-head);
@@ -345,11 +350,14 @@ button,input,textarea,select{font:inherit}
 }
 .concept-item{
   display:grid;
-  grid-template-columns:minmax(0,.08fr) minmax(max-content,.52fr) minmax(0,1.1fr);
-  gap:clamp(20px,3vw,32px);
-  padding:clamp(30px,4vw,44px) 0;
+  grid-template-columns:minmax(0,1fr);
+  row-gap:12px;
+  padding:clamp(30px,3.6vw,48px) 0;
   border-bottom:1px solid var(--line);
 }
+.concept-item > .index{font-size:.82rem;letter-spacing:.18em;opacity:.55}
+.concept-item > .concept-title{margin:0}
+.concept-item > .concept-body{margin:0}
 .mission-inset{
   display:grid;
   grid-template-columns:minmax(0,1fr);
@@ -420,11 +428,11 @@ button,input,textarea,select{font:inherit}
 }
 .about-cols{
   display:grid;
-  grid-template-columns:minmax(0,1fr);
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   gap:clamp(36px,6vw,72px);
   align-items:start;
 }
-.about-cols .about-body{ max-width:62em; }
+.about-cols .about-body{ max-width:none; }
 .about .mission-inset{ margin-top:0; border-color:var(--line-ink); }
 @media(max-width:900px){
   .about-cols{ grid-template-columns:minmax(0,1fr); gap:32px; }
@@ -607,30 +615,6 @@ button,input,textarea,select{font:inherit}
   grid-column:1 / -1;
   grid-row:2;
 }
-.leads-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:clamp(40px,6vw,88px);
-  align-items:stretch;
-}
-.lead-card{
-  display:flex;
-  flex-direction:column;
-  height:100%;
-}
-.lead-card .section-head{margin-bottom:clamp(20px,2.4vw,32px)}
-.lead-card .service-head{padding:18px 0 0}
-.lead-card-cta{
-  margin-top:auto;
-  padding-top:clamp(18px,2.4vw,28px);
-  border-top:1px solid var(--line);
-}
-@media(max-width:900px){
-  .leads-grid{
-    grid-template-columns:minmax(0,1fr);
-    gap:clamp(44px,8vw,64px);
-  }
-}
 .service-detail span{display:block;margin-top:6px;font-size:1rem;line-height:1.7}
 
 .partner{background:var(--bg)}
@@ -790,8 +774,22 @@ button,input,textarea,select{font:inherit}
   .problem-item,.concept-grid,.partner-grid,.package-card,.site-footer{
     grid-template-columns:minmax(0,1fr);
   }
+  .problem-item > .index,
+  .problem-item > .problem-title,
+  .problem-item > .problem-body,
+  .problem-item > .problem-solve{
+    grid-column:1;
+    grid-row:auto;
+  }
   .concept-item{
     grid-template-columns:minmax(0,1fr);
+  }
+  .concept-item > .index,
+  .concept-item > .concept-title,
+  .concept-item > .concept-body,
+  .concept-item > .body-copy{
+    grid-column:1;
+    grid-row:auto;
   }
   .package-price{text-align:left}
   .cycle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -893,80 +891,221 @@ button,input,textarea,select{font:inherit}
 </header>
 
 <main>
-  <section class="hero">
-    <img class="hero-bg" src="img/profile-back.jpg" alt="沖縄の海辺に立つ人物" loading="lazy">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1><span class="np">島の良いものを</span><span class="np">ちゃんと伝える</span></h1>
-        <div class="hero-actions">
-          <a href="wedding.html" class="text-link">沖縄前撮り →</a>
-          <a href="hospitality.html" class="text-link">宿・お店向け →</a>
+  <section class="photo-break tall" aria-label="沖縄の風景写真">
+    <img src="img/work-01.jpg" alt="沖縄の海辺の風景" loading="lazy">
+  </section>
+
+  <section class="section wedding-lead" id="hospitality-lead">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title"><span class="np">宿・お店向け</span></h2>
+        <p class="lead">写真・LP・直販の仕組みまで、窓口はひとつ。最初から最後まで、同じ人間が担当します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section problem">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title"><span class="np">SNSは伸びても</span><span class="np">予約は増えない。</span></h2>
+      </div>
+      <div class="problem-list">
+        <div class="problem-item">
+          <div class="index">01</div>
+          <h3 class="problem-title"><span class="np">OTAに</span><span class="np">流れるまま</span></h3>
+          <p class="problem-body">インスタで集客できている。写真に「行きたい」とコメントも来る。でも「予約はこちら」とOTAに飛ばした瞬間、15〜30%が引かれます。</p>
+          <p class="problem-solve">→ SNSのファンを直販で受け取れる仕組みをつくります。</p>
+        </div>
+        <div class="problem-item">
+          <div class="index">02</div>
+          <h3 class="problem-title"><span class="np">写真が</span><span class="np">世界観と合わない</span></h3>
+          <p class="problem-body">カメラマンに頼んで撮ってもらいました。届いた写真は綺麗でしたが、自分のインスタに並べると何かが違う。</p>
+          <p class="problem-solve">→ 撮影からLP制作まで同じ人間が<span class="nowrap">担当します。</span></p>
+        </div>
+        <div class="problem-item">
+          <div class="index">03</div>
+          <h3 class="problem-title"><span class="np">作って</span><span class="np">終わり</span></h3>
+          <p class="problem-body">2年前にLPを作り直しました。でも今また同じ状態になっています。更新していく仕組みがなかった。</p>
+          <p class="problem-solve">→ パートナー契約で継続して仕組みを磨きます。</p>
+        </div>
+        <div class="problem-item">
+          <div class="index">04</div>
+          <h3 class="problem-title"><span class="np">料金が</span><span class="np">不明瞭</span></h3>
+          <p class="problem-body">相見積もりをとったら、カメラマンとWeb業者それぞれから見積もりが来ました。</p>
+          <p class="problem-solve">→ 全工程の料金を最初から明記します。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section about" id="about">
+  <section class="section concept" id="concept">
     <div class="container">
-      <div class="about-text">
-        <h2 class="section-title"><span class="np">元々</span><span class="np">医療従事者でした</span></h2>
-        <div class="about-cols">
-          <div class="about-body">
-            <p>理学療法士として約5年間、患者さんの状態を診て、<br>治療して、経過を見守る仕事をしていました。<br>やることは今も同じです。</p>
-            <p>お店の見せ方を診る。<br>原因を見つけて、撮影と制作で整える。</p>
-            <p>担当が変わらないから、毎回説明しなくていい。<br>あなたのビジネスを一番理解している人間が、<br>ずっと同じ目線で並走します。</p>
-            <p>沖縄生まれ育ち。みんなが好きな<span class="np">沖縄を、</span>次の世代に残したい。</p>
-            <div class="profile-line">
-              <img class="profile-thumb" src="img/profile-face.jpg" alt="上江洌孝太" loading="lazy">
-              <div class="profile-meta">
-                <strong>Kota Uezu / <span class="nowrap">上江洌孝太</span></strong>
-                <span>1998年、<span class="nowrap">沖縄生まれ</span><span class="nowrap">沖縄育ち。</span></span>
-                <span>Shima Log 代表</span>
-                <span><span class="nowrap">ウェディングフォトグラファー</span></span>
-                <span>沖縄県在住 / 元理学療法士</span>
-              </div>
-            </div>
+      <div class="section-head">
+        <h2 class="section-title">OTAに流さないで、<span class="np">直接予約を</span><span class="np">受ける仕組みを</span>作ります。</h2>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-lead">
+          <p class="concept-main">写真・LP・直販の仕組みまで、窓口はひとつ。最初から最後まで、同じ人間が担当します。</p>
+          <p class="lead">島ログは一人が撮影からLP制作・直販設定まで担当するので、説明のやり直しがありません。</p>
+          <p class="lead">撮影とWebを分けずに見ます。</p>
+        </div>
+        <div class="concept-list">
+          <div class="concept-item">
+            <div class="index">01</div>
+            <h3 class="concept-title"><span class="np">説明は一度でいい</span></h3>
+            <p class="body-copy">撮影・LP・直販設定まで同じ人間が担当するので、業者間の説明コストがゼロになります。</p>
+          </div>
+          <div class="concept-item">
+            <div class="index">02</div>
+            <h3 class="concept-title"><span class="nowrap">作って</span><span class="nowrap">終わらない</span></h3>
+            <p class="body-copy">納品がゴールではありません。パートナー契約では月1ミーティングで現状を確認し、OTA依存から抜け出すための次の一手を一緒に考えます。</p>
+          </div>
+          <div class="concept-item">
+            <div class="index">03</div>
+            <h3 class="concept-title"><span class="nowrap">ありのままを</span><span class="nowrap">引き出す</span></h3>
+            <p class="body-copy">どこよりも良く見せるのではなく、その施設が本来持っている価値を言葉と写真で届けます。本来の価値で選ばれると、リピーターになります。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section works">
-    <div class="container section-head">
-      <h2 class="section-title">Gallery</h2>
-    </div>
+  <section class="photo-break" aria-label="沖縄の仕事写真">
+    <img src="img/work-05.jpg" alt="沖縄の屋外で撮影した写真" loading="lazy">
+  </section>
+
+  <section class="section services" id="services">
     <div class="container">
-      <div class="mini-gallery" id="miniGallery"></div>
-      <div class="mini-gallery-cta">
-        <a href="gallery.html" class="btn btn-primary">ギャラリー（写真展）を見る →</a>
+      <div class="section-head">
+        <div class="kicker label">Services</div>
+        <h2 class="section-title">提供サービス</h2>
+      </div>
+      <div class="package-card">
+        <div>
+          <div class="label index">Recommended</div>
+          <h2 class="package-title"><span class="nowrap">撮影・LP・直販 まとめて</span></h2>
+          <p class="package-desc">SNSのファンを直接受け取れる状態をつくります。写真・LP制作に加えて、LINE公式アカウントとオンライン決済（Stripe / Square）の導入までをセットで対応。</p>
+          <p class="package-desc" style="margin-top:10px;font-size:1rem;">撮影4h&thinsp;+&thinsp;LP制作&thinsp;+&thinsp;LINE公式&thinsp;+&thinsp;オンライン決済</p>
+        </div>
+        <div class="package-price">
+          <div class="price-main">¥170,000</div>
+          <div class="price-sub">単体合計 ¥190,000 → パックで ¥20,000 OFF</div>
+          <div class="price-alt">
+            <div class="partner-price">¥190,000</div>
+            <div class="price-sub"><span class="np">クリエイティブパートナー契約</span>（¥20,000/月）込み</div>
+          </div>
+        </div>
+      </div>
+      <div class="service-group" id="hospitality">
+        <div class="label service-group-label">宿・事業者の方へ</div>
+        <div class="service-category">
+          <div class="service-head">
+            <div class="index">01</div>
+            <h3 class="service-name">写真・映像撮影（専用素材）</h3>
+            <p class="service-desc">素材を作る</p>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">写真撮影（4h）</h4><div class="service-tag">Photography</div></div>
+            <p class="service-detail">施設・商品・スタッフ撮影。現像・編集込み、全データ納品。Web・SNSに即活用できる素材を提供。</p>
+            <div class="service-price">¥30,000<small>〜</small></div>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">スナップムービー</h4><div class="service-tag">Videography</div></div>
+            <p class="service-detail">その場の空気感をそのまま閉じ込めた1〜2分の映像制作。過剰編集せず、見た人が「行きたい」と思う映像を届ける。</p>
+            <div class="service-price">¥50,000<small>〜</small></div>
+          </div>
+        </div>
+        <div class="service-category">
+          <div class="service-head">
+            <div class="index">03</div>
+            <h3 class="service-name">Web・デジタル</h3>
+            <p class="service-desc"></p>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">LP制作</h4><div class="service-tag">Web Design</div></div>
+            <p class="service-detail">構成・コピー・デザイン一気通貫。1ページ完結型。修正2回まで。</p>
+            <div class="service-price">¥80,000</div>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">コーポレートサイト</h4><div class="service-tag">Web Design</div></div>
+            <p class="service-detail">3ページ〜構成。会社の顔となる複数ページWebサイト。修正3回まで。</p>
+            <div class="service-price">¥150,000<small>〜</small></div>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name">LINE公式＋決済導入</h4><div class="service-tag">Set</div></div>
+            <p class="service-detail">LINE公式アカウントの初期設計・リッチメニュー・挨拶メッセージ設定と、オンライン決済の導入をセットで対応。問い合わせ〜決済までをオンラインで完結させる。<span>※ 単体での提供は行っていません</span></p>
+            <div class="service-price">¥80,000</div>
+          </div>
+        </div>
+        <div class="service-category">
+          <div class="service-head">
+            <div class="index">04</div>
+            <h3 class="service-name">継続支援</h3>
+            <p class="service-desc">制作物の保守と、気軽に<span class="nowrap">相談</span>できる窓口。<span class="nowrap">ドメイン・サーバー</span>費用も無料で付帯します。</p>
+          </div>
+          <div class="service-row">
+            <div class="index"></div>
+            <div><h4 class="service-name"><span class="np">クリエイティブパートナー契約</span></h4><div class="service-tag">10社限定</div></div>
+            <p class="service-detail">保守・気軽な相談・ドメイン/サーバー費用、ぜんぶ込み。<br><span>※ 撮影・LP制作のご依頼後にご案内します</span></p>
+            <div class="service-price">¥20,000<small>/月〜</small></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section leads">
+  <section class="section partner" id="flow">
     <div class="container">
-      <div class="leads-grid">
-        <div class="lead-card" id="wedding">
-          <div class="section-head">
-            <h2 class="section-title"><span class="np">沖縄前撮り　</span><span class="np">写真・映像</span></h2>
-            <p class="lead">海、緑、夕景。写真と映像を、場所選びから一緒に整えます。</p>
-          </div>
-          <div class="lead-card-cta">
-            <a href="wedding.html" class="btn btn-primary">前撮りの詳細を見る →</a>
-          </div>
+      <div class="section-head">
+        <h2 class="section-title">作った後も<span class="nowrap">並走します。</span></h2>
+      </div>
+      <div class="partner-grid">
+        <div class="partner-card">
+          <div class="label index">いつでも相談できる窓口</div>
+          <h3 class="partner-title"><span class="np">困ったら</span><span class="np">すぐ聞ける。</span></h3>
+          <p class="body-copy">サイトの小さな修正、季節ごとの差し替え、SNSに何を出すかの相談。</p>
+          <div class="partner-price">¥20,000 <span class="service-tag">/ 月〜</span></div>
         </div>
-
-        <div class="lead-card" id="hospitality-lead">
-          <div class="section-head">
-            <h2 class="section-title"><span class="np">宿・お店向け</span></h2>
-            <p class="lead">写真・LP・直販の仕組みまで、窓口はひとつ。最初から最後まで、同じ人間が担当します。</p>
-          </div>
-          <div class="lead-card-cta">
-            <a href="hospitality.html" class="btn btn-primary">宿・お店向けの詳細を見る →</a>
-          </div>
+        <div class="partner-card">
+          <div class="label index">パートナー契約に込みのもの</div>
+          <h3 class="partner-title"><span class="np">続けて</span><span class="np">見てもらえる。</span></h3>
+          <p class="body-copy">パートナー契約には、ドメインとサーバー費用も込み。</p>
         </div>
       </div>
+      <div class="flow-block">
+        <div class="section-head">
+          <h2 class="section-title">ご相談から公開まで。</h2>
+        </div>
+        <div class="flow-grid">
+          <div class="flow-card"><div class="index">01</div><h3 class="flow-title">無料相談（30分）</h3><p class="body-copy">今の状態・困っていること・やりたいことを聞かせてください。</p></div>
+          <div class="flow-card"><div class="index">02</div><h3 class="flow-title">構成案をお見せします</h3><p class="body-copy">LPの構成案と切り口をまとめます。作る前に「どんなものができるか」を見てから決めてください。</p></div>
+          <div class="flow-card"><div class="index">03</div><h3 class="flow-title">LP制作</h3><p class="body-copy">PC・スマホ両対応、修正2回まで対応します。</p></div>
+          <div class="flow-card"><div class="index">04</div><h3 class="flow-title">確認・公開</h3><p class="body-copy">2回の修正まで対応します。公開・動作確認まで対応します。</p></div>
+          <div class="flow-card"><div class="index">05</div><h3 class="flow-title">パートナー契約 or ここで終了</h3><p class="body-copy">続けるかどうかは、公開後に判断してください。<span class="flow-note">パートナー契約 ¥20,000/月 — 保守・相談・ドメイン/サーバー込み</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-break tall" aria-label="沖縄の仕事写真">
+    <img src="img/work-08.jpg" alt="沖縄の自然の中で撮影した写真" loading="lazy">
+  </section>
+
+  <section class="section cta" id="contact">
+    <div class="container">
+      <div class="kicker label center">Contact</div>
+      <h2 class="section-title center"><span class="np">まず</span><span class="np">お話しましょう。</span></h2>
+      <p class="cta-body">難しいことはありません。<br>今どんな状態で、何に困っているか。<br>それだけ聞かせてください。</p>
+      <p class="cta-limit">現在受付：10社限定</p>
+      <a href="https://line.me/R/ti/p/%40009yvklo" class="btn btn-primary" target="_blank" rel="noopener">LINE で無料相談する</a>
+      <p class="cta-note">返信は24時間以内 / 無理な営業はしません</p>
+      <p class="cta-note">LINE ID：@009yvklo</p>
+      <a href="gallery.html" class="text-link">ギャラリーを見る →</a>
     </div>
   </section>
 </main>
