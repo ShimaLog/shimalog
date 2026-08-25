@@ -64,7 +64,7 @@ body{
   color:var(--fg);
   font-family:var(--f-jp-body);
   font-size:var(--t-body);
-  font-weight:400;
+  font-weight:300;
   line-height:1.95;
   letter-spacing:.02em;
   font-feature-settings:"palt" 1;
@@ -247,7 +247,7 @@ button,input,textarea,select{font:inherit}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(31,29,26,.58) 0%,rgba(31,29,26,.14) 46%,rgba(31,29,26,.62) 100%);
+  background:linear-gradient(180deg,rgba(31,29,26,.48) 0%,rgba(31,29,26,.10) 40%,rgba(31,29,26,.60) 100%);
   z-index:1;
 }
 .hero-bg{
@@ -269,13 +269,28 @@ button,input,textarea,select{font:inherit}
   margin:0 auto;
 }
 .hero-text{display:grid;gap:clamp(24px,3.2vw,40px);text-align:center;justify-items:center}
-.hero .text-link{color:var(--white);justify-self:center;width:fit-content}
+.hero .text-link{
+  color:var(--white);
+  justify-self:center;
+  width:fit-content;
+  padding:14px 30px;
+  border:1px solid rgba(255,255,255,.7);
+  background:rgba(31,29,26,.26);
+  text-shadow:0 1px 12px rgba(31,29,26,.45);
+  transition:background .24s ease,color .24s ease,border-color .24s ease;
+}
+.hero .text-link:hover{
+  background:var(--white);
+  color:var(--ink);
+  border-color:var(--white);
+  text-shadow:none;
+}
 .hero h1{
   max-width:100%;
   color:var(--white);
   font-family:var(--f-jp-head);
   font-size:var(--t-h1);
-  font-weight:400;
+  font-weight:300;
   line-height:1.26;
   letter-spacing:.06em;
 }
@@ -290,7 +305,7 @@ button,input,textarea,select{font:inherit}
   overflow-wrap:normal;
 }
 .hero-body{max-width:38em;color:var(--white)}
-.hero-actions{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:center;justify-content:center}
+.hero-actions{display:flex;flex-wrap:wrap;gap:clamp(14px,2.2vw,22px);align-items:center;justify-content:center}
 
 .problem{background:var(--bg-2)}
 .problem-list{
@@ -420,14 +435,27 @@ button,input,textarea,select{font:inherit}
 }
 .about-cols{
   display:grid;
-  grid-template-columns:minmax(0,1fr);
+  grid-template-columns:minmax(0,max-content) minmax(max-content,1fr);
   gap:clamp(36px,6vw,72px);
   align-items:start;
 }
-.about-cols .about-body{ max-width:62em; }
+.about-cols .about-body{ max-width:none; }
+.about-profile{
+  display:grid;
+  gap:16px;
+  justify-items:start;
+  min-width:0;
+}
+.about-profile .profile-thumb{ width:124px; height:124px; flex:none; }
 .about .mission-inset{ margin-top:0; border-color:var(--line-ink); }
 @media(max-width:900px){
   .about-cols{ grid-template-columns:minmax(0,1fr); gap:32px; }
+  .about-profile{
+    margin-top:4px;
+    padding-top:24px;
+    border-top:1px solid var(--line-ink);
+  }
+  .about-profile .profile-thumb{ width:96px; height:96px; }
   .about .mission-inset{ margin-top:4px; }
 }
 
@@ -802,7 +830,7 @@ button,input,textarea,select{font:inherit}
   .hero-inner{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:640px){
-  .hero-actions{align-items:center;flex-direction:column;gap:18px}
+  .hero-actions{align-items:stretch;flex-direction:column;gap:14px}
 }
 @media (max-width:520px){
   :root{--pad-section:72px}
@@ -815,7 +843,7 @@ button,input,textarea,select{font:inherit}
   .hero h1{font-size:clamp(2rem,10vw,2.55rem)}
   .hero-subtitle{max-width:16em}
   .hero-actions .btn{width:100%}
-  .hero-actions .text-link{width:fit-content}
+  .hero-actions .text-link{width:auto;padding:14px 24px;text-align:center}
   .service-head{padding-top:28px}
   .service-row{column-gap:14px;row-gap:6px;padding:18px 0}
   .service-price{font-size:1.08rem}
@@ -894,10 +922,10 @@ button,input,textarea,select{font:inherit}
 
 <main>
   <section class="hero">
-    <img class="hero-bg" src="img/profile-back.jpg" alt="沖縄の海辺に立つ人物" loading="lazy">
+    <img class="hero-bg" src="img/gallery/g01.jpg" alt="沖縄・東海岸の日の出" fetchpriority="high" decoding="async">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1><span class="np">島の良いものを</span><span class="np">ちゃんと伝える</span></h1>
+        <h1><span class="np">島のいいものを</span><span class="np">ちゃんと伝える</span></h1>
         <div class="hero-actions">
           <a href="wedding.html" class="text-link">沖縄前撮り →</a>
           <a href="hospitality.html" class="text-link">宿・お店向け →</a>
@@ -916,17 +944,17 @@ button,input,textarea,select{font:inherit}
             <p>お店の見せ方を診る。<br>原因を見つけて、撮影と制作で整える。</p>
             <p>担当が変わらないから、毎回説明しなくていい。<br>あなたのビジネスを一番理解している人間が、<br>ずっと同じ目線で並走します。</p>
             <p>沖縄生まれ育ち。みんなが好きな<span class="np">沖縄を、</span>次の世代に残したい。</p>
-            <div class="profile-line">
-              <img class="profile-thumb" src="img/profile-face.jpg" alt="上江洌孝太" loading="lazy">
-              <div class="profile-meta">
-                <strong>Kota Uezu / <span class="nowrap">上江洌孝太</span></strong>
-                <span>1998年、<span class="nowrap">沖縄生まれ</span><span class="nowrap">沖縄育ち。</span></span>
-                <span>Shima Log 代表</span>
-                <span><span class="nowrap">ウェディングフォトグラファー</span></span>
-                <span>沖縄県在住 / 元理学療法士</span>
-              </div>
-            </div>
           </div>
+          <aside class="about-profile">
+            <img class="profile-thumb" src="img/profile-face.jpg" alt="上江洌孝太" loading="lazy">
+            <div class="profile-meta">
+              <strong>Kota Uezu / <span class="nowrap">上江洌孝太</span></strong>
+              <span>1998年、<span class="nowrap">沖縄生まれ</span><span class="nowrap">沖縄育ち。</span></span>
+              <span>Shima Log 代表</span>
+              <span><span class="nowrap">ウェディングフォトグラファー</span></span>
+              <span>沖縄県在住 / 元理学療法士</span>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
@@ -1007,7 +1035,7 @@ function setupNav(){
 setupNav();
 (function(){
   var box=document.getElementById('miniGallery'); if(!box) return;
-  var pick=[1,2,3,4,5,6,7,8,9,10,11,12];
+  var pick=[2,3,4,5,6,7,8,9,10,11,12,13];
   box.innerHTML = pick.map(function(n){
     var s=('0'+n).slice(-2);
     return '<a href="gallery.html"><img src="img/gallery/g'+s+'.jpg" alt="沖縄で撮影した写真" loading="lazy"></a>';
