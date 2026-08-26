@@ -435,22 +435,22 @@ button,input,textarea,select{font:inherit}
 }
 .about-cols{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(max-content,320px);
-  gap:clamp(40px,7vw,96px);
+  grid-template-columns:minmax(0,1fr) max-content;
+  gap:clamp(32px,5vw,72px);
   align-items:stretch;
+  max-width:940px;
 }
 .about .section-title{ max-width:none; margin-bottom:clamp(28px,3.4vw,48px); }
 .about-cols .about-body{ max-width:none; }
 .about-profile{
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  justify-content:flex-end;
   align-items:flex-start;
-  gap:24px;
+  gap:20px;
   min-width:0;
-  padding-top:clamp(28px,3.6vw,56px);
 }
-.about-profile .profile-thumb{ width:140px; height:140px; flex:none; }
+.about-profile .profile-thumb{ width:180px; height:180px; flex:none; }
 .about-profile .profile-meta{ flex:none; }
 .about .mission-inset{ margin-top:0; border-color:var(--line-ink); }
 @media(max-width:900px){
